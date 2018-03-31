@@ -1,0 +1,15 @@
+html{
+	background-color:$color-background;
+	font-size:$font-size-em;
+	font-family:$font-opensans;
+	color:$color-white-off;
+	@media #{$mq-mobile}{
+		font-size:$font-size-em-mo;
+	}
+}
+*{
+	box-sizing:border-box;
+}
+body{
+	margin:0;
+}

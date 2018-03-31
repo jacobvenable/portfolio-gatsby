@@ -1,0 +1,22 @@
+.header{
+	display:block;
+	overflow:hidden;
+	&__link{
+		&-svg{
+			display:block;
+			float:left;
+			height:calc-toRem(52);
+			border:none;
+			&:link,&:visited{
+				cursor:pointer;
+			}
+			&:hover,&:active{
+				cursor:pointer;
+			}
+		}
+	}
+	&__logo{
+		display:inline-block;
+		height:100%;
+	}
+}

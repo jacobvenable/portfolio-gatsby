@@ -9,6 +9,7 @@
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-postcss-sass": "^1.0.19",
     "gatsby-plugin-react-helmet": "^2.0.8",
+    "normalize.css": "^8.0.0",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

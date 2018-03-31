@@ -1,0 +1,11 @@
+@function calc-toEm($i){
+	@return $i/$font-size-px*1em
+}
+
+@function calc-calc-toRem($i){
+	@return $i/$font-size-px*1rem
+}
+
+@function calc-calc-toRemMo($i){
+	@return $i/$font-size-px-mo*1rem
+}

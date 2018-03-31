@@ -1,0 +1,130 @@
+@mixin base-a{
+	&:link,&:visited{
+		color:$color-yellow-light;
+		text-decoration:underline;
+	}
+	&:hover,&:active{
+		color:$color-yellow-light;
+		text-decoration:none;
+	}
+}
+@mixin base-p{
+	font-size:1em;
+	line-height:1.72em;
+	margin:0 0 toRem(26) 0;
+	padding:0;
+	#{$mq-mobile}{
+		line-height:1.833em;
+	}
+}
+@mixin base-q{
+	display:inline;
+	color:$color-yellow-light;
+	font-size:1em;
+	font-style:italic;
+	&::before{
+		content:open-quote;
+		color:inherit;
+	}
+	&::after{
+		content:close-quote;
+		color:inherit;
+	}
+}
+@mixin base-blockquote{
+	position:relative;
+	display:block;
+	margin:0 0 toRem(26) 0;
+	border-left:solid toRem(5) $color-yellow-light;
+	padding:0 0 0 toRem(10);
+	font-size:1em;
+	line-height:1.72em;
+	color:$color-yellow-light;
+	#{$mq-large}{
+		margin:0 0 toRem(30) 0;
+		padding:0 0 0 toRem(12);
+	}
+}
+@mixin base-ul{
+	display:block;
+	margin:0 0 toRem(26) 0;
+	padding:0 0 0 toRem(40);
+	list-style-type:none;
+	#{$mq-large}{
+		margin:0 0 toRem(30) 0;
+		padding:0 0 0 toRem(47);
+	}
+}
+@mixin base-li-unordered{
+	position:relative;
+	margin:0.4em 0;
+	padding:0;
+	&::before{
+		content:"";
+		position:absolute;
+		top:0.6em;
+		left:-1em;
+		display:block;
+		height:0.4em;
+		width:0.4em;
+		background-color:$color-yellow-light;
+	}
+}
+@mixin base-ol{
+	display:block;
+	margin:0 0 toRem(26) 0;
+	padding:0 0 0 toRem(40);
+	list-style-type:none;
+	counter-reset:section;
+	#{$mq-large}{
+		margin:0 0 toRem(30) 0;
+		padding:0 0 0 toRem(47);
+	}
+}
+@mixin base-li-ordered{
+	position:relative;
+	margin:0.25em 0;
+	padding:0;
+	counter-increment:item;
+	&::before{
+		content:counter(item)".";
+		position:absolute;
+		top:0em;
+		left:-1.2em;
+		display:block;
+		background-color:none;
+		font-size:1em;
+		font-weight:700;
+		color:$color-yellow-light;
+	}
+}
+@mixin base-mark{
+	background-color:$color-blue-dark;
+	color:#fff;
+}
+@mixin base-dl{
+	display:block;
+	margin:0.25em 0;
+	padding:0;
+}
+@mixin base-dt{
+	display:block;
+	margin:toRem(15) 0 0 0;
+	text-transform:uppercase;
+	font-weight:300;
+	line-height:1.2em;
+	color:$color-yellow-light;
+	&:first-child{
+		margin:0;
+	}
+}
+@mixin base-dd{
+	display:block;
+	margin:0 0 0 toRem(30);
+	padding:0;
+	font-size:0.95em;
+	font-style:italic;
+	#{$mq-large}{
+		margin:0 0 0 toRem(35);
+	}
+}

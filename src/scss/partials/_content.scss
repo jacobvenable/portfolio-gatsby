@@ -1,0 +1,97 @@
+h1{
+	@apply --base-h1;
+}
+h2{
+	@apply --base-h2;
+}
+a{
+	@apply --base-a;
+}
+p{
+	@apply --base-p;
+}
+q{
+	@apply --base-q;
+}
+blockquote{
+	@apply --base-blockquote;
+}
+ul{
+	@apply --base-ul;
+	& li{
+		@apply --base-li-unordered;
+	}
+}
+ol{
+	@apply --base-ol;
+	& li{
+		@apply --base-li-ordered;
+	}
+}
+mark{
+	@apply --base-mark;
+}
+dl{
+	@apply --base-dl;
+	& dt{
+		@apply --base-dt;
+	}
+	& dd{
+		@apply --base-dd;
+	}
+}
+.content{
+	&__header{
+		&-1{
+			@apply --base-h1;
+		}
+		&-2{
+			@apply --base-h2;
+		}
+	}
+	&__p{
+		@apply --base-p;
+	}
+	&__quote{
+		@apply --base-q;
+	}
+	&__blockquote{
+		@apply --base-blockquote;
+	}
+	&__list{
+		&-unordered{
+			@apply --base-ul;
+		}
+		&-ordered{
+			@apply --base-ul;
+		}
+	}
+	&__item{
+		&-unordered{
+			@apply --base-li-unordered;
+		}
+		&-ordered{
+			@apply --base-li-ordered;
+		}
+	}
+	&__deflist{
+		@apply --base-dl;
+		&__term{
+			@apply --base-dt;
+		}
+		&__def{
+			@apply --base-dd;
+		}
+	}
+	&__intro{
+		display:block;
+		margin:1em 0;
+		padding:calc-toRem(20) 0;
+		border-top:solid 1px var(--color-yellow-light);
+		border-bottom:solid 1px var(--color-yellow-light);
+		font-size:calc-toRem(26);
+		line-height:calc-toRem(38);
+		font-weight:300;
+		color:var(--color-yellow-light);
+	}
+}

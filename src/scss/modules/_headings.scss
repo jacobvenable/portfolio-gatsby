@@ -1,0 +1,35 @@
+@mixin heading-1{
+	margin:calc-calc-toRem(50) 0 calc-calc-toRem(20);
+	padding:0;
+	font-family:$font-montserrat;
+	font-size:calc-calc-toRem(86);
+	line-height:calc-calc-toRem(96);
+	font-weight:normal;
+	color:$color-yellow-dark;
+	@media #{$mq-large}{
+		margin:calc-calc-toRem(59) 0 calc-calc-toRem(23);
+		font-size:calc-calc-toRem(101);
+		line-height:calc-calc-toRem(112);
+	}
+	@media #{$mq-mobile}{
+		margin:calc-calc-toRemMo(30) 0 calc-calc-toRemMo(35);
+		font-size:calc-calc-toRemMo(41);
+		line-height:calc-calc-toRemMo(46);
+		font-weight:700;
+	}
+}
+@mixin heading-2{
+	font-family:$font-montserrat;
+	font-size:calc-calc-toRem(44);
+	line-height:calc-calc-toRem(50);
+	font-weight:700;
+	color:$color-blue-light;
+	@media #{$mq-large}{
+		font-size:calc-calc-toRem(52);
+		line-height:calc-calc-toRem(59);
+	}
+	@media #{$mq-mobile}{
+		font-size:calc-calc-toRemMo(34);
+		line-height:calc-calc-toRemMo(40);
+	}
+}
