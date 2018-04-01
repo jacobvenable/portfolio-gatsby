@@ -1,7 +1,7 @@
-$mq-mobile: (max-width: 47.9375em);
-$mq-mobile-retina: (max-width: 47.9375em) and (-webkit-min-device-pixel-ratio: 2);
-$mq-tablet: (min-width: 48em) and (max-width: 64em);
-$mq-tablet-retina: (min-width: 48em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 2);
-$mq-medium: (min-width: 64.0625em) and (max-width: 74.9375em);
-$mq-large: (min-width: 75em);
-$mq-large-retina: (min-width: 75em) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi);
+$mq-mobile: "(max-width: 47.9375em)";
+$mq-mobile-retina: "(max-width: 47.9375em) and (-webkit-min-device-pixel-ratio: 2)";
+$mq-tablet: "(min-width: 48em) and (max-width: 64em)";
+$mq-tablet-retina: "(min-width: 48em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 2)";
+$mq-medium: "(min-width: 64.0625em) and (max-width: 74.9375em)";
+$mq-large: "(min-width: 75em)";
+$mq-large-retina: "(min-width: 75em) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)";

@@ -22,6 +22,11 @@
 		background-color:$color-background;
 		transition:unset;
 	}
+	&:link,&:visited{
+		border:solid 1px $color-white-off;
+		color:$color-white-off;
+		text-decoration:none;
+	}
 	&:hover,&:active,&:focus{
 		border:solid 1px $color-white-off;
 		color:$color-background;
@@ -35,15 +40,15 @@
 			transition:all 0.15s ease-in-out;
 		}
 	}
-	#{$mq-large}{
+	@media #{$mq-large}{
 		padding:calc-toRem(12) calc-toRem(35);
 		font-size:calc-toRem(23);
 	}
-	#{$mq-tablet}{
+	@media #{$mq-tablet}{
 		padding:calc-toRem(9) calc-toRem(28);
 		font-size:calc-toRem(19);
 	}
-	#{$mq-mobile}{
+	@media #{$mq-mobile}{
 		clear:both;
 		display:block;
 		padding:calc-toRemMo(12) calc-toRemMo(45);
@@ -55,10 +60,14 @@
 	border-color:$color-yellow-dark;
 	color:$color-yellow-dark;
 	text-decoration:none;
+	&:link,&:visited{
+		border-color:$color-yellow-dark;
+		color:$color-yellow-dark;
+		text-decoration:none;
+	}
 	&:hover,&:active,&:focus{
 		border-color:$color-yellow-dark;
 		color:$color-background;
-		text-decoration:none;
 		text-decoration:none;
 		&::before{
 			background-color:$color-yellow-dark;
@@ -69,6 +78,11 @@
 	border-color:$color-yellow-light;
 	color:$color-yellow-light;
 	text-decoration:none;
+	&:link,&:visited{
+		border-color:$color-yellow-light;
+		color:$color-yellow-light;
+		text-decoration:none;
+	}
 	&:hover,&:active,&:focus{
 		border-color:$color-yellow-light;
 		color:$color-background;

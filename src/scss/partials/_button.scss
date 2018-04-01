@@ -1,49 +1,22 @@
 button.button{
-	@apply --base-button;
-	&-outline{
-		@apply --base-button-outline;
-	}
+	@include base-button;
 	&-yellow{
 		&-light{
-			@apply --base-button-yellow-light;
-			&:hover{
-				@apply --base-button-yellow-light-hover;
-			}
+			@include base-button-yellow-light;
 		}
 		&-dark{
-			@apply --base-button-yellow-dark;
-			&:hover{
-				@apply --base-button-yellow-dark-hover;
-			}
+			@include base-button-yellow-dark;
 		}
 	}
 }
 a.button{
-	@apply --base-button;
-	&-outline{
-		&:link,&:visited{
-			@apply --base-button-outline;
-		}
-		&:hover,&:active{
-			@apply --base-button-outline-hover;
-		}
-	}
+	@include base-button;
 	&-yellow{
 		&-light{
-			&:link,&:visited{
-				@apply --base-button-yellow-light;
-			}
-			&:hover,&:active{
-				@apply --base-button-yellow-light-hover;
-			}
+			@include base-button-yellow-light;
 		}
 		&-dark{
-			&:link,&:visited{
-				@apply --base-button-yellow-dark;
-			}
-			&:hover,&:active{
-				@apply --base-button-yellow-dark-hover;
-			}
+			@include base-button-yellow-dark;
 		}
 	}
 }

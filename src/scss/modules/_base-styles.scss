@@ -13,7 +13,7 @@
 	line-height:1.72em;
 	margin:0 0 toRem(26) 0;
 	padding:0;
-	#{$mq-mobile}{
+	@media #{$mq-mobile}{
 		line-height:1.833em;
 	}
 }
@@ -40,7 +40,7 @@
 	font-size:1em;
 	line-height:1.72em;
 	color:$color-yellow-light;
-	#{$mq-large}{
+	@media #{$mq-large}{
 		margin:0 0 toRem(30) 0;
 		padding:0 0 0 toRem(12);
 	}
@@ -50,7 +50,7 @@
 	margin:0 0 toRem(26) 0;
 	padding:0 0 0 toRem(40);
 	list-style-type:none;
-	#{$mq-large}{
+	@media #{$mq-large}{
 		margin:0 0 toRem(30) 0;
 		padding:0 0 0 toRem(47);
 	}
@@ -76,7 +76,7 @@
 	padding:0 0 0 toRem(40);
 	list-style-type:none;
 	counter-reset:section;
-	#{$mq-large}{
+	@media #{$mq-large}{
 		margin:0 0 toRem(30) 0;
 		padding:0 0 0 toRem(47);
 	}
@@ -124,7 +124,7 @@
 	padding:0;
 	font-size:0.95em;
 	font-style:italic;
-	#{$mq-large}{
+	@media #{$mq-large}{
 		margin:0 0 0 toRem(35);
 	}
 }

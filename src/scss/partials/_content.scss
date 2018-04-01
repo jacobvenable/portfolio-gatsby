@@ -1,86 +1,86 @@
 h1{
-	@apply --base-h1;
+	@include heading-1;
 }
 h2{
-	@apply --base-h2;
+	@include heading-2;
 }
 a{
-	@apply --base-a;
+	@include base-a;
 }
 p{
-	@apply --base-p;
+	@include base-p;
 }
 q{
-	@apply --base-q;
+	@include base-q;
 }
 blockquote{
-	@apply --base-blockquote;
+	@include base-blockquote;
 }
 ul{
-	@apply --base-ul;
+	@include base-ul;
 	& li{
-		@apply --base-li-unordered;
+		@include base-li-unordered;
 	}
 }
 ol{
-	@apply --base-ol;
+	@include base-ol;
 	& li{
-		@apply --base-li-ordered;
+		@include base-li-ordered;
 	}
 }
 mark{
-	@apply --base-mark;
+	@include base-mark;
 }
 dl{
-	@apply --base-dl;
+	@include base-dl;
 	& dt{
-		@apply --base-dt;
+		@include base-dt;
 	}
 	& dd{
-		@apply --base-dd;
+		@include base-dd;
 	}
 }
 .content{
 	&__header{
 		&-1{
-			@apply --base-h1;
+			@include heading-1;
 		}
 		&-2{
-			@apply --base-h2;
+			@include heading-2;
 		}
 	}
 	&__p{
-		@apply --base-p;
+		@include base-p;
 	}
 	&__quote{
-		@apply --base-q;
+		@include base-q;
 	}
 	&__blockquote{
-		@apply --base-blockquote;
+		@include base-blockquote;
 	}
 	&__list{
 		&-unordered{
-			@apply --base-ul;
+			@include base-ul;
 		}
 		&-ordered{
-			@apply --base-ul;
+			@include base-ul;
 		}
 	}
 	&__item{
 		&-unordered{
-			@apply --base-li-unordered;
+			@include base-li-unordered;
 		}
 		&-ordered{
-			@apply --base-li-ordered;
+			@include base-li-ordered;
 		}
 	}
 	&__deflist{
-		@apply --base-dl;
+		@include base-dl;
 		&__term{
-			@apply --base-dt;
+			@include base-dt;
 		}
 		&__def{
-			@apply --base-dd;
+			@include base-dd;
 		}
 	}
 	&__intro{
