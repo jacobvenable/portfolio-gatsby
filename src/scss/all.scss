@@ -1,11 +1,6 @@
-@import "../../node_modules/normalize.css/normalize.css";
-@import "modules/_all.scss";
-@import "partials/_root.scss";
-@import "partials/_content.scss";
-@import "partials/_container.scss";
-@import "partials/_nav.scss";
-@import "partials/_header.scss";
-@import "partials/_main.scss";
-@import "partials/_clipmask.scss";
-@import "partials/_button.scss";
-@import "partials/_portfolio.scss";
+@import "settings/_all.scss";
+@import "tools/_all.scss";
+@import "generic/_all.scss";
+@import "elements/_all.scss";
+@import "objects/_all.scss";
+@import "components/_all.scss";

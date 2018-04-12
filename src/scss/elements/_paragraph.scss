@@ -1,0 +1,12 @@
+@mixin paragraph{
+	font-size:1em;
+	line-height:1.72em;
+	margin:0 0 toRem(26) 0;
+	padding:0;
+	@media #{$mq-mobile}{
+		line-height:1.833em;
+	}
+}
+p{
+	@include paragraph;
+}

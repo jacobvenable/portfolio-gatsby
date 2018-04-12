@@ -1,0 +1,64 @@
+@mixin list-base{
+	display:block;
+	margin:0 0 toRem(26) 0;
+	list-style-type:none;
+	@media #{$mq-large}{
+		margin:0 0 toRem(30) 0;
+		padding:0 0 0 toRem(47);
+	}
+}
+@mixin list-unordered{
+	padding:0 0 0 toRem(40);
+}
+@mixin list-ordered{
+	padding:0 0 0 toRem(40);
+	counter-reset:section;
+}
+@mixin listItem-base{
+	position:relative;
+	padding:0;
+	&::before{
+		position:absolute;
+		display:block;
+	}
+}
+@mixin listItem-unordered{
+	@include listItem-base;
+	margin:0.4em 0;
+	&::before{
+		content:"";
+		position:absolute;
+		top:0.6em;
+		left:-1em;
+		height:0.4em;
+		width:0.4em;
+		background-color:$color-yellow-light;
+	}
+}
+@mixin listItem-ordered{
+	@include listItem-base;
+	margin:0.25em 0;
+	counter-increment:item;
+	&::before{
+		content:counter(item)".";
+		top:0em;
+		left:-1.2em;
+		font-size:1em;
+		font-weight:700;
+		color:$color-yellow-light;
+	}
+}
+ul{
+	@include list-base;
+	@include list-unordered;
+	li{
+		@include listItem-unordered;
+	}
+}
+ol{
+	@include list-base;
+	@include list-unordered;
+	li{
+		@include listItem-ordered;
+	}
+}

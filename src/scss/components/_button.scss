@@ -1,0 +1,39 @@
+.button{
+	@include button;
+	&--yellow{
+		&-dark{
+			@include button-base;
+			border-color:$color-yellow-dark;
+			color:$color-yellow-dark;
+			&:link,&:visited{
+				border-color:$color-yellow-dark;
+				color:$color-yellow-dark;
+				text-decoration:none;
+			}
+			&:hover,&:active,&:focus{
+				border-color:$color-yellow-dark;
+				text-decoration:none;
+				&::before{
+					background-color:$color-yellow-dark;
+				}
+			}
+		}
+		&-light{
+			@include button-base;
+			border-color:$color-yellow-light;
+			color:$color-yellow-light;
+			&:link,&:visited{
+				border-color:$color-yellow-light;
+				color:$color-yellow-light;
+				text-decoration:none;
+			}
+			&:hover,&:active,&:focus{
+				border-color:$color-yellow-light;
+				text-decoration:none;
+				&::before{
+					background-color:$color-yellow-light;
+				}
+			}
+		}
+	}
+}

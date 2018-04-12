@@ -1,0 +1,29 @@
+.container{
+	max-width:convert-toRem(751);
+	width:100%;
+	margin:0 auto;
+	padding:0 convert-toRem(20);
+	@media #{$mq-large}
+	{
+		max-width:convert-toRem(1183);
+	}
+	@media #{$mq-medium}
+	{
+		max-width:convert-toRem(1010);
+	}
+	@media #{$mq-tablet}
+	{
+		max-width:convert-toRem(751);
+	}
+	@media #{$mq-mobile}
+	{
+		max-width:100%;
+	}
+	&__row{
+		margin:0 convert-toRem(-15);
+	}
+	&__column{
+		padding-left:convert-toRem(15);
+		padding-right:convert-toRem(15);
+	}
+}

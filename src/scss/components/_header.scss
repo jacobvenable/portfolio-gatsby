@@ -5,7 +5,7 @@
 		&-svg{
 			display:block;
 			float:left;
-			height:calc-toRem(52);
+			height:convert-toRem(52);
 			border:none;
 			&:link,&:visited{
 				cursor:pointer;

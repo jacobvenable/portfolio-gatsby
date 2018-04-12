@@ -1,0 +1,15 @@
+@mixin anchor{
+	color:$color-yellow-light;
+	text-decoration:underline;
+	&:link,&:visited{
+		color:$color-yellow-light;
+		text-decoration:underline;
+	}
+	&:hover,&:active{
+		color:$color-yellow-light;
+		text-decoration:none;
+	}
+}
+a{
+	@include anchor;
+}

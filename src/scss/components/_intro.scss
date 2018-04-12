@@ -1,0 +1,11 @@
+.intro{
+	display:block;
+	margin:1em 0;
+	padding:convert-toRem(20) 0;
+	border-top:solid 1px $color-yellow-light;
+	border-bottom:solid 1px $color-yellow-light;
+	font-size:convert-toRem(26);
+	line-height:convert-toRem(38);
+	font-weight:300;
+	color:$color-yellow-light;
+}

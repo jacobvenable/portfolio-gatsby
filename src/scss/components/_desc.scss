@@ -1,0 +1,9 @@
+.desc{
+	@include descriptionList;
+	&__term{
+		@include descriptionTerm;
+	}
+	&__description{
+		@include descriptionDefinition;
+	}
+}

@@ -1,0 +1,35 @@
+@mixin descriptionList{
+	display:block;
+	margin:0.25em 0;
+	padding:0;
+}
+dl{
+	@include descriptionList;
+}
+@mixin descriptionTerm{
+	display:block;
+	margin:toRem(15) 0 0 0;
+	text-transform:uppercase;
+	font-weight:300;
+	line-height:1.2em;
+	color:$color-yellow-light;
+	&:first-child{
+		margin:0;
+	}
+}
+dt{
+	@include descriptionTerm;
+}
+@mixin descriptionDefinition{
+	display:block;
+	margin:0 0 0 toRem(30);
+	padding:0;
+	font-size:0.95em;
+	font-style:italic;
+	@media #{$mq-large}{
+		margin:0 0 0 toRem(35);
+	}
+}
+dd{
+	@include descriptionDefinition;
+}

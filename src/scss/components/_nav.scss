@@ -2,11 +2,11 @@
 	&-main{
 		display:block;
 		float:left;
-		padding:calc-toRem(10) calc-toRem(5);
+		padding:convert-toRem(10) convert-toRem(5);
 		color:$color-white-off;
 		text-transform:uppercase;
 		font-family:$font-montserrat;
-		font-size:calc-toRem(20);
+		font-size:convert-toRem(20);
 		font-weight:300;
 		line-height:1em;
 	}
@@ -18,7 +18,7 @@
 	&__item{
 		position:relative;
 		display:inline-block;
-		padding:0 0 0 calc-toRem(14);
+		padding:0 0 0 convert-toRem(14);
 		&::before{
 			content:"/";
 			position:absolute;
@@ -26,8 +26,8 @@
 			left:0;
 			display:inline-block;
 			background:none;
-			padding:calc-toRem(5) 0 0;
-			font-size:calc-toRem(28);
+			padding:convert-toRem(5) 0 0;
+			font-size:convert-toRem(28);
 		}
 		&:first-child{
 			padding:0;
@@ -44,19 +44,19 @@
 			position:absolute;
 			top:0.7em;
 			display:block;
-			height:calc-toRem(2);
+			height:convert-toRem(2);
 			background-color:$color-yellow-light;
 		}
 		&:link,&:visited{
 			color:$color-white-off;
 			text-decoration:none;
 			&::before{
-				left:calc-toRem(5);
+				left:convert-toRem(5);
 				width:0;
 				transition:width 0.25s;
 			}
 			&::after{
-				right:calc-toRem(5);
+				right:convert-toRem(5);
 				width:0;
 				transition:width 0.25s;
 			}
@@ -65,19 +65,19 @@
 			color:$color-white-off;
 			text-decoration:none;
 			&::before{
-				left:calc-toRem(5);
-				width:calc-toRem(8);
+				left:convert-toRem(5);
+				width:convert-toRem(8);
 				transition:width 0.25s;
 			}
 			&::after{
-				right:calc-toRem(5);
-				width:calc-toRem(8);
+				right:convert-toRem(5);
+				width:convert-toRem(8);
 				transition:width 0.25s;
 			}
 		}
 		&-main{
 			display:inline-block;
-			padding:calc-toRem(5) calc-toRem(18);
+			padding:convert-toRem(5) convert-toRem(18);
 		}
 		&-skipto{
 			position:absolute;
@@ -85,9 +85,9 @@
 			left:-10rem;
 			display:inline-block;
 			border:solid 1px $color-white-off;
-			padding:calc-toRem(10) calc-toRem(20);
+			padding:convert-toRem(10) convert-toRem(20);
 			background-color:$color-background;
-			font-size:calc-toRem(20);
+			font-size:convert-toRem(20);
 			&:focus{
 				top:0;
 				left:0;

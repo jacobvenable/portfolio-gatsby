@@ -1,0 +1,7 @@
+@mixin mark{
+	background-color:$color-blue-dark;
+	color:#fff;
+}
+mark{
+	@include mark;
+}

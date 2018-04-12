@@ -1,0 +1,8 @@
+.heading{
+	&-1{
+		@include heading-1;
+	}
+	&-2{
+		@include heading-2;
+	}
+}
