@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
 
 import TriangleMask from './../components/TriangleMask';
 
 import life360Thumb from './../images/portfolio_life360-thumb.jpg';
 import boilerLifeThumb from './../images/portfolio_boilerlife-thumb.jpg';
 
-const PortfolioPage = () => (
+const PortfolioPage = ({data}) => (
   <div className="container">
 		<h1>Work</h1>
 		<section aria-labelled-by="portfolio__title-1" className="portfolio__item">
@@ -15,7 +16,7 @@ const PortfolioPage = () => (
 				<p className="portfolio__role portfolio__role-item"><span className="portfolio__role-sr"></span>Front-end Development</p>
 			</div>
 			<a href="#" aria-labelled-by="portfolio__link-1" className="portfolio__container portfolio__container-thumb">
-				<img src={life360Thumb} alt="" className="portfolio__image portfolio__image-item"/>
+				<Img sizes={data.life360Thumb.sizes} className="portfolio__image portfolio__image-item"/>
 			</a>
 			<div className="portfolio__container portfolio__container-summary">
 				<p className="portfolio__description portfolio__description-item">Custom-built magazine template to showcase people, places and events from across the College of Health and Human Sciences.</p>
@@ -28,7 +29,7 @@ const PortfolioPage = () => (
 				<p className="portfolio__role portfolio__role-item"><span className="portfolio__role-sr"></span>Front-end Development , CMS Implementation</p>
 			</div>
 			<a href="#" aria-labelled-by="portfolio__link-2" className="portfolio__container portfolio__container-thumb portfolio__container-thumb-reverse">
-				<img src={boilerLifeThumb} alt="" className="portfolio__image portfolio__image-item"/>
+				<Img sizes={data.boilerLifeThumb.sizes} className="portfolio__image portfolio__image-item"/>
 			</a>
 			<div className="portfolio__container portfolio__container-summary portfolio__container-summary-reverse">
 				<p className="portfolio__description portfolio__description-item">Social media marketing campaign with a custom-designed microsite, showcasing stories of Purdue students, groups and alumni.</p>
@@ -40,3 +41,18 @@ const PortfolioPage = () => (
 );
 
 export default PortfolioPage;
+
+export const query = graphql`
+  query PortfolioThumbs {
+    life360Thumb: imageSharp(id: {regex: "/portfolio_life360-thumb.jpg/"}){
+    	sizes(maxWidth:1240){
+    		...GatsbyImageSharpSizes_withWebp
+    	}
+    },
+    boilerLifeThumb: imageSharp(id: {regex: "/portfolio_boilerlife-thumb.jpg/"}){
+    	sizes(maxWidth:1240){
+    		...GatsbyImageSharpSizes_withWebp
+    	}
+    }
+  }
+`;
