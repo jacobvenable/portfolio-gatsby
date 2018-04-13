@@ -20,7 +20,7 @@ const PortfolioPage = ({data}) => (
 			</a>
 			<div className="portfolio__container portfolio__container-summary">
 				<p className="portfolio__description portfolio__description-item">Custom-built magazine template to showcase people, places and events from across the College of Health and Human Sciences.</p>
-				<a href="#" id="portfolio__link-1" className="button button-outline button-yellow-light portfolio__button portfolio__button-item">More Info</a>
+				<a href="#" id="portfolio__link-1" className="button button--yellow-light portfolio__button portfolio__button-item">More Info</a>
 			</div>
 		</section>
 		<section aria-labelled-by="portfolio__title-2" className="portfolio__item portfolio__item-reverse">
@@ -33,7 +33,7 @@ const PortfolioPage = ({data}) => (
 			</a>
 			<div className="portfolio__container portfolio__container-summary portfolio__container-summary-reverse">
 				<p className="portfolio__description portfolio__description-item">Social media marketing campaign with a custom-designed microsite, showcasing stories of Purdue students, groups and alumni.</p>
-				<a href="#" id="portfolio__link-2" className="button button-outline button-yellow-light portfolio__button portfolio__button-item">More Info</a>
+				<a href="#" id="portfolio__link-2" className="button button--yellow-light portfolio__button portfolio__button-item">More Info</a>
 			</div>
 		</section>
 		<TriangleMask />

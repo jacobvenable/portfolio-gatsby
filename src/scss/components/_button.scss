@@ -12,6 +12,7 @@
 			}
 			&:hover,&:active,&:focus{
 				border-color:$color-yellow-dark;
+				color:$color-background;
 				text-decoration:none;
 				&::before{
 					background-color:$color-yellow-dark;
@@ -29,6 +30,7 @@
 			}
 			&:hover,&:active,&:focus{
 				border-color:$color-yellow-light;
+				color:$color-background;
 				text-decoration:none;
 				&::before{
 					background-color:$color-yellow-light;

@@ -133,7 +133,7 @@
 		&-item{
 			margin:convert-toRem(5) 0 0;
 			font-size:convert-toRem(19);
-			color:var(--color-yellow-light);
+			color:$color-yellow-light;
 			@media #{$mq-large}{
 				margin:convert-toRem(6) 0 0;
 				font-size:convert-toRem(22);
