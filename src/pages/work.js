@@ -7,7 +7,7 @@ import TriangleMask from './../components/TriangleMask';
 import life360Thumb from './../images/portfolio_life360-thumb.jpg';
 import boilerLifeThumb from './../images/portfolio_boilerlife-thumb.jpg';
 
-const PortfolioPage = ({data}) => (
+const WorkPage = ({data}) => (
   <div className="container">
 		<h1>Work</h1>
 		<section aria-labelled-by="portfolio__title-1" className="portfolio__item">
@@ -40,7 +40,7 @@ const PortfolioPage = ({data}) => (
 	</div>
 );
 
-export default PortfolioPage;
+export default WorkPage;
 
 export const query = graphql`
   query PortfolioThumbs {
