@@ -2,10 +2,10 @@
 	display:block;
 	overflow:hidden;
 	&__link{
-		&-svg{
+		&-logo{
+			position:relative;
 			display:block;
-			float:left;
-			height:convert-toRem(52);
+			width:convert-toRem(60);
 			border:none;
 			&:link,&:visited{
 				cursor:pointer;
@@ -13,10 +13,18 @@
 			&:hover,&:active{
 				cursor:pointer;
 			}
+			&::after{
+				content:"";
+				position:absolute;
+				z-index:3;
+				top:0;
+				right:0;
+				bottom:0;
+				left:0;
+			}
 		}
 	}
 	&__logo{
-		display:inline-block;
-		height:100%;
+		padding-bottom:52/60*100%;
 	}
 }

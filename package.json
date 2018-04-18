@@ -6,6 +6,7 @@
   "dependencies": {
     "autoprefixer": "^8.2.0",
     "gatsby": "^1.9.241",
+    "gatsby-cli": "^1.1.50",
     "gatsby-image": "^1.0.45",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-postcss-sass": "^1.0.19",
