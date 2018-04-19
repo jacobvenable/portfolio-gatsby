@@ -1,7 +1,22 @@
 .header{
+	position:sticky;
+	top:0;
+	z-index:10;
 	display:block;
 	overflow:hidden;
+	padding:convert-toRem(15) 0;
+	background:$color-background;
+	&__container{
+		display:block;
+		display:flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+		justify-content:flex-start;
+		align-items:center;
+	}
 	&__link{
+		display:block;
+		float:left;
 		&-logo{
 			position:relative;
 			display:block;
@@ -26,5 +41,32 @@
 	}
 	&__logo{
 		padding-bottom:52/60*100%;
+	}
+	&__heading{
+		display:block;
+		float:left;
+		margin:0 0 0 convert-toRem(15);
+		padding:0 convert-toRem(22) 0 0;
+		border-right:solid 2px $color-yellow-dark;
+	}
+	&__name{
+		display:block;
+		font-family:$font-montserrat;
+		font-size:convert-toRem(22);
+		font-weight:400;
+		line-height:1.2em;
+		color:$color-yellow-dark;
+	}
+	&__title{
+		display:block;
+		font-family:$font-montserrat;
+		font-size:convert-toRem(14);
+		font-weight:300;
+		line-height:1.2em;
+		color:$color-white-off;
+	}
+	&__nav{
+		float:left;
+		margin:0 0 0 convert-toRem(7);
 	}
 }

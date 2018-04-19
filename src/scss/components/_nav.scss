@@ -1,8 +1,7 @@
 .nav{
 	&-main{
 		display:block;
-		float:left;
-		padding:convert-toRem(10) convert-toRem(5);
+		padding:0;
 		color:$color-white-off;
 		text-transform:uppercase;
 		font-family:$font-montserrat;
@@ -18,6 +17,7 @@
 	&__item{
 		position:relative;
 		display:inline-block;
+		margin:0;
 		padding:0 0 0 convert-toRem(14);
 		&::before{
 			content:"/";
