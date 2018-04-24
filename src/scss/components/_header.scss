@@ -4,9 +4,10 @@
 	z-index:10;
 	display:block;
 	overflow:hidden;
-	padding:convert-toRem(15) 0;
+	width:100%;
 	background:$color-background;
-	&__container{
+	padding:convert-toRem(15) 0;
+		&__container{
 		display:block;
 		display:flex;
 		flex-direction:row;
@@ -18,9 +19,11 @@
 		display:block;
 		float:left;
 		&-logo{
+			transition:max-width 0.1s ease-out;
 			position:relative;
 			display:block;
-			width:convert-toRem(60);
+			width:100%;
+			max-width:convert-toRem(60);
 			border:none;
 			&:link,&:visited{
 				cursor:pointer;
@@ -43,11 +46,15 @@
 		padding-bottom:52/60*100%;
 	}
 	&__heading{
+		transition:max-width padding-right 0.1s ease-out;
+		overflow:hidden;
 		display:block;
+		max-width:100%;
 		float:left;
 		margin:0 0 0 convert-toRem(15);
 		padding:0 convert-toRem(22) 0 0;
 		border-right:solid 2px $color-yellow-dark;
+		white-space:nowrap;
 	}
 	&__name{
 		display:block;
@@ -68,5 +75,30 @@
 	&__nav{
 		float:left;
 		margin:0 0 0 convert-toRem(7);
+	}
+	&-sticking{
+		padding:convert-toRem(7) 0;
+		& .header{
+			&__link{
+				&-logo{
+					max-width:convert-toRem(45);
+				}
+			}
+			&__heading{
+				max-width:0;
+				padding-right:0;
+			}
+		}
+	}
+	@media #{$mq-mobile}{
+		position:static;
+		&__link{
+			&-logo{
+				max-width:convert-toRem(45);
+			}
+		}
+		&__heading{
+			border-right:0;
+		}
 	}
 }
