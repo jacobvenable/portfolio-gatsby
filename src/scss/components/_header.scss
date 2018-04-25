@@ -7,7 +7,7 @@
 	width:100%;
 	background:$color-background;
 	padding:convert-toRem(15) 0;
-		&__container{
+	&__container{
 		display:block;
 		display:flex;
 		flex-direction:row;
@@ -76,29 +76,39 @@
 		float:left;
 		margin:0 0 0 convert-toRem(7);
 	}
-	&-sticking{
-		padding:convert-toRem(7) 0;
-		& .header{
-			&__link{
-				&-logo{
-					max-width:convert-toRem(45);
+	@media #{$mq-large} and #{$mq-medium} and #{$mq-tablet}{
+		&-sticking{
+			padding:convert-toRem(7) 0;
+			& .header{
+				&__link{
+					&-logo{
+						max-width:convert-toRem(45);
+					}
 				}
-			}
-			&__heading{
-				max-width:0;
-				padding-right:0;
+				&__heading{
+					max-width:0;
+					padding-right:0;
+				}
 			}
 		}
 	}
 	@media #{$mq-mobile}{
 		position:static;
+		padding:convert-toRemMo(15) 0;
 		&__link{
 			&-logo{
-				max-width:convert-toRem(45);
+				width:14vw;
+				max-width:convert-toRemMo(60);
 			}
 		}
 		&__heading{
-			border-right:0;
+			border-right:none;
+		}
+		&__name{
+			font-size:convert-toRem(26);
+		}
+		&__title{
+			font-size:convert-toRem(18);
 		}
 	}
 }
