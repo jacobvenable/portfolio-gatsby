@@ -31,6 +31,9 @@
 			&:hover,&:active{
 				cursor:pointer;
 			}
+			&:focus{
+				outline:dotted 1px $color-white-off;
+			}
 			&::after{
 				content:"";
 				position:absolute;

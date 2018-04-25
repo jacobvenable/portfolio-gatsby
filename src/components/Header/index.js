@@ -66,6 +66,17 @@ class Header extends React.Component {
     })
   }
 
+  navItem(link,text,icon,home = false){
+    return(
+      <li className={`nav__item nav__item-main${home?' nav__item-home':''}`}>
+        <Link to={link} className={`nav__link nav__link-main`} exact activeClassName="nav__link-main-current">
+          <FontAwesomeIcon icon={icon} className="nav__icon nav__icon-main"/>
+          {text}
+        </Link>
+      </li>
+    );
+  }
+
   render(){
     return (
       <header ref={this.element} className={`header${this.state.stickyClass}`}>
@@ -91,30 +102,10 @@ class Header extends React.Component {
               </button>
             </div>
             <ul className="nav__list nav__list-main">
-              <li className="nav__item nav__item-main nav__item-home">
-                <Link to="/" className="nav__link nav__link-main">
-                  <FontAwesomeIcon icon={faHome} className="nav__icon nav__icon-main"/>
-                  Home
-                </Link>
-              </li>
-              <li className="nav__item nav__item-main">
-                <a href="#" className="nav__link nav__link-main">
-                  <FontAwesomeIcon icon={faUserAlt} className="nav__icon nav__icon-main"/>
-                  About
-                </a>
-              </li>
-              <li className="nav__item nav__item-main">
-                <Link to="/work/" className="nav__link nav__link-main">
-                  <FontAwesomeIcon icon={faFolderOpen} className="nav__icon nav__icon-main" />
-                  Work
-                </Link>
-              </li>
-              <li className="nav__item nav__item-main">
-                <a href="#" className="nav__link nav__link-main">
-                  <FontAwesomeIcon icon={faEnvelope} className="nav__icon nav__icon-main" />
-                  Contact
-                </a>
-              </li>
+              {this.navItem('/','Home',faHome,true)}
+              {this.navItem('/about/','About',faUserAlt,false)}
+              {this.navItem('/work/','Work',faFolderOpen,false)}
+              {this.navItem('/contact/','Contact',faEnvelope,false)}
             </ul>
           </nav>
         </div>
