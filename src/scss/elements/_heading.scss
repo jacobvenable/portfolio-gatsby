@@ -1,4 +1,11 @@
+@mixin heading{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+}
 @mixin heading-1{
+	@include heading;
 	margin:convert-toRem(50) 0 convert-toRem(20);
 	padding:0;
 	font-family:$font-montserrat;
@@ -19,6 +26,9 @@
 	}
 }
 @mixin heading-2{
+	@include heading;
+	margin:convert-toRem(30) 0 convert-toRem(15);
+	padding:0;
 	font-family:$font-montserrat;
 	font-size:convert-toRem(44);
 	line-height:convert-toRem(50);
@@ -34,10 +44,14 @@
 	}
 }
 @mixin heading-3{
+	@include heading;
+	margin:convert-toRem(25) 0 convert-toRem(10);
+	padding:0;
+	font-family:$font-montserrat;
 	font-size:convert-toRem(32);
 	line-height:convert-toRem(38);
 	font-weight:400;
-	color:$color-yellow-dark;
+	color:$color-white-off;
 	@media #{$mq-large}{
 		font-size:convert-toRem(36);
 		line-height:convert-toRem(45);

@@ -5,4 +5,16 @@
 	&-2{
 		@include heading-2;
 	}
+	&-3{
+		@include heading-3;
+	}
+	&__icon{
+		flex-grow:0;
+		flex-shrink:1;
+		flex-basis:auto;
+		display:inline-block;
+		margin-right:convert-toRem(10);
+		font-size:0.6em;
+		color:$color-yellow-dark;
+	}
 }

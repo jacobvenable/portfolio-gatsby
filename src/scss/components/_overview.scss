@@ -1,0 +1,18 @@
+.overview{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:stretch;
+	flex-wrap:wrap;
+	font-size:0.9em;
+	&__section{
+		flex-grow:1;
+		flex-shrink:1;
+		flex-basis:50%;
+	}
+	@media #{$mq-tablet}{
+		&__section{
+			flex-basis:100%;
+		}
+	}
+}
