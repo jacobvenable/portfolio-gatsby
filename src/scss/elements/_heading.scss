@@ -33,9 +33,26 @@
 		line-height:convert-toRemMo(40);
 	}
 }
+@mixin heading-3{
+	font-size:convert-toRem(32);
+	line-height:convert-toRem(38);
+	font-weight:400;
+	color:$color-yellow-dark;
+	@media #{$mq-large}{
+		font-size:convert-toRem(36);
+		line-height:convert-toRem(45);
+	}
+	@media #{$mq-mobile}{
+		font-size:convert-toRemMo(24);
+		line-height:convert-toRemMo(30);
+	}
+}
 h1{
 	@include heading-1;
 }
 h2{
 	@include heading-2;
+}
+h3{
+	@include heading-3;
 }
