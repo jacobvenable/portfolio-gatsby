@@ -9,7 +9,7 @@ import TriangleMask from './../components/TriangleMask';
 const WorkPage = ({data}) => (
   <div className="container">
 		<h1>Work</h1>
-		{ data.allJavascriptFrontmatter !== null && data.allJavascriptFrontmatter.edges.length > 0 ? data.allJavascriptFrontmatter.edges.map((page,index) => <PortfolioItem key={page.node.id} relativeDirectory={page.node.node.relativeDirectory} name={page.node.node.name} title={page.node.frontmatter.title} role={page.node.frontmatter.role} blurb={page.node.frontmatter.blurb} thumb={data.thumbs.edges.find((thumb) => thumb.node.id.replace(/.+\/(.+) absPath of file >> ImageSharp/,'$1') == page.node.frontmatter.thumb)} index = {index} /> ) : null }
+		{ data.allJavascriptFrontmatter !== null && data.allJavascriptFrontmatter.edges.length > 0 ? data.allJavascriptFrontmatter.edges.map((page,index) => <PortfolioItem key={page.node.id} relativeDirectory={page.node.node.relativeDirectory} name={page.node.node.name} title={page.node.frontmatter.title} role={page.node.frontmatter.role} blurb={page.node.frontmatter.blurb} thumb={data.thumbs.edges.find((thumb) => thumb.node.id.replace(/.+\/(.+) absPath of file >> ImageSharp/,'$1') == page.node.frontmatter.thumb)} tech={page.node.frontmatter.tech} index = {index} /> ) : null }
 		<TriangleMask />
 	</div>
 );
@@ -42,7 +42,8 @@ export const portfolioQuery = graphql`
 	          title,
 	          blurb,
 	          role,
-	          thumb
+	          thumb,
+	          tech
 	        }
 	      }
 	    }

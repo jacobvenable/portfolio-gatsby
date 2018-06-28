@@ -79,7 +79,7 @@
 		float:left;
 		margin:0 0 0 convert-toRem(7);
 	}
-	@media #{$mq-large} and #{$mq-medium} and #{$mq-tablet}{
+	@media #{$mq-tablet-min}{
 		&-sticking{
 			padding:convert-toRem(7) 0;
 			& .header{

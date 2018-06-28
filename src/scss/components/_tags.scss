@@ -1,0 +1,15 @@
+.tags{
+	list-style-type:none;
+	width:auto;
+	margin:convert-toRem(15) convert-toRem(-5) 0;
+	padding:0;
+	&__tag{
+		display:inline-block;
+		margin:convert-toRem(5);
+		padding:convert-toRem(3) convert-toRem(7);
+		background:$color-blue-dark;
+		&::before{
+			display:none;
+		}
+	}
+}
