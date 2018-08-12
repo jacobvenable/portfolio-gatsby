@@ -5,6 +5,7 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    'gatsby-plugin-react-next',
   	'gatsby-plugin-react-helmet',
   	{
 			resolve: `gatsby-plugin-postcss-sass`,
@@ -18,6 +19,13 @@ module.exports = {
       options:{
         name: "img",
         path:`${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options:{
+        name: "video",
+        path:`${__dirname}/src/videos`
       }
     },
     {

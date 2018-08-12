@@ -1,3 +1,18 @@
+@mixin button-reverse{
+	@include button-base;
+	color:$color-background;
+	&::after{
+		opacity:1;
+	}
+	&:link,&:visited{
+		color:$color-background;
+	}
+	&:hover,&:active,&:focus{
+		&::before{
+			background-color:$color-background;
+		}
+	}
+}
 .button{
 	@include button;
 	&--yellow{
@@ -8,12 +23,10 @@
 			&:link,&:visited{
 				border-color:$color-yellow-dark;
 				color:$color-yellow-dark;
-				text-decoration:none;
 			}
 			&:hover,&:active,&:focus{
 				border-color:$color-yellow-dark;
 				color:$color-background;
-				text-decoration:none;
 				&::before{
 					background-color:$color-yellow-dark;
 				}
@@ -26,16 +39,116 @@
 			&:link,&:visited{
 				border-color:$color-yellow-light;
 				color:$color-yellow-light;
-				text-decoration:none;
 			}
 			&:hover,&:active,&:focus{
 				border-color:$color-yellow-light;
 				color:$color-background;
-				text-decoration:none;
 				&::before{
 					background-color:$color-yellow-light;
 				}
 			}
+			&-reverse{
+				@include button-reverse;
+				border-color:$color-yellow-light;
+				&::after{
+					background-color:$color-yellow-light;
+				}
+				&:link,&:visited{
+					border-color:$color-yellow-light;
+				}
+				&:hover,&:active,&:focus{
+					border-color:$color-yellow-light;
+					color:$color-yellow-light;
+				}
+			}
+		}
+	}
+	&--blue{
+		&-dark{
+			@include button-base;
+			border-color:$color-blue-dark;
+			color:$color-white-off;
+			&:link,&:visited{
+				border-color:$color-blue-dark;
+				color:$color-white-off;
+			}
+			&:hover,&:active,&:focus{
+				border-color:$color-blue-dark;
+				color:$color-white-off;
+				&::before{
+					background-color:$color-blue-dark;
+				}
+			}
+			&-reverse{
+				@include button-reverse;
+				border-color:$color-blue-dark;
+				color:$color-white-off;
+				&::after{
+					background-color:$color-blue-dark;
+				}
+				&:link,&:visited{
+					border-color:$color-blue-dark;
+					color:$color-white-off;
+				}
+				&:hover,&:active,&:focus{
+					border-color:$color-blue-dark;
+					color:$color-white-off;
+					&::before{
+						background-color:$color-background;
+					}
+				}
+			}
+		}
+		&-light{
+			@include button-base;
+			border-color:$color-blue-light;
+			color:$color-white-off;
+			&:link,&:visited{
+				border-color:$color-blue-light;
+				color:$color-white-off;
+			}
+			&:hover,&:active,&:focus{
+				border-color:$color-blue-light;
+				color:$color-white-off;
+				&::before{
+					background-color:$color-blue-light;
+				}
+			}
+			&-reverse{
+				@include button-reverse;
+				border-color:$color-blue-light;
+				color:$color-white-off;
+				&::after{
+					background-color:$color-blue-light;
+				}
+				&:link,&:visited{
+					border-color:$color-blue-light;
+					color:$color-white-off;
+				}
+				&:hover,&:active,&:focus{
+					border-color:$color-blue-light;
+					color:$color-white-off;
+					&::before{
+						background-color:$color-background;
+					}
+				}
+			}
+		}
+	}
+	&--icon{
+		padding:convert-toRem(7) convert-toRem(11);
+		font-size:convert-toRem(26);
+	}
+	@media #{$mq-large}{
+		&--icon{
+			padding:convert-toRem(8) convert-toRem(12);
+			font-size:convert-toRem(29);
+		}
+	}
+	@media #{$mq-tablet-max}{
+		&--icon{
+			padding:convert-toRemMo(8) convert-toRemMo(11);
+			font-size:convert-toRemMo(26);
 		}
 	}
 }

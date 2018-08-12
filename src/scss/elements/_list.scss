@@ -1,17 +1,17 @@
 @mixin list-base{
 	display:block;
-	margin:0 0 toRem(26) 0;
+	margin:0 0 convert-toRem(26) 0;
 	list-style-type:none;
 	@media #{$mq-large}{
-		margin:0 0 toRem(30) 0;
-		padding:0 0 0 toRem(47);
+		margin:0 0 convert-toRem(30) 0;
+		padding:0 0 0 convert-toRem(47);
 	}
 }
 @mixin list-unordered{
-	padding:0 0 0 toRem(40);
+	padding:0 0 0 convert-toRem(40);
 }
 @mixin list-ordered{
-	padding:0 0 0 toRem(40);
+	padding:0 0 0 convert-toRem(40);
 	counter-reset:section;
 }
 @mixin listItem-base{
@@ -24,11 +24,11 @@
 }
 @mixin listItem-unordered{
 	@include listItem-base;
-	margin:0.4em 0;
+	margin:0.6em 0;
 	&::before{
 		content:"";
 		position:absolute;
-		top:0.6em;
+		top:0.4em;
 		left:-1em;
 		height:0.4em;
 		width:0.4em;

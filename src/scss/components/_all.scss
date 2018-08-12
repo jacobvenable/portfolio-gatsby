@@ -1,6 +1,7 @@
 @import '_button.scss';
 @import '_clipmask.scss';
 @import '_desc.scss';
+@import '_figure.scss';
 @import '_header.scss';
 @import '_heading.scss';
 @import '_intro.scss';
@@ -10,3 +11,5 @@
 @import '_portfolio.scss';
 @import '_tags.scss';
 @import '_quote.scss';
+// vendor CSS
+@import '../../node_modules/prismjs/themes/prism-okaidia.css';

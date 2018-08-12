@@ -1,0 +1,41 @@
+.figure{
+	display:flex;
+	margin:convert-toRem(45) auto;
+	&--full{
+		flex-direction:column;
+		justify-content:flex-start;
+		align-items:stretch;
+	}
+	&__img{
+		flex-grow:0;
+		flex-shrink:1;
+		flex-basis:auto;
+		max-width:100%;
+	}
+	&__caption{
+		flex-grow:0;
+		flex-shrink:1;
+		flex-basis:auto;
+		align-self:flex-end;
+		position:relative;
+		margin:convert-toRem(20) 0 0;
+		padding:convert-toRem(15) 0;
+		font-size:convert-toRem(14);
+		color:$color-yellow-light;
+		&::before,&::after{
+			content:"";
+			position:absolute;
+			display:block;
+			height:convert-toRem(1);
+			background-color:$color-yellow-light;
+			top:0;
+			right:0;
+			left:-15px;
+		}
+		&::after{
+			top:initial;
+			bottom:0;
+			left:25%;
+		}
+	}
+}

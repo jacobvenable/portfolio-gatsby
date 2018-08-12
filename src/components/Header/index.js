@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import StickyFill from 'stickyfilljs';
+//import StickyFill from 'stickyfilljs';
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faBars from '@fortawesome/fontawesome-pro-solid/faBars';

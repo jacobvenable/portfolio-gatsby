@@ -8,4 +8,9 @@
 	line-height:convert-toRem(38);
 	font-weight:300;
 	color:$color-yellow-light;
+	@media #{$mq-mobile}{
+		padding:convert-toRem(15) 0;
+		font-size:convert-toRem(22);
+		line-height:convert-toRem(32);
+	}
 }

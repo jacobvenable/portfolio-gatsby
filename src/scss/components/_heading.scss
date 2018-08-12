@@ -8,6 +8,20 @@
 	&-3{
 		@include heading-3;
 	}
+	&--underline{
+		position:relative;
+		display:inline-block;
+		&::after{
+			content:'';
+			position:absolute;
+			bottom:0;
+			left:0;
+			width:convert-toRem(110);
+			max-width:50%;
+			height:convert-toRem(2);
+			background-color:$color-yellow-light;
+		}
+	}
 	&__icon{
 		flex-grow:0;
 		flex-shrink:1;

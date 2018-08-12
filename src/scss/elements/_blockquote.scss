@@ -1,15 +1,15 @@
 @mixin blockquote{
 	position:relative;
 	display:block;
-	margin:0 0 toRem(26) 0;
-	border-left:solid toRem(5) $color-yellow-light;
-	padding:0 0 0 toRem(10);
+	margin:0 0 convert-toRem(26) 0;
+	border-left:solid convert-toRem(5) $color-yellow-light;
+	padding:0 0 0 convert-toRem(10);
 	font-size:1em;
 	line-height:1.72em;
 	color:$color-yellow-light;
 	@media #{$mq-large}{
-		margin:0 0 toRem(30) 0;
-		padding:0 0 0 toRem(12);
+		margin:0 0 convert-toRem(30) 0;
+		padding:0 0 0 convert-toRem(12);
 	}
 }
 blockquote{

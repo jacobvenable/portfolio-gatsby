@@ -46,19 +46,20 @@
 @mixin heading-3{
 	@include heading;
 	margin:convert-toRem(25) 0 convert-toRem(10);
-	padding:0;
+	padding:0 0 convert-toRem(5);
 	font-family:$font-montserrat;
-	font-size:convert-toRem(32);
-	line-height:convert-toRem(38);
+	font-size:convert-toRem(28);
+	line-height:convert-toRem(34);
 	font-weight:400;
 	color:$color-white-off;
 	@media #{$mq-large}{
-		font-size:convert-toRem(36);
-		line-height:convert-toRem(45);
+		font-size:convert-toRem(32);
+		line-height:convert-toRem(40);
 	}
 	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(24);
-		line-height:convert-toRemMo(30);
+		font-size:convert-toRemMo(20);
+		line-height:convert-toRemMo(26);
+		margin:convert-toRem(20) 0 convert-toRem(8);
 	}
 }
 h1{

@@ -4,13 +4,22 @@
 	justify-content:flex-start;
 	align-items:stretch;
 	flex-wrap:wrap;
+	width:auto;
+	margin:0 convert-toRem(-45);
 	font-size:0.9em;
+	line-height:1.4em;
 	&__section{
 		flex-grow:1;
 		flex-shrink:1;
 		flex-basis:50%;
+		padding:0 convert-toRem(45);
 	}
-	@media #{$mq-tablet}{
+	&__item{
+		&::before{
+			top:0.5em;
+		}
+	}
+	@media #{$mq-tablet-max}{
 		&__section{
 			flex-basis:100%;
 		}

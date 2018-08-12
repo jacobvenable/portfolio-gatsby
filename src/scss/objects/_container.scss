@@ -21,8 +21,14 @@
 	}
 	&__row{
 		margin:0 convert-toRem(-15);
+		&::after{
+			content:'';
+			display:block;
+			clear:both;
+		}
 	}
 	&__column{
+		float:left;
 		padding-left:convert-toRem(15);
 		padding-right:convert-toRem(15);
 	}
