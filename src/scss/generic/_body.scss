@@ -1,5 +1,6 @@
 body{
-	@media #{$mq-mobile}{
-		padding-bottom:convert-toRemMo(45);
+	padding-bottom:convert-toRemMo(60);
+	@media #{$mq-tablet-min}{
+		padding-bottom:0;
 	}
 }
