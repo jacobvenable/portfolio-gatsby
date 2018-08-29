@@ -66,6 +66,8 @@ const PurdueHomePage = ({data}) => (
 				poster={data.images.edges.find((image) => image.node.id.replace(/.+\/(.+) absPath of file >> ImageSharp/,'$1').includes("purdueHomePage_customize-poster.png") == true).node.original.src}
 				mp4={data.videos.edges.find(video => video.node.extension == 'mp4').node.publicURL}
 			/>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus accusantium cumque odit vitae, voluptate repellendus iusto ab corporis ducimus ullam hic officiis doloribus ut maiores labore provident eum animi ea.</p>
+			<p>Necessitatibus exercitationem hic dolorem pariatur iure explicabo vitae voluptas accusamus blanditiis, voluptatibus rem, atque sed repudiandae, iusto! Illo quae fugit eius quibusdam, quaerat assumenda, excepturi voluptas dicta dignissimos voluptates quisquam!</p>
 		</section>
 	</div>
 );

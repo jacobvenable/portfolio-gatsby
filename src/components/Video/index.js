@@ -14,6 +14,7 @@ class Video extends React.Component {
     this.videoMask = React.createRef();
     this.videoElement = React.createRef();
     this.videoPlayPauseButton = React.createRef();
+    this.videoProgress = React.createRef();
     this.title = props.title || null;
     this.id = props.id || null;
     this.poster = props.poster || null;
@@ -32,6 +33,7 @@ class Video extends React.Component {
     this.showControls = this.showControls.bind(this);
     this.hideControls = this.hideControls.bind(this);
     this.updateProgress = this.updateProgress.bind(this);
+    this.updateVideoTime = this.updateVideoTime.bind(this);
   }
 
   componentDidMount(){
@@ -40,6 +42,7 @@ class Video extends React.Component {
     this.videoElement.current.addEventListener('timeupdate',this.updateProgress);
     this.videoMask.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
     this.videoPlayPauseButton.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
+    this.videoProgress.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
   }
 
   resetVideo(){
@@ -102,17 +105,40 @@ class Video extends React.Component {
     );
   }
 
-  updateProgress(){
-    this.setState({
-      progress:this.videoElement.current.currentTime/this.videoElement.current.duration*100
-    });
+  updateProgress(e){
+    if(typeof e !== 'undefined' && typeof e.target.value != 'undefined')
+    {
+      e.preventDefault();
+      this.updateVideoTime(parseFloat(e.target.value));
+    }
+    else{
+      this.setState({
+        progress:this.videoElement.current.currentTime/this.videoElement.current.duration*100
+      });
+    }
+  }
+
+  updateVideoTime(percent = -1){
+    if(this.videoElement.current.readyState > 0 && typeof percent === 'number' && percent > 0)
+    {
+      let currentTime = parseFloat(this.videoElement.current.duration) * (percent/100);
+      this.videoElement.current.currentTime = currentTime;
+      if(currentTime < this.videoElement.current.duration)
+      {
+        this.setState({
+          reset:false
+        });
+      }
+    }
   }
 
   progressBar(){
     return(
       <div>
-        <div className={`video__progress video__progress--visible${!this.state.controls?' video__progress--hidden':''}`} style={{ width:`${this.state.progress}%` }}></div>
-        <progress className="video__progress video__progress--hidden" value={this.state.progress} max="100"></progress>
+        <div className={`video__progress video__progress--visible${!this.state.controls || !this.state.interaction?' video__progress--hidden':''}`} style={{ width:`${this.state.progress}%` }}>
+          <div className="video__control video__control--progress"></div>
+        </div>
+        <input ref={this.videoProgress} type="range" className="video__progress video__progress--hidden" value={`${this.state.progress}`} onChange={this.updateProgress} min="0" max="100" step="0.01"/>
       </div>
     );
   }
