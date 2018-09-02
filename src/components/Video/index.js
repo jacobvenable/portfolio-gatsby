@@ -16,7 +16,8 @@ class Video extends React.Component {
     this.videoPlayPauseButton = React.createRef();
     this.videoProgress = React.createRef();
     this.title = props.title || null;
-    this.id = props.id || null;
+    this.titleId = generateId('video-title');
+    this.videoId = generateId('video');
     this.poster = props.poster || null;
     this.mp4 = props.mp4 || null;
     this.state = {
@@ -37,12 +38,18 @@ class Video extends React.Component {
   }
 
   componentDidMount(){
+    //remove browser-default video controls
+    this.videoElement.current.removeAttribute('controls');
+
+    //attach event listeners to elements
     this.videoElement.current.addEventListener('ended',this.resetVideo);
     this.videoMask.current.addEventListener('click',this.toggleVideo);
     this.videoElement.current.addEventListener('timeupdate',this.updateProgress);
     this.videoMask.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
     this.videoPlayPauseButton.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
+    this.videoPlayPauseButton.current.addEventListener('focus',() => this.showControls(!this.state.paused));
     this.videoProgress.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
+    this.videoProgress.current.addEventListener('focus',() => this.showControls(!this.state.paused));
   }
 
   resetVideo(){
@@ -54,7 +61,6 @@ class Video extends React.Component {
   }
 
   toggleVideo(){
-    console.log('toggle');
     this.state.paused ? this.playVideo() : this.pauseVideo();
     this.setState({
       paused:!this.state.paused,
@@ -98,8 +104,8 @@ class Video extends React.Component {
 
   playPauseButton(){
     return(
-      <button ref={this.videoPlayPauseButton} className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`} onClick={this.toggleVideo}>
-        <span className="sr-only">{this.state.paused?'play':'pause'}</span>
+      <button ref={this.videoPlayPauseButton} aria-controls={this.videoId} className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`} onClick={this.toggleVideo}>
+        <span className="sr-only">{this.state.reset?'replay':(this.state.paused?'play':'pause')}</span>
         <FontAwesomeIcon icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:faPause)} flip={`${this.state.reset?'horizontal':''}`} className="video__icon"/>
       </button>
     );
@@ -135,10 +141,11 @@ class Video extends React.Component {
   progressBar(){
     return(
       <div>
+        <label htmlFor={`${this.title}-progress`} aria-hidden="true" className="sr-only">{this.title} Video Progress</label>
+        <input ref={this.videoProgress} type="range" id={`${this.title}-progress`} name={`${this.title}-progress`} aria-controls={this.videoId} className="video__progress video__progress--hidden" value={`${this.state.progress}`} onChange={this.updateProgress} min="0" max="100" step="0.01"/>
         <div className={`video__progress video__progress--visible${!this.state.controls || !this.state.interaction?' video__progress--hidden':''}`} style={{ width:`${this.state.progress}%` }}>
           <div className="video__control video__control--progress"></div>
         </div>
-        <input ref={this.videoProgress} type="range" className="video__progress video__progress--hidden" value={`${this.state.progress}`} onChange={this.updateProgress} min="0" max="100" step="0.01"/>
       </div>
     );
   }
@@ -147,10 +154,10 @@ class Video extends React.Component {
     return (
       <div className={`video${!this.state.controls?' video--controls-hidden':''}`}>
         <div ref={this.videoMask} className="video__mask"></div>
-        <p id={this.id} className={`video__title${!this.state.controls?' video__title--hidden':''}`}><FontAwesomeIcon icon={faVideo}/> {this.title}</p>
+        <p id={this.titleId} className={`video__title${!this.state.controls?' video__title--hidden':''}`}><FontAwesomeIcon icon={faVideo}/> {this.title}</p>
         {this.playPauseButton()}
         {this.progressBar()}
-        <video ref={this.videoElement} aria-labelledby={this.id} className={`video__element${!this.state.interaction?' video__element--initial':''}`} preload="none" poster={this.poster}>
+        <video controls ref={this.videoElement} id={this.videoId} aria-labelledby={this.titleId} className={`video__element${!this.state.interaction?' video__element--initial':''}`} preload="none" poster={this.poster}>
           <source src={this.mp4} type="video/mp4"/>
         </video>
       </div>

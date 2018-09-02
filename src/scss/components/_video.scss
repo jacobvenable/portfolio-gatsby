@@ -1,7 +1,10 @@
+$bem-block:'video';
 .video{
 	overflow:hidden;
 	position:relative;
+	display:block;
 	max-width:100%;
+	margin:convert-toRem(30) 0;
 	&--controls{
 		&-hidden{
 			cursor:none;
@@ -73,6 +76,7 @@
 		left:0;
 	}
 	&__progress{
+		$bem-element:'progress';
 		position:absolute;
 		z-index:5;
 		bottom:0;
@@ -84,9 +88,16 @@
 		cursor:pointer;
 		&--visible{
 			background:$color-yellow-light;
+			z-index:4;
 		}
 		&--hidden{
 			opacity:0;
+		}
+		&:focus{
+			& + .#{$bem-block}__#{$bem-element}--visible{
+				outline:dashed 2px $color-background;
+				outline-offset:-2px;
+			}
 		}
 	}
 	&__title{
