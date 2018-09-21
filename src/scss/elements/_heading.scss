@@ -62,6 +62,25 @@
 		margin:convert-toRem(20) 0 convert-toRem(8);
 	}
 }
+@mixin heading-4{
+	@include heading;
+	margin:convert-toRem(20) 0 convert-toRem(8);
+	padding:0;
+	font-family:$font-montserrat;
+	font-size:convert-toRem(23);
+	line-height:convert-toRem(27);
+	font-weight:700;
+	color:$color-yellow-light;
+	@media #{$mq-large}{
+		font-size:convert-toRem(23);
+		line-height:convert-toRem(27);
+	}
+	@media #{$mq-mobile}{
+		font-size:convert-toRemMo(19);
+		line-height:convert-toRemMo(22);
+		margin:convert-toRem(20) 0 convert-toRem(8);
+	}
+}
 h1{
 	@include heading-1;
 }
@@ -70,4 +89,7 @@ h2{
 }
 h3{
 	@include heading-3;
+}
+h4{
+	@include heading-4;
 }
