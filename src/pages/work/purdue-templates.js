@@ -109,7 +109,6 @@ const PurdueHomePage = ({data}) => (
 			<p>Throwing our code on GitHub wasn't enough though. We needed a set of standards so that we understood how changes would be developed and how they would be batched into a release. The workflow I decided was best for our situation was one coined "Gitflow" and first outlined by <a href="http://nvie.com/about/">Vincent Driessen</a>.</p>
 			<p>Using this workflow, I <a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documented</a> our branch naming conventions and how the branches interact.</p>
 			<p><mark>Since it's implementation, we've been able to successfully implement multiple minor updates/patches and easily communicate them to the rest of campus.</mark></p>
-			
 		</section>
 	</div>
 );
