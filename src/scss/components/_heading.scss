@@ -8,6 +8,12 @@
 	&-3{
 		@include heading-3;
 	}
+	&-4{
+		@include heading-4;
+	}
+	&-5{
+		@include heading-5;
+	}
 	&--underline{
 		position:relative;
 		display:inline-block;
