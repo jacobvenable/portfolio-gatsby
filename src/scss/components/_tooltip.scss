@@ -1,0 +1,37 @@
+.tooltip{
+	position:absolute;
+	z-index:10;
+	overflow:visible;
+	display:none;
+	flex-direction:row;
+	flex-wrap:no-wrap;
+	margin:convert-toRem(7) 0 0;
+	padding:convert-toRem(4) convert-toRem(3);
+	background-color:$color-yellow-light;
+	font-size:convert-toRem(14);
+	line-height:1;
+	color:$color-background;
+	&::before{
+		content:'';
+		position:absolute;
+		left:convert-toRem(5);
+		bottom:100%;
+		display:block;
+		width:0;
+		height:0;
+		border-left:convert-toRem(5) solid transparent;
+		border-right:convert-toRem(5) solid transparent;
+		border-bottom:convert-toRem(7) solid $color-yellow-light;
+	}
+	&--visible{
+		display:inline-block;
+		display:inline-flex;
+	}
+	&__icon{
+		flex-grow:0;
+		flex-shrink:0;
+		flex-basis:auto;
+		display:inline-block;
+		margin-right:convert-toRem(5);
+	}
+}

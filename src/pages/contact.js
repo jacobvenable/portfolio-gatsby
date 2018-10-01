@@ -5,6 +5,7 @@ import Input from './../components/Input';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/fontawesome-free-brands';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
+import { faExclamationCircle } from '@fortawesome/fontawesome-pro-solid';
 
 const ContactPage = ({ data }) => (
   <div className="container">
@@ -33,7 +34,7 @@ const ContactPage = ({ data }) => (
 					<Input type="text" name="name" label="What is your name?" required={true}  />
 				</div>
 				<div className="contact__input contact__input--detail">
-					<Input type="email" name="email" label="What is your email?" required={true}  />
+					<Input type="email" name="email" label="What is your email?" errorMessage="Oops! Double check your email is right." required={true}  />
 				</div>
 				<div className="contact__input contact__input--message">
 					<Input type="textarea" name="message" label="What would you like to talk about?" required={true}  />

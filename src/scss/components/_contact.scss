@@ -8,6 +8,7 @@
 		margin:convert-toRem(45) 0 0;
 	}
 	&__input{
+		position:relative;
 		margin:convert-toRem(45) 0 convert-toRem(15);
 		&:first-child{
 			margin-top:0;
@@ -41,6 +42,9 @@
 				outline:dashed 1px $color-white-off;
 			}
 		}
+	}
+	&__tooltip{
+		top:100%;
 	}
 	@media #{$mq-tablet-min}{
 		&__form{
