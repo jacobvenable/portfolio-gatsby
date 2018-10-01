@@ -6,8 +6,6 @@ import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import Figure from './../../components/Figure';
-import Video from './../../components/Video';
-import CodeSection from './../../components/CodeSection';
 
 exports.frontmatter = {
     title: 'Purdue Web Templates (Ongoing)',

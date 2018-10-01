@@ -3,6 +3,7 @@
 	display:inline-block;
 	border-style:solid;
 	border-width:1px;
+	background:none;
 	padding:convert-toRem(11) convert-toRem(30);
 	text-decoration:none;
 	transition:unset;
@@ -33,11 +34,15 @@
 	&:link,&:visited{
 		border-style:solid;
 		border-width:1px;
+		background:none;
 		text-decoration:none;
 	}
 	&:hover,&:active,&:focus{
+		cursor:pointer;
+		outline:none;
 		border-style:solid;
 		border-width:1px;
+		background:none;
 		color:$color-background;
 		text-decoration:none;
 		transition:color 0.15s ease-in-out;
