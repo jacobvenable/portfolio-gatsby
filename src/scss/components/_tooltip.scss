@@ -2,9 +2,12 @@
 	position:absolute;
 	z-index:10;
 	overflow:visible;
-	display:none;
+	opacity:0;
+	transform:translateY(convert-toRem(5));
+	display:inline-block;
+	display:inline-flex;
 	flex-direction:row;
-	flex-wrap:no-wrap;
+	flex-wrap:nowrap;
 	margin:convert-toRem(7) 0 0;
 	padding:convert-toRem(4) convert-toRem(3);
 	background-color:$color-yellow-light;
@@ -24,8 +27,9 @@
 		border-bottom:convert-toRem(7) solid $color-yellow-light;
 	}
 	&--visible{
-		display:inline-block;
-		display:inline-flex;
+		transition:all 0.3s ease-in;
+		opacity:1;
+		transform:translateY(0);
 	}
 	&__icon{
 		flex-grow:0;
