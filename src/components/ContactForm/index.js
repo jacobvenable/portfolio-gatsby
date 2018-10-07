@@ -39,7 +39,7 @@ class ContactForm extends React.Component {
 
   render(){
     return (
-      <form name="contact" onSubmit={(e) => this.handleSubmit(e)} className="container__column contact__form" method="POST" netlify="true" netlify-recaptcha netlify-honeypot="sweet-honey">
+      <form name="contact" onSubmit={(e) => this.handleSubmit(e)} className="container__column contact__form" method="POST" data-netlify="true" {/*data-netlify-recaptcha="true"*/} data-netlify-honeypot="sweet-honey">
         <div className="contact__input contact__input--detail">
           {this.inputName}
         </div>
@@ -52,9 +52,9 @@ class ContactForm extends React.Component {
         <div className="sr-only">
           {this.inputHoney}
         </div>
-        <div className="contact__input contact__input--recaptcha">
+        {/*<div className="contact__input contact__input--recaptcha">
           <div class="g-recaptcha" data-sitekey="6LcnMnMUAAAAAHFKMs_CSVi7FCZ13HXuKkLKDl-S"></div>
-        </div>
+        </div>*/}
         <div className="contact__submit">
           <button className="button button--yellow-light" type="submit">Send</button>
         </div>
