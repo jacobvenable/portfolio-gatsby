@@ -42,6 +42,9 @@ class ContactForm extends React.Component {
     /*data-netlify-honeypot="sweet-honey"*/
     return (
       <form name="contact" className="container__column contact__form" method="post" data-netlify="true">
+        <div className="sr-only">
+          <input type="hidden" name="form-name" value="contact" />
+        </div>
         <div className="contact__input contact__input--detail">
           {this.inputName}
         </div>
