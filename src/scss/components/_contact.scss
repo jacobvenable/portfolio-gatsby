@@ -43,6 +43,12 @@
 			}
 		}
 	}
+	&__recaptcha{
+		display:inline-block;
+		&--error{
+			outline:solid 2px $color-yellow-light;
+		}
+	}
 	&__tooltip{
 		top:100%;
 	}

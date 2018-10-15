@@ -2,6 +2,7 @@ import React from 'react';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Input from './../Input';
 import { faExclamationCircle } from '@fortawesome/fontawesome-pro-solid';
+import Recaptcha from 'react-google-recaptcha';
 
 class ContactForm extends React.Component {
 
@@ -15,11 +16,14 @@ class ContactForm extends React.Component {
     this.inputMessage = <Input ref={this.inputMessageRef} type="textarea" name="message" label="What would you like to talk about?" required={true} />;
     this.inputHoneyRef = React.createRef();
     this.inputHoney = <Input ref={this.inputHoneyRef} type="text" name="sweet-honey" label="Leave this blank if you're human" required={false} />;
+    this.inputRecaptchaRef = React.createRef();
+    this.inputRecaptcha = <Input ref={this.inputRecaptchaRef} type="recaptcha" name="" label="" required={true} />;
     this.inputs = [
       this.inputNameRef,
       this.inputEmailRef,
       this.inputMessageRef,
-      this.inputHoneyRef
+      this.inputHoneyRef,
+      this.inputRecaptchaRef
     ];
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +31,7 @@ class ContactForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let invalidInput = this.inputs.find((input) => {return !input.current.valid});
+    let invalidInput = this.inputs.find((input) => {return !input.current.validate('submit')});
     console.log(invalidInput);
     if(typeof invalidInput === 'undefined'){
       e.target.submit();
@@ -56,7 +60,7 @@ class ContactForm extends React.Component {
           {this.inputHoney}
         </div>
         <div className="contact__input contact__input--recaptcha">
-          <div class="g-recaptcha" data-sitekey="6LcnMnMUAAAAAHFKMs_CSVi7FCZ13HXuKkLKDl-S"></div>
+          {this.inputRecaptcha}
         </div>
         <div className="contact__submit">
           <button className="button button--yellow-light" type="submit">Send</button>
