@@ -7,6 +7,46 @@ import Recaptcha from 'react-google-recaptcha';
 
 class Input extends React.Component {
 
+  Label(){
+    if(this.type != 'recaptcha'){
+      return <label ref={this.labelRef} htmlFor={this.name}>{this.label}</label>
+    }
+    return null;
+  }
+
+  Input(){
+    return(
+      <input ref={this.inputRef} aria-describedby={`${this.name}-tooltip`} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} type={this.type} name={this.name} id={this.name}/> //required={this.required}/>
+    );
+  }
+
+  TextArea(){
+    return(
+      <textarea ref={this.inputRef} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} name={this.name} id={this.name}></textarea> //required={this.required}></textarea>
+    );
+  }
+
+  Recaptcha(){
+    return(
+      <Recaptcha
+        sitekey="6LcnMnMUAAAAAHFKMs_CSVi7FCZ13HXuKkLKDl-S"
+        onChange={(e)=>{
+          this.valid = true;
+          this.validate('');
+        }}
+        onExpired={(e)=>{
+          this.valid = false;
+          this.validate('');
+        }}
+        onErrored={(e)=>{
+          console.log('error');
+          console.log(e);
+        }}
+        theme="dark"
+      />
+    );
+  }
+
 	constructor(props) {
     super(props);
 
@@ -53,46 +93,6 @@ class Input extends React.Component {
     scrollTarget.current.focus({
       preventScroll:true
     });
-  }
-
-  Label(){
-    if(this.type != 'recaptcha'){
-      return <label ref={this.labelRef} htmlFor={this.name}>{this.label}</label>
-    }
-    return null;
-  }
-
-  Input(){
-    return(
-      <input ref={this.inputRef} aria-describedby={`${this.name}-tooltip`} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} type={this.type} name={this.name} id={this.name}/> //required={this.required}/>
-    );
-  }
-
-  TextArea(){
-    return(
-      <textarea ref={this.inputRef} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} name={this.name} id={this.name}></textarea> //required={this.required}></textarea>
-    );
-  }
-
-  Recaptcha(){
-    return(
-      <Recaptcha
-        sitekey="6LcnMnMUAAAAAHFKMs_CSVi7FCZ13HXuKkLKDl-S"
-        onChange={(e)=>{
-          this.valid = true;
-          this.validate('');
-        }}
-        onExpired={(e)=>{
-          this.valid = false;
-          this.validate('');
-        }}
-        onErrored={(e)=>{
-          console.log('error');
-          console.log(e);
-        }}
-        theme="dark"
-      />
-    );
   }
 
   handleInputChange(e){
