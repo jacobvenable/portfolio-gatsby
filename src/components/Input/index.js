@@ -86,6 +86,10 @@ class Input extends React.Component {
           this.valid = false;
           this.validate('');
         }}
+        onErrored={(e)=>{
+          console.log('error');
+          console.log(e);
+        }}
         theme="dark"
       />
     );
