@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './../components/Layout';
 import { graphql } from 'gatsby';
-import PortfolioItems from './../Components/PortfolioItems';
+import PortfolioItems from './../components/PortfolioItems';
 import TriangleMask from './../components/TriangleMask';
 
 const WorkPage = ({ data }) => (
