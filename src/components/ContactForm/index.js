@@ -1,8 +1,5 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Input from './../Input';
-import { faExclamationCircle } from '@fortawesome/fontawesome-pro-solid';
-import Recaptcha from 'react-google-recaptcha';
 
 class ContactForm extends React.Component {
 

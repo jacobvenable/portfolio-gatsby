@@ -5,15 +5,8 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
-    'gatsby-plugin-react-next',
   	'gatsby-plugin-react-helmet',
-  	{
-			resolve: `gatsby-plugin-postcss-sass`,
-			options: {
-			postCssPlugins: [autoprefixer()],
-				precision: 8, // SASS default: 5
-			},
-		},
+    'gatsby-plugin-sass',
     {
       resolve: "gatsby-source-filesystem",
       options:{
@@ -35,8 +28,31 @@ module.exports = {
         path:`${__dirname}/src/pages`
       }
     },
-    'gatsby-transformer-sharp',
+    {
+      resolve: "gatsby-source-filesystem",
+      options:{
+        name: "markdown",
+        path:`${__dirname}/src/markdown`
+      }
+    },
+    'gatsby-transformer-javascript-frontmatter',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-javascript-frontmatter'
+    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          }
+        ],
+      },
+    },
   ],
 };

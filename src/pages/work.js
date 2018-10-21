@@ -1,18 +1,18 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import Img from 'gatsby-image';
-
-import PortfolioItem from './../components/PortfolioItem';
+import Layout from './../components/Layout';
+import { graphql } from 'gatsby';
+import PortfolioItems from './../Components/PortfolioItems';
 import TriangleMask from './../components/TriangleMask';
 
-
 const WorkPage = ({ data }) => (
-  <div className="container">
-		<h1>Work</h1>
-		{console.log(data)}
-		{ typeof data === 'object' && typeof data.allJavascriptFrontmatter === 'object' && data.allJavascriptFrontmatter !== null && data.allJavascriptFrontmatter.edges.length > 0 ? data.allJavascriptFrontmatter.edges.map((page,index) => <PortfolioItem key={page.node.id} relativeDirectory={page.node.node.relativeDirectory} name={page.node.node.name} title={page.node.frontmatter.title} role={page.node.frontmatter.role} blurb={page.node.frontmatter.blurb} thumb={data.thumbs.edges.find((thumb) => thumb.node.id.replace(/.+\/(.+) absPath of file >> ImageSharp/,'$1') == page.node.frontmatter.thumb)} tech={page.node.frontmatter.tech} index = {index} /> ) : null }
-		<TriangleMask />
-	</div>
+	<Layout>
+	  <div className="container">
+			<h1>Work</h1>
+			{console.log(data)}
+			<PortfolioItems data={data}/>
+			<TriangleMask />
+		</div>
+	</Layout>
 );
 
 export default WorkPage;
@@ -21,7 +21,7 @@ export const portfolioQuery = graphql`
 	query PortfolioPages {
 		allJavascriptFrontmatter(
 	    filter:{
-	      id:{
+	      fileAbsolutePath:{
 	        regex:"/work/.+/"
 	      }
 	    }
@@ -49,13 +49,30 @@ export const portfolioQuery = graphql`
 	      }
 	    }
 	  }
-	  thumbs: allImageSharp(filter:{ id:{ regex:"/-thumb/" }})
+	  thumbs: allImageSharp(
+	  	filter:{
+	      original:{
+	        src:{ regex:"/-thumb/" }
+	      }
+    	}
+    )
 	  {
 	  	edges{
 	      node{
 	        id
-	        sizes(maxWidth:1240){
-	        	...GatsbyImageSharpSizes
+	        fluid(maxWidth:1240){
+	          base64
+	          tracedSVG
+	          aspectRatio
+	          src
+	          srcSet
+	          srcWebp
+	          srcSetWebp
+	          sizes
+	          originalImg
+	          originalName
+	          presentationWidth
+	          presentationHeight
 	        }
 	      }
 	    }

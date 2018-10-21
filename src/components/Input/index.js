@@ -1,14 +1,12 @@
 import React from 'react';
-import Img from 'gatsby-image';
-import generateId from './../../utils/generateId';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/fontawesome-pro-solid';
 import Recaptcha from 'react-google-recaptcha';
 
 class Input extends React.Component {
 
   Label(){
-    if(this.type != 'recaptcha'){
+    if(this.type !== 'recaptcha'){
       return <label ref={this.labelRef} htmlFor={this.name}>{this.label}</label>
     }
     return null;
@@ -84,7 +82,7 @@ class Input extends React.Component {
   }
 
   focusInput(smooth){
-    let scrollTarget = (this.type == 'recaptcha' ? this.containerRef : this.labelRef);
+    let scrollTarget = (this.type === 'recaptcha' ? this.containerRef : this.labelRef);
     scrollTarget.current.scrollIntoView({
       behavior:smooth?"smooth":"auto",
       block:"start",
@@ -102,7 +100,7 @@ class Input extends React.Component {
   }
 
   validate(eventType){
-    if(this.type == 'recaptcha'){
+    if(this.type === 'recaptcha'){
       this.setState({
         valid:this.valid,
         validated:true,
@@ -115,10 +113,10 @@ class Input extends React.Component {
       let value = this.inputRef.current.value.trim();
       this.valid = false;
       let message = '';
-      if(this.required && value === '' && (eventType == 'blur' || eventType == 'submit')){
+      if(this.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
         message = 'Please fill out this required field.';
       }
-      else if(this.type === 'email' && (eventType == 'blur' || eventType == 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+      else if(this.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
         message = this.errorMessage?this.errorMessage:'Please provide a valid email';
       }
       else{
@@ -135,7 +133,7 @@ class Input extends React.Component {
 
   render(){
     return (
-      <div tabIndex='-1' aria-label='Google Recaptcha' className={this.type == 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''} ref={this.containerRef}>
+      <div tabIndex='-1' aria-label='Google Recaptcha' className={this.type === 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''} ref={this.containerRef}>
         {this.label}
         {this.input}
         <p id={`${this.name}-tooltip`} aria-hidden={`${this.state.validated && !this.state.valid?'false':'true'}`} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>

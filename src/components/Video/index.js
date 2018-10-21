@@ -1,7 +1,6 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import generateId from './../../utils/generateId';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo } from '@fortawesome/fontawesome-pro-light';
 import { faPlay } from '@fortawesome/fontawesome-pro-solid';
 import { faPause } from '@fortawesome/fontawesome-pro-solid';
@@ -81,7 +80,7 @@ class Video extends React.Component {
 
   showControls(rescheduleHideControls = false){
     if(!this.state.controls){
-      rescheduleHideControls ? this.scheduleHideControls() : null;
+      if(rescheduleHideControls) this.scheduleHideControls();
       this.setState({
         controls:true
       });
@@ -89,7 +88,7 @@ class Video extends React.Component {
   }
 
   scheduleHideControls(){
-    typeof this.timeoutHideControls !== 'undefined' ? clearTimeout(this.timeoutHideControls) : null;
+    if(typeof this.timeoutHideControls !== 'undefined') clearTimeout(this.timeoutHideControls);
     this.timeoutHideControls = setTimeout(() => this.hideControls(),2000);
   }
 
@@ -106,13 +105,13 @@ class Video extends React.Component {
     return(
       <button ref={this.videoPlayPauseButton} aria-controls={this.videoId} className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`} onClick={this.toggleVideo}>
         <span className="sr-only">{this.state.reset?'replay':(this.state.paused?'play':'pause')}</span>
-        <FontAwesomeIcon icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:faPause)} flip={`${this.state.reset?'horizontal':''}`} className="video__icon"/>
+        <FontAwesomeIcon icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:faPause)} flip={this.state.reset?'horizontal':null} className="video__icon"/>
       </button>
     );
   }
 
   updateProgress(e){
-    if(typeof e !== 'undefined' && typeof e.target.value != 'undefined')
+    if(typeof e !== 'undefined' && typeof e.target.value !== 'undefined')
     {
       e.preventDefault();
       this.updateVideoTime(parseFloat(e.target.value));
@@ -157,7 +156,7 @@ class Video extends React.Component {
         <p id={this.titleId} className={`video__title${!this.state.controls?' video__title--hidden':''}`}><FontAwesomeIcon icon={faVideo}/> {this.title}</p>
         {this.playPauseButton()}
         {this.progressBar()}
-        <video controls ref={this.videoElement} id={this.videoId} aria-labelledby={this.titleId} className={`video__element${!this.state.interaction?' video__element--initial':''}`} preload="none" poster={this.poster}>
+        <video controls ref={this.videoElement} id={this.videoId} aria-labelledby={this.titleId} className={`video__element${!this.state.interaction?' video__element--initial':''}`} preload="none" poster={this.poster.src}>
           <source src={this.mp4} type="video/mp4"/>
         </video>
       </div>

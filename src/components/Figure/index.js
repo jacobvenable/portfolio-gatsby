@@ -7,7 +7,7 @@ class Figure extends React.Component {
 	constructor(props) {
     super(props);
     this.full = props.full || false;
-    this.sizes = props.sizes;
+    this.fluid = props.fluid;
     this.alt = props.alt || '';
     this.caption = props.caption || false;
     this.id = generateId('figure');
@@ -16,7 +16,7 @@ class Figure extends React.Component {
   render(){
     return (
       <figure className={`figure${this.full?' figure--full':''}`}>
-				<Img sizes={this.sizes} className="figure__img" alt={this.alt}/>
+				<Img fluid={this.fluid} className="figure__img" alt={this.alt}/>
 				{ typeof this.caption === 'string' &&
 					<figcaption className="figure__caption">{this.caption}</figcaption>
 				}

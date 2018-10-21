@@ -1,13 +1,16 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import Img from 'gatsby-image';
+import Layout from './../components/Layout';
+//import Link from 'gatsby-link';
+//import Img from 'gatsby-image';
 
 
 const AboutPage = ({ data }) => (
-  <div className="container">
-		<h1>About Me</h1>
+	<Layout>
+	  <div className="container">
+			<h1>About Me</h1>
 
-	</div>
+		</div>
+	</Layout>
 );
 
 export default AboutPage;
