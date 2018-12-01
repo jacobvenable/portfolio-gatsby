@@ -82,18 +82,20 @@ class Header extends React.Component {
       <header ref={this.element} className={`header${this.state.stickyClass}`}>
         <div className="container header__container">
           <Link to="/" className="header__link header__link-logo">
-            <span className="sr-hidden">Home</span> 
-            <div className="svg header__logo">
-              <object data={logoSvg} type="image/svg+xml" className="svg__object" tabIndex="-1">
-                <img src={logoPng} alt="logo" className="header__logo"/>
-              </object>
+            <div to="/" className="header__container header__container-logo">
+              <span className="sr-hidden">Home</span> 
+              <div className="svg header__logo">
+                <object data={logoSvg} type="image/svg+xml" className="svg__object" tabIndex="-1">
+                  <img src={logoPng} alt="logo" className="header__logo"/>
+                </object>
+              </div>
             </div>
+            <h1 className="header__heading">
+              <span className="header__name">Jacob Venable </span>
+              <span className="sr-hidden">&#8212;</span> 
+              <span className="header__title">Front-End Web Developer</span>
+            </h1>
           </Link>
-          <h1 className="header__heading">
-            <span className="header__name">Jacob Venable </span>
-            <span className="sr-hidden">&#8212;</span> 
-            <span className="header__title">Front-End Web Developer</span>
-          </h1>
           <nav className={`header__nav nav nav-main${this.state.mobileNavOpenClass}`} role="navigation">
             <div className="container nav__container nav__container-toggler">
               <button className="nav__toggler nav__toggler-main" onClick={this.toggleOpen}>
@@ -103,7 +105,7 @@ class Header extends React.Component {
             </div>
             <ul className="nav__list nav__list-main">
               {this.navItem('/','Home',faHome,true)}
-              {this.navItem('/about/','About',faUserAlt,false)}
+              {this.navItem('/skills/','Skills',faUserAlt,false)}
               {this.navItem('/work/','Work',faFolderOpen,false)}
               {this.navItem('/contact/','Contact',faEnvelope,false)}
             </ul>
