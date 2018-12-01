@@ -1,8 +1,12 @@
 @mixin paragraph{
+	overflow:hidden;
 	font-size:1em;
 	line-height:1.72em;
 	margin:0 0 convert-toRem(26) 0;
 	padding:0;
+	font-family:inherit;
+	color:inherit;
+	font-weight:inherit;
 	@media #{$mq-mobile}{
 		line-height:1.833em;
 	}
