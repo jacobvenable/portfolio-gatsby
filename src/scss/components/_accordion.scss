@@ -1,0 +1,44 @@
+.accordion{
+	&__button{
+		display:inline-flex;
+		flex-direction:row;
+		align-items:center;
+		outline:none;
+		border:none;
+		color:$color-yellow-light;
+		padding:0;
+		text-align:left;
+		&::before,&::after{
+			display:none;
+		}
+		&:hover,&:focus{
+			outline:none;
+			border:none;
+			color:$color-yellow-light;
+			text-decoration:underline;
+			&::before,&::after{
+				display:none;
+			}
+		}
+		&--single{
+			&-hidden{
+				animation-duration:0.5s;
+				animation-fill-mode:forwards;
+				animation-name:$animation-hide-grow-shrink;
+			}
+			&-removed{
+				visibility:hidden;
+			}
+		}
+	}
+	&__icon{
+		display:inline-block;
+		margin:0 0 0 convert-toRem(20);
+		transition:transform 0.2s ease-out;
+	}
+	&__content{
+		overflow:hidden;
+		transition:max-height 0.2s ease-in;
+		width:100%;
+	}
+}

@@ -1,0 +1,101 @@
+.about{
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+	overflow:hidden;
+	&::after{
+		content:'';
+		position:absolute;
+		display:none;
+		bottom:100%;
+		left:50%;
+		width:200%;
+		height:convert-toRem(50);
+		border-top:solid 3px $color-yellow-light;
+		border-bottom:solid 3px $color-yellow-light;
+		transform-origin:bottom left;
+		transform:rotate(55deg);
+		transition:transform 0.2s ease-in;
+	}
+	&__button{
+		margin:0 0 convert-toRem(20);
+	}
+	&__greeting{
+		@include heading-2;
+	}
+	&__intro{
+		flex:1 1 100%;
+		margin:0;
+		font-size:convert-toRem(22);
+		line-height:1.7;
+		&::before{
+			content:'';
+			display:none;
+			float:right;
+			width:50%;
+			padding-bottom:32%;
+		}
+	}
+	&__logo{
+		flex:0 1 50%;
+		padding:0 10%;
+	}
+	@media #{$mq-tablet}{
+		padding:convert-toRem(20) 0;
+		&::after{
+			display:block;
+			left:67%;
+			transform:rotate(68deg);
+		}
+		&__button{
+			margin:0;
+		}
+		&__greeting{
+			margin-top:0;
+		}
+		&__intro{
+			flex-grow:0;
+			flex-basis:70%;
+		}
+	}
+	@media #{$mq-medium}{
+		padding:convert-toRem(45) 0;
+		&::after{
+			display:block;
+		}
+		&__button{
+			margin:0;
+		}
+		&__greeting{
+			margin-top:0;
+		}
+		&__intro{
+			&::before{
+				display:block;
+				padding-bottom:37%;
+				shape-outside:polygon(5% 0,57% 100%,100% 100%,100% 0);
+			}
+		}
+	}
+	@media #{$mq-large}{
+		padding:convert-toRem(45) 0;
+		&::after{
+			display:block;
+		}
+		&__button{
+			margin:0;
+		}
+		&__greeting{
+			margin-top:0;
+		}
+		&__intro{
+			&::before{
+				display:block;
+				padding-bottom:32%;
+				shape-outside:polygon(5% 0,50% 100%,100% 100%,100% 0);
+			}
+		}
+	}
+}
