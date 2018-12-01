@@ -101,6 +101,26 @@
 		margin:convert-toRem(20) 0 convert-toRem(8);
 	}
 }
+@mixin heading-6{
+	@include heading;
+	margin:convert-toRem(20) 0 convert-toRem(8);
+	padding:0;
+	font-family:$font-opensans;
+	font-size:convert-toRem(17);
+	line-height:convert-toRem(20);
+	font-weight:400;
+	color:$color-yellow-light;
+	text-transform:uppercase;
+	@media #{$mq-large}{
+		font-size:convert-toRem(17);
+		line-height:convert-toRem(20);
+	}
+	@media #{$mq-mobile}{
+		font-size:convert-toRemMo(14);
+		line-height:convert-toRemMo(17);
+		margin:convert-toRem(20) 0 convert-toRem(8);
+	}
+}
 h1{
 	@include heading-1;
 }
@@ -115,4 +135,7 @@ h4{
 }
 h5{
 	@include heading-5;
+}
+h6{
+	@include heading-6;
 }
