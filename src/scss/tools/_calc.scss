@@ -1,0 +1,9 @@
+@function calc-proportion-lg-md($i){
+	@return ($container-md/$container-lg)*$i
+}
+@function calc-proportion-lg-sm($i){
+	@return ($container-sm/$container-lg)*$i
+}
+@function calc-proportion-md-sm($i){
+	@return ($container-sm/$container-md)*$i
+}
