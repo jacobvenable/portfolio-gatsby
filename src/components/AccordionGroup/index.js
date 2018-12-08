@@ -25,7 +25,7 @@ class AccordionGroup extends React.Component {
     if(element.type.displayName === 'Accordion'){
       let newAccordionRef = React.createRef();
       this.accordions.push(newAccordionRef);
-      return <Accordion key={element.props.buttonText} buttonText={element.props.buttonText} type={element.props.type} level={element.props.level} group={element.props.group} ref={newAccordionRef} parentToggle={this.toggleAll} icon={element.props.icon}>{element.props.children}</Accordion>;
+      return <Accordion key={element.props.buttonText} buttonText={element.props.buttonText} type={element.props.type} level={element.props.level} group={element.props.group} ref={newAccordionRef} parentToggle={this.toggleAll} tileIcon={element.props.tileIcon} icon={element.props.icon}>{element.props.children}</Accordion>;
     }
     return element;
   }
@@ -40,7 +40,9 @@ class AccordionGroup extends React.Component {
 
   render(props){
     return (
-      this.children
+      <div class={this.props.className || null}>
+      {this.children}
+      </div>
     );
   }
 }

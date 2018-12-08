@@ -1,0 +1,16 @@
+.tiles{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	&__tile{
+		flex-grow:1;
+		flex-shrink:0;
+		flex-basis:50%;
+	}
+	@media #{$mq-medium-min}{
+		&__tile{
+			flex-grow:0;
+			flex-basis:33%;
+		}
+	}
+}

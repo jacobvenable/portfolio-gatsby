@@ -13,6 +13,7 @@ class Accordion extends React.Component {
     this.buttonText = props.buttonText;
     this.children = props.children;
     this.id = generateId('accordion');
+    this.tileIcon = props.tileIcon || undefined;
     this.icon = props.icon || undefined;
     this.level = props.level || undefined;
     this.open = false;
@@ -89,33 +90,34 @@ class Accordion extends React.Component {
 
   render(props){
     return (
-    <div className="accordion">
-      <p>
-        <button 
+    <div className={`${typeof this.tileIcon !== 'undefined'?'container__column tiles__tile':''} accordion`}>
+      <button 
+        className={
+          `accordion__button
+          ${this.type === 'single-use' ? ' accordion__button--single':''}
+          ${this.type === 'single-use' && this.state.open?' accordion__button--single-hidden':''}
+          ${this.type === 'single-use' && this.state.removed?'accordion__button--single-removed':''}
+          ${typeof this.tileIcon !== 'undefined'?'tile':''}`
+        } 
+        role={this.type === 'group' && typeof(this.level) === 'string' ? 'heading':null} 
+        aria-level={this.type === 'group' && typeof(this.level) === 'string' ? this.level:null}
+        onBlur={this.handleBlur}
+        onClick={() => this.toggle()} 
+        aria-expanded={`${this.state.open?'true':'false'}`} 
+        aria-controls={this.id}
+        id={`button-${this.id}`}
+      >
+        {typeof this.tileIcon !== 'undefined' ? <FontAwesomeIcon icon={this.tileIcon} className='tile__icon'/> : null}
+        {this.buttonText}
+        <FontAwesomeIcon
+          icon={this.icon || faArrowAltRight}
           className={
-            `accordion__button
-            ${this.type === 'single-use' ? ' accordion__button--single':''}
-            ${this.type === 'single-use' && this.state.open?' accordion__button--single-hidden':''}
-            ${this.type === 'single-use' && this.state.removed?'accordion__button--single-removed':''}`
-          } 
-          role={this.type === 'group' && typeof(this.level) === 'string' ? 'heading':null} 
-          aria-level={this.type === 'group' && typeof(this.level) === 'string' ? this.level:null}
-          onBlur={this.handleBlur}
-          onClick={() => this.toggle()} 
-          aria-expanded={`${this.state.open?'true':'false'}`} 
-          aria-controls={this.id}
-          id={`button-${this.id}`}
-        >
-          {this.buttonText}
-          <FontAwesomeIcon
-            icon={this.icon || faArrowAltRight}
-            className={
-              `accordion__icon
-              ${this.type === 'single-use' || (this.type === 'group' && this.state.open) ? 'fa-rotate-90' : ''}`
-            }
-          />
-        </button>
-      </p>
+            `accordion__icon
+            ${this.type === 'single-use' || (this.type === 'group' && this.state.open) ? 'fa-rotate-90' : ''}
+            ${typeof this.tileIcon !== 'undefined'?'tile__icon tile__icon--arrow':''}`
+          }
+        />
+      </button>
       <div 
         id={this.id} 
         ref={this.content} 
