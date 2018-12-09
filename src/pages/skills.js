@@ -18,29 +18,31 @@ const SkillsPage = ({ data }) => (
 	<Layout>
 	  <div className="container">
 			<h1>Skills</h1>
-			<AccordionGroup className="container__row tiles">
-				<Accordion buttonText="HTML5" tileIcon={faHtml5} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>stuff</p>
-				</Accordion>
-				<Accordion buttonText="CSS3 + SCSS" tileIcon={faSass} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>stuff</p>
-				</Accordion>
-				<Accordion buttonText="JavaScript" tileIcon={faJs} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>Javascript</p>
-				</Accordion>
-				<Accordion buttonText="React" tileIcon={faReact} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>Javascript</p>
-				</Accordion>
-				<Accordion buttonText="Git + GitHub" tileIcon={faGithub} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>Javascript</p>
-				</Accordion>
-				<Accordion buttonText="Accessibility" tileIcon={faUniversalAccess} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>Javascript</p>
-				</Accordion>
-				<Accordion buttonText="Workflow" tileIcon={faGulp} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
-					<p>Javascript</p>
-				</Accordion>
-			</AccordionGroup>
+			<div className="container__row tiles">
+				<AccordionGroup>
+					<Accordion buttonText="HTML5" tileIcon={faHtml5} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>stuff</p>
+					</Accordion>
+					<Accordion buttonText="CSS3 + SCSS" tileIcon={faSass} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>stuff</p>
+					</Accordion>
+					<Accordion buttonText="JavaScript" tileIcon={faJs} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>Javascript</p>
+					</Accordion>
+					<Accordion buttonText="React" tileIcon={faReact} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>Javascript</p>
+					</Accordion>
+					<Accordion buttonText="Git + GitHub" tileIcon={faGithub} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>Javascript</p>
+					</Accordion>
+					<Accordion buttonText="Accessibility" tileIcon={faUniversalAccess} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>Javascript</p>
+					</Accordion>
+					<Accordion buttonText="Workflow" tileIcon={faGulp} icon={faCaretDown} iconType="" type="group" group="skills" level="2">
+						<p>Javascript</p>
+					</Accordion>
+				</AccordionGroup>
+			</div>
 		</div>
 	</Layout>
 );

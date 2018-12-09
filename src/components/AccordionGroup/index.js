@@ -39,11 +39,7 @@ class AccordionGroup extends React.Component {
   }
 
   render(props){
-    return (
-      <div class={this.props.className || null}>
-      {this.children}
-      </div>
-    );
+    return (this.children);
   }
 }
 
