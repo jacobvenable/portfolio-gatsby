@@ -32,8 +32,8 @@ class Header extends React.Component {
 
   componentDidMount() {
     //StickyFill.add(this.element.current);
-    this.checkStick();
-    window.addEventListener('scroll', e => { this.checkStick() });
+    //this.checkStick();
+    //window.addEventListener('scroll', e => { this.checkStick() });
   }
 
   checkStick(){
