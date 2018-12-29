@@ -26,10 +26,17 @@
 			display:block;
 			clear:both;
 		}
+		&--padded{
+			margin:0 convert-toRem(-$container-gutter*2);
+		}
 	}
 	&__column{
 		float:left;
 		padding-left:convert-toRem($container-gutter);
 		padding-right:convert-toRem($container-gutter);
+		&--padded{
+			padding-left:convert-toRem($container-gutter*2);
+			padding-right:convert-toRem($container-gutter*2);
+		}
 	}
 }
