@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import SkipToMain from './../SkipToMain';
 import Header from './../Header';
@@ -21,9 +20,5 @@ const TemplateWrapper = ({ children }) => (
     </main>
   </div>
 );
-
-// TemplateWrapper.propTypes = {
-//   children: PropTypes.func,
-// };
 
 export default TemplateWrapper;

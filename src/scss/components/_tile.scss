@@ -6,14 +6,18 @@ $block:'tile';
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	border:0;
 	color:$color-white-off;
 	text-decoration:none;
 	text-align:center;
 	&:link,&:visited{
+		border:0;
 		color:$color-white-off;
 		text-decoration:none;
 	}
 	&:hover,&:active,&:focus{
+		background:none;
+		border:0;
 		color:$color-white-off;
 		text-decoration:none;
 		& .#{$block}__icon{
@@ -22,6 +26,9 @@ $block:'tile';
 				transform:translateY(10%);
 			}
 		}
+	}
+	&::before,&::after{
+		display:none;
 	}
 	&__icon{
 		margin:0 0 convert-toRem(10) 0;
@@ -35,6 +42,13 @@ $block:'tile';
 				transform:none;
 			}
 		}
+	}
+	&__label{
+		display:inline-block;
+		margin:convert-toRem(5) 0 0;
+		text-transform:uppercase;
+		font-size:convert-toRem(12);
+		color:$color-yellow-light;
 	}
 	@media #{$mq-tablet-min}{
 		width:auto;

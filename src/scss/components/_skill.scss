@@ -1,0 +1,16 @@
+.skill{
+	padding:0;
+	text-align:center;
+	&__item{
+		display:inline-block;
+		margin:convert-toRem(10) convert-toRem(20);
+		&::before{
+			display:none;
+		}
+	}
+	&__icon{
+		display:inline-block;
+		margin:0 convert-toRem(10) 0 0;
+		color:$color-blue-light;
+	}
+}
