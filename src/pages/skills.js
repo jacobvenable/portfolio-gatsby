@@ -13,6 +13,7 @@ import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import { faUniversalAccess } from '@fortawesome/fontawesome-pro-light';
 import { faGulp } from '@fortawesome/fontawesome-free-brands';
 import { faPhp } from '@fortawesome/fontawesome-free-brands';
+import { faUsers } from '@fortawesome/fontawesome-pro-light';
 //import Link from 'gatsby-link';
 //import Img from 'gatsby-image';
 
@@ -138,7 +139,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">It feels like my understanding of JavaScript has changed the most throughout my career. Maybe that's because it has changed the most, or its use has changed the most, since I first started. When I thought jQuery and libraries were the end of the road, I discovered that my journey had only just begun.</p>
-								<p className="panel__description">Now I feel I have a solid foundation of the core, vanilla language and feel comfortable in determining when to use the language by itself, or implement a library/framework. Notably, my experience with JavaScript is nearly entirely client-side with the exception of some scripting done in Node for the sake of workflow.</p>
+								<p className="panel__description">Now I feel I have a solid foundation of the core, vanilla language and feel comfortable in determining when to use the language by itself, or implement a library/framework. Most of my experience with JavaScript is client-side with the exception of some scripting done in Node.js for the sake of workflow.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
@@ -171,7 +172,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">My interest in React was born after the initial version of the <Link to="/work/purdue-home-page">Purdue home page customization</Link>. Although it was a good exercise, limiting interaction with the DOM without the help of a framework was tolling on progress.</p>
-								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reuseable components. I went as far as rebuilding this site using <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, a static site generator which uses React.</p>
+								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reuseable components. I went as far as rebuilding this site using <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, a static site generator that you build with React.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
@@ -204,7 +205,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">In my first position out of college, our system of versioning was the old school "myscript_v1.js", "myscript_v2.js", "myscript_final.js", "myscript_final-v2".js, etc. Ok, maybe it wasn't that bad but you get the <i>Gist</i>. This made updating files cumbersome and collaboration with other developers difficult.</p>
-								<p className="panel__description">I took it upon myself to modernize and implemented Git and GitHub into our workflow. This included determining and <a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documenting</a> our branching model. Overall, we've been successful not only in improving collboration within our team, but also with other teams across campus.</p>
+								<p className="panel__description">I took it upon myself to modernize and implemented Git and GitHub into our workflow. This included determining and <a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documenting</a> our branching model. Overall, we've been successful in not only improving collaboration within our team, but also with other teams across campus.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
@@ -240,7 +241,7 @@ const SkillsPage = ({ data }) => (
 								</p>
 							</div>
 							<div className="container__column container__column--padded panel__column">
-								<p className="panel__description">Being a public university, accessibility has always been a top priority for my position. At first, it started as a requirement we had to follow; however, it has evolved into a cause for what's right. If you can build a tool that is built for everyone despite impairments, why wouldn't you?</p>
+								<p className="panel__description">Working for a public university, accessibility has always been a top priority for my position. It started as a requirement for our sites; however, it has evolved into a cause for what's right. If you can build a tool that is built for everyone despite impairments, why wouldn't you?</p>
 								<p className="panel__description">I've had both self-driven and formal training on accessibility through the <a href="https://www.disability.illinois.edu/academic-support/accessible-it-group/badging">University of Illinois</a>. I understand the implications of creating custom widgets, the importance of proper (and improper) ARIA attributes, and can perform manual accessibility testing.</p>
 							</div>
 						</div>
@@ -292,7 +293,40 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">Yes, my specialty is front-end development, but who says I can't have it all? While, I don't necessarily use it everyday, I'll regularly turn to it when I need to protect API keys, setup authentication, etc.</p>
-								<p className="panel__description">I've also used PHP to setup some basic templating that follows an OOP approach to create template elements.</p>
+								<p className="panel__description">I've also used PHP to setup some basic templating that follows an OOP approach to create templated elements.</p>
+							</div>
+						</div>
+					<button className="tiles__tile tile" role="heading" aria-level="2">
+						<FontAwesomeIcon icon={faUsers} className='tile__icon'/>
+						Soft Skills
+						<FontAwesomeIcon icon={faCaretDown} className='tile__icon tile__icon--arrow'/>
+					</button>
+						<h3 className="sr-only">Relevant Experience</h3>
+						<ul className="skill">
+							<li className="skill__item">
+								<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
+								public speaking
+							</li>
+							<li className="skill__item">
+								<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
+								presenting
+							</li>
+							<li className="skill__item">
+								<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
+								visual communication
+							</li>
+						</ul>
+						<div className="container__row container__row--padded panel">
+							<h3 className="sr-only">About my Experience</h3>
+							<div className="container__column container__column--padded panel__column panel__column--heading">
+								<p className="panel__heading">
+									it takes a village 
+									<span className="panel__subheading">(to build a product)</span>
+								</p>
+							</div>
+							<div className="container__column container__column--padded panel__column">
+								<p className="panel__description">A large portion of my time is not only working with other developers, but also with other disciplines. I understand that it's important to listen to other's points of view, because I know I would want the same.</p>
+								<p className="panel__description">At Purdue, I was responsible with creating the end-user documentation for our content management system. I've also facilitated over 15 CMS training sessions with end-users in groups ranging from 2 - 15 individuals.</p>
 							</div>
 						</div>
 				</Accordions>
