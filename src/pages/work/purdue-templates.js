@@ -131,7 +131,14 @@ const PurdueHomePage = ({data}) => (
 				</ul>
 				<p><mark>The new user interface and documentation resulted in decreasing the amount of support needed of our team.</mark></p>
 				<h3 className="heading--underline">Adding Gulp.js</h3>
-				<p></p>
+				<p>Originally, SASS was implemented using using <a href="http://koala-app.com/">Koala</a>, a GUI application that can compile SASS. While this made jumping into SASS much easier, I still wasn't receiving the full flexibility and benefits of a task runner.</p>
+				<p>In order to further improve our development workflow, to took it upon myself to learn and implement GulpJS. During this training, I decided to start simple and implement GulpJS to handle the following tasks:</p>
+				<ul>
+					<li><mark>HTML templating</mark> &#8212; most sites we build were implemented into a CMS, so I used a simple library that allowed including HTML files. This allowed the team to create small snippets for various elements used throughout a site</li>
+					<li><mark>SASS compiling</mark> &amp; minification &#8212; compiling our SASS files within the task runner allowed us to have more customization in how our files output and automate other features, such as autoprefixing</li>
+					<li><mark>live reload</mark> &#8212; this tool was one I didn't know I needed. Having the ability to have GulpJS watch your files and reload a page based when it notices a change was a huge timesaver.</li>
+				</ul>
+				<p>Each of these tasks would run dependent on the environment they were built for. For example, minification of CSS would only occur if it was building for the production environment.</p>
 				<h3 className="heading--underline">Implementing Git + Github</h3>
 				<p>While multiple issues were addressed with the updates released in 2015, most fixes affected our immediate team and end-users of the CMS. A complaint we often received came from other developers on campus was, </p>
 				<p><q>Most template updates we receive come periodically and in large chunks. By the time I finish implementing these updates, it feels like there is another batch to implement.</q></p>
