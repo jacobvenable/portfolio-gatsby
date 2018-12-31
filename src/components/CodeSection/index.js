@@ -15,7 +15,7 @@ class CodeSection extends React.Component {
   render(props){
     return (
       <pre className={`language-${this.language}`}>
-        {<code dangerouslySetInnerHTML={this.getHtml()}/>}
+        <code dangerouslySetInnerHTML={this.getHtml()}/>
       </pre>
     );
   }
