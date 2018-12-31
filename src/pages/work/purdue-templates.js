@@ -11,8 +11,8 @@ import Figure from './../../components/Figure';
 export const frontmatter = {
     title: 'Purdue Web Templates (Ongoing)',
     role: 'Front-end Development, CMS Implementation',
-    blurb: 'The official web templates provided by',
-    thumb: 'portfolio_purdueHomePage-thumb.png',
+    blurb: 'The official web templates provided by the Office of Marketing and Media',
+    thumb: 'portfolio_purdueTemplates-thumb.png',
     date: '2017-12-01',
     tech: ['GulpJS','HTML5','responsive','SASS','PostCSS','Cascade Server (CMS)']
 }
