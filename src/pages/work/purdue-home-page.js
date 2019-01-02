@@ -13,7 +13,7 @@ export const frontmatter = {
     role: 'Front-end Development, CMS Implementation',
     blurb: 'A revamp of Purdue\'s home page that gives visitors a chance to customize their page',
     thumb: 'portfolio_purdueHomePage-thumb.png',
-    date: '2018-01-01',
+    date: '2018-06-01',
     tech: ['GulpJS','HTML5','responsive','SASS','PostCSS','Browserify','Watchify','Lazy Loading','ARIA','PHP']
 }
 
@@ -21,7 +21,7 @@ const PurdueHomePage = ({data}) => (
 	<Layout>
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Home Page Redesign</h1>
-			<p className="intro" id="intro">A revamp of Purdue's home page that gives visitors a chance to customize their page</p>
+			<p className="intro" id="intro">a revamp of Purdue's home page that gives visitors a chance to customize their page</p>
 			<div className="container__row">
 				<div className="container__column">
 					<a href="https://www.purdue.edu/" className="button button--blue-dark">View Live Site</a>

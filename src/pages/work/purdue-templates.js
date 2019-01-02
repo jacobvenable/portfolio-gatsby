@@ -21,7 +21,7 @@ const PurdueHomePage = ({data}) => (
 	<Layout>
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Web Templates (Ongoing)</h1>
-			<p className="intro" id="intro">The free, web templates made available by Marketing and Media for other organizations across Purdue University</p>
+			<p className="intro" id="intro">the free, web templates made available by Marketing and Media for other organizations across Purdue University</p>
 			<div className="container__row">
 				<div className="container__column">
 					<a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015" className="button button--icon button--yellow-light-reverse"><span className="sr-only">View GitHub Repository</span><FontAwesomeIcon icon={faGithub}/></a>

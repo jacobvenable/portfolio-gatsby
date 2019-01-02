@@ -20,7 +20,7 @@ const Pccr40thPage = ({data}) => (
 	<Layout>
 	  <div className="container">
 			<h1 aria-describedby="intro">PCCR 40th Anniversary Site</h1>
-			<p className="intro" id="intro">A site celebrating the 40th anniversary of the Purdue Center for Cancer Research</p>
+			<p className="intro" id="intro">a site celebrating the 40th anniversary of the Purdue Center for Cancer Research</p>
 			<div className="container__row">
 				<div className="container__column">
 					<a href="https://www.cancerresearch.purdue.edu/research-that-delivers/" className="button button--blue-dark">View Live Site</a>

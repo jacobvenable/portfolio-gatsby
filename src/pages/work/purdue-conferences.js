@@ -20,7 +20,7 @@ const PurdueConferencesPage = ({data}) => (
 	<Layout>
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Conferences</h1>
-			<p className="intro" id="intro">The main landing site for Purdue Conferences</p>
+			<p className="intro" id="intro">the main landing site for Purdue Conferences</p>
 			<div className="container__row">
 				<div className="container__column">
 					<a href="https://www.purdue.edu/conferences/index.php" className="button button--blue-dark">View Live Site</a>
