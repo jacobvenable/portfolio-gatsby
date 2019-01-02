@@ -57,7 +57,7 @@
 			&::before,&::after{
 				content:"";
 				position:absolute;
-				top:0.7em;
+				top:0.9em;
 				display:block;
 				height:convert-toRem(2);
 				background-color:$color-yellow-light;
