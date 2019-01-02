@@ -11,7 +11,7 @@ export const frontmatter = {
     title: 'Purdue Conferences',
     role: 'Front-end Development, CMS Implementation',
     blurb: 'The main landing site for Purdue Conferences',
-    thumb: 'portfolio_life360-thumb.jpg',
+    thumb: 'portfolio_purdueConferences-thumb.png',
     date: '2019-01-01',
     tech: ['GulpJS','HTML5','responsive','Flexbox','Grid','SCSS','PostCSS','BEM','ITCSS','Vanilla JS','lazy loading','Browserify','Watchify','Handlebars']
 }
@@ -107,7 +107,7 @@ const PurdueConferencesPage = ({data}) => (
 					}).node.html
 				}/>
 				<p>Using Handlebars did have a drawback though. There were some components that didn't have a large level of customization, which meant they didn't need various conditionals assigned to properties; however, the way it was built meant that that I still needed to create the Handlebars partial, import the partial into the template, and pass properties to the component.</p>
-				<p>In the end, I decided that Handlebars is a good for creating flexible components when we're NOT also implementing the site within a CMS.</p>
+				<p>In the end, I decided that Handlebars is a good for creating flexible components when we're not also implementing the site within a CMS. Otherwise, it's easier to create quicker, simple HTML snippets.</p>
 			</section>
 		</div>
 	</Layout>
