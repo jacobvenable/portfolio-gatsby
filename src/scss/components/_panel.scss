@@ -9,7 +9,6 @@
 		flex-basis:100%;
 		&--heading{
 			border-right:solid 1px $color-yellow-light;
-			text-align:right;
 		}
 	}
 	&__heading{
@@ -27,8 +26,7 @@
 		font-weight:400;
 		color:$color-white-off;
 	}
-	@media #{$mq-medium-min}
-	{
+	@media #{$mq-medium-min}{
 		flex-direction:row;
 		justify-content:center;
 		&__column{
