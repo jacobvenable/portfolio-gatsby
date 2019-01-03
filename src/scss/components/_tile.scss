@@ -1,8 +1,6 @@
 $block:'tile';
 .#{$block}{
 	width:100%;
-	margin:convert-toRem(15) auto;
-	padding:convert-toRem(15) convert-toRem(20);
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -53,23 +51,28 @@ $block:'tile';
 	@media #{$mq-tablet-min}{
 		width:auto;
 	}
+	@media #{$mq-tablet}{
+		&__icon{
+			margin:0 0 convert-toRem(10) 0;
+			font-size:convert-toRem(150);
+			&--arrow{
+				font-size:convert-toRem(40);
+			}
+		}
+	}
 	@media #{$mq-medium}{
-		margin:convert-toRem(calc-proportion-lg-md(15)) auto;
-		padding:convert-toRem(calc-proportion-lg-md(15)) convert-toRem(calc-proportion-lg-md(20));
 		&__icon{
 			margin:0 0 convert-toRem(calc-proportion-lg-md(10)) 0;
-			font-size:convert-toRem(calc-proportion-lg-md(125));
+			font-size:convert-toRem(calc-proportion-lg-md(140));
 			&--arrow{
 				font-size:convert-toRem(calc-proportion-lg-md(40));
 			}
 		}
 	}
 	@media #{$mq-large}{
-		margin:convert-toRem(15) auto;
-		padding:convert-toRem(15) convert-toRem(20);
 		&__icon{
 			margin:0 0 convert-toRem(10) 0;
-			font-size:convert-toRem(125);
+			font-size:convert-toRem(150);
 			&--arrow{
 				font-size:convert-toRem(40);
 			}
