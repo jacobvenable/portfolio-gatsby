@@ -1,3 +1,5 @@
+import 'normalize.css/normalize.css';
+require('prismjs/themes/prism-okaidia.css')
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

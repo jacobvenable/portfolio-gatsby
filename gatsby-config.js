@@ -6,6 +6,21 @@ module.exports = {
   },
   plugins: [
   	'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family:`Montserrat`,
+            variants:[`400`,`700`]
+          },
+          {
+            family:`Open Sans`,
+            variants:[`400`,`700`,`400i`]
+          }
+        ]
+      }
+    },
     'gatsby-plugin-sass',
     {
       resolve: "gatsby-source-filesystem",
