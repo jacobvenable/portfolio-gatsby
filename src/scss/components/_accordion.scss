@@ -3,7 +3,9 @@ $block:'accordion';
 	&__button{
 		display:flex;
 		flex-direction:row;
+		justify-content:space-between;
 		align-items:center;
+		width:100%;
 		outline:none;
 		border:none;
 		color:$color-yellow-light;
@@ -48,5 +50,11 @@ $block:'accordion';
 		transition:max-height 0.2s ease-in;
 		width:100%;
 		max-height:0px;
+	}
+	@media #{$mq-tablet-min}{
+		&__button{
+			display:inline-flex;
+			width:auto;
+		}
 	}
 }
