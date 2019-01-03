@@ -10,11 +10,11 @@ import CodeSection from './../../components/CodeSection';
 
 export const frontmatter = {
     title: 'Purdue Home Page Redesign',
-    role: 'Front-end Development, CMS Implementation',
-    blurb: 'A revamp of Purdue\'s home page that gives visitors a chance to customize their page',
+    role: 'Front-End Development, CMS Implementation',
+    blurb: 'a revamp of Purdue\'s home page that gives visitors a chance to customize their page',
     thumb: 'portfolio_purdueHomePage-thumb.png',
     date: '2018-06-01',
-    tech: ['GulpJS','HTML5','responsive','SASS','PostCSS','Browserify','Watchify','Lazy Loading','ARIA','PHP']
+    tech: ['GulpJS','HTML5','responsive','SASS','PostCSS','Browserify','Watchify','lazy loading','ARIA','PHP']
 }
 
 const PurdueHomePage = ({data}) => (
@@ -36,7 +36,7 @@ const PurdueHomePage = ({data}) => (
 							<dt>Task Runner</dt>
 							<dd>Gulp.js</dd>
 							<dt>CSS</dt>
-							<dd>New components structured with BEM and written/compiled in SCSS</dd>
+							<dd>new components structured with BEM and written/compiled in SCSS</dd>
 							<dt>JS</dt>
 							<dd>JS modules bundled with Browserify + Watchify and minified via Uglify</dd>
 							<dt>Back-end</dt>
@@ -71,7 +71,7 @@ const PurdueHomePage = ({data}) => (
 				<h3 className="heading--underline">Customization Feature</h3>
 				<h4>Background</h4>
 				<p>From the very beginning, the team wanted the Purdue home page to be a door to the University that quickly sent the user where they wanted to go. In the previous iteration of the home page, the main content consisted completely of featured links. These links were chosen by our team based on the date and/or analytics. The difficulty with choosing these links came in determining the audience we were catering to.</p>
-				<p>Often, we would decide that prospective and/or current students were the main audience and choose links accordingly; however, we would then receive complaints/requests from other organizations on campus that there needed to be something more alumni-focused or faculty/staff-focused.</p>
+				<p>Often, we would decide that prospective and/or current students were the main audience and choose links accordingly; however, we would then receive complaints/requests from other organizations on campus that desired something more alumni-focused or faculty/staff-focused.</p>
 				<h4>Solution</h4>
 				<p>To handle the numerous audiences, we decided to give our users a way of self-identifying to filter relevant links, and allow them to determine what they want to see on the home page.</p>
 				<Video 
@@ -112,7 +112,7 @@ const PurdueHomePage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('js-accessibility');
 					}).node.html
 				}/>
-				<p>Now that we have identified when an element has been interacted via a mouse, we can implement CSS to prevent focus styles from displaying.</p>
+				<p>Now that we have identified when an element has been interacted with via a mouse, we can implement CSS to prevent focus styles from displaying.</p>
 				<CodeSection language="scss" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('scss-accessibility-02');
@@ -121,7 +121,7 @@ const PurdueHomePage = ({data}) => (
 				<p>Other keyboard support features included implementing the recommended keyboard controls for custom elements listed in <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</a>. More information about using those best practices can be found in the next section.</p>
 				<h5>Screen Reader Support</h5>
 				<p>While the tiles being customized are easily interacted with as links, the customization modal was an entirely different story. Modals aren't prebaked into browsers, so it was important to build a way to communicate with screen-reader-users about how to interact with the customization component. On top of that, the design called for creating custom elements that mimicked elements pre-built into the browser. </p>
-				<p>Luckily, there is already a way to communicate this through <a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications</a> (ARIA). By following <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</a>, I was able to setup these custom elements in away that users would be used to. The following patterns were most useful:</p>
+				<p>Luckily, there is already a way to communicate this through <a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications</a> (ARIA). By following <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</a>, I was able to setup these custom elements in a way that users would expect. The following patterns were most useful:</p>
 				<ul>
 					<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Dialog (Modal)</a> &#8212; used when setting up the modal</li>
 					<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox">Checkbox</a> &#8212; used when creating the custom checkbox elements</li>

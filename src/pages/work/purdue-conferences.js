@@ -9,11 +9,11 @@ import CodeSection from './../../components/CodeSection';
 
 export const frontmatter = {
     title: 'Purdue Conferences',
-    role: 'Front-end Development, CMS Implementation',
-    blurb: 'The main landing site for Purdue Conferences',
+    role: 'Front-End Development, CMS Implementation',
+    blurb: 'the main landing site for Purdue Conferences',
     thumb: 'portfolio_purdueConferences-thumb.png',
     date: '2019-01-01',
-    tech: ['GulpJS','HTML5','responsive','Flexbox','Grid','SCSS','PostCSS','BEM','ITCSS','Vanilla JS','lazy loading','Browserify','Watchify','Handlebars']
+    tech: ['GulpJS','HTML5','responsive','flexbox','grid','SCSS','PostCSS','BEM','ITCSS','vanilla JS','lazy loading','Browserify','Watchify','Handlebars']
 }
 
 const PurdueConferencesPage = ({data}) => (
@@ -39,7 +39,7 @@ const PurdueConferencesPage = ({data}) => (
 							<dt>CSS</dt>
 							<dd>flexbox and grid layout structured with BEM and ITCSS</dd>
 							<dt>JS</dt>
-							<dd>Vanilla JS bundled with Browserify and Watchify</dd>
+							<dd>vanilla JS bundled with Browserify and Watchify</dd>
 							<dt>CMS</dt>
 							<dd>UI built & data stored in Cascade Server and compiled via Apache Velocity</dd>
 						</dl>
@@ -85,14 +85,14 @@ const PurdueConferencesPage = ({data}) => (
 						}).node.fluid
 					}
 				/>
-				<p>Instead, I had decided to use CSS grid to create his layout. I had avoided grid in the past because it had proven difficult to manage within IE11, the oldest browser we needed to support. Close to all of the layouts we created in the past could be handled with flexbox anyways, so there was no point in spending extra time to implement grid. Grid was acceptable to use in this instance since flexbox wouldn't.</p>
-				<p>As a fallback for IE11, I decided to take a similar <a href="https://slack.engineering/rebuilding-slack-com-b124c405c193">approach</a> that the Slack team used in their latest redesign. This was using wrapping an use of grid within <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">@supports rule</a>. Since IE doesn't understand @supports, I was free to provide a flexbox backup.</p>
+				<p>Instead, I decided to use CSS grid to create this layout. I had avoided grid in the past because it had proven difficult to manage within IE11, the oldest browser we needed to support. Most of the layouts we created in the past could be handled with flexbox anyways, so there was no point in spending extra time to implement grid. Grid was acceptable to use in this instance since flexbox wouldn't work.</p>
+				<p>As a fallback for IE11, I decided to take a similar <a href="https://slack.engineering/rebuilding-slack-com-b124c405c193">approach</a> that the Slack team used in their latest redesign. This called for wrapping any use of grid within <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">@supports rule</a>. Since IE doesn't understand @supports, I was free to provide a flexbox backup.</p>
 				<CodeSection language="scss" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('scss-grid-01');
 					}).node.html
 				}/>
-				<p>This approach did mean that IE11 would not have the desired layout, but still a useable, appealing fallback.</p>
+				<p>This approach did mean that IE11 would not have the desired layout, but still have a useable, appealing fallback.</p>
 				<h3 className="heading--underline">Implementing Handlebars</h3>
 				<p>The reason for using <a href="https://handlebarsjs.com/">Handlebars</a> during development was to have the ability to create more flexible components. In the past, I had simply used <a href="https://github.com/coderhaoxin/gulp-file-include">gulp-file-include</a> in order to handle templating various components and page types. The problem with this plugin is that it didn't provide enough flexibility with its conditionals. For example, if I wanted to include a button that has four different looks depending on the used modifiers, I'd have to have multiple conditionals.</p>
 				<CodeSection language="html" code={
@@ -100,6 +100,7 @@ const PurdueConferencesPage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('html-handlebars-01');
 					}).node.html
 				}/>
+				<p>This meant that I could need to have a conditional for every possible class combination. Gross, right?</p>
 				<p>Writing the same thing using Handlebars would be much shorter.</p>
 				<CodeSection language="handlebars" code={
 					data.markdown.edges.find((edge) => {

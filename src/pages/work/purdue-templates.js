@@ -10,8 +10,8 @@ import Figure from './../../components/Figure';
 
 export const frontmatter = {
     title: 'Purdue Web Templates (Ongoing)',
-    role: 'Front-end Development, CMS Implementation',
-    blurb: 'The official web templates provided by the Office of Marketing and Media',
+    role: 'Front-End Development, CMS Implementation',
+    blurb: 'the official web templates provided by the Office of Marketing and Media',
     thumb: 'portfolio_purdueTemplates-thumb.png',
     date: '2017-12-01',
     tech: ['GulpJS','HTML5','responsive','SASS','PostCSS','Cascade Server (CMS)']
@@ -39,7 +39,7 @@ const PurdueHomePage = ({data}) => (
 							<dt>Task Runner</dt>
 							<dd>Gulp.js</dd>
 							<dt>CSS</dt>
-							<dd>New components structured with BEM and written/compiled in SCSS</dd>
+							<dd>new components structured with BEM and written/compiled in SCSS</dd>
 							<dt>JS</dt>
 							<dd>Bootstrap V3 and dependencies (JQuery)</dd>
 							<dt>Back-End</dt>
@@ -80,7 +80,7 @@ const PurdueHomePage = ({data}) => (
 			<section aria-labelledby="contributions">
 				<h2 id="contributions">My Contributions</h2>
 				<h3 className="heading--underline">2015 Template Updates</h3>
-				<p>Since the release of the updated templates in 2014, our team was gathering feedback about both the base web-templates and our CMS implementation. Using the feedback, I, being the only web developer on the team at the time, made the following updates that were released a year after the last release.</p>
+				<p>Since the release of the updated templates in 2014, our team was gathering feedback about both the base web-templates and our CMS implementation. Using the feedback, I, the only web developer on the team at the time, made the following updates that were released a year after the last release.</p>
 				<h4>Implementing SASS</h4>
 				<p>In an effort to improve readability and solidify the Purdue brand, the header and footer were redesigned along with other elements on prebuilt pages.</p>
 				<Figure 
@@ -122,32 +122,32 @@ const PurdueHomePage = ({data}) => (
 				<p>The events feed was created using server-side PHP rather than client-side JS. This decision was made in an effort to improve progressive enhancement by having the feed independent of browser version and whether JS was enabled.</p>
 				<p><mark>Since its creation, multiple groups at the University have moved from their own, separate calendaring system into the shared, central system.</mark></p>
 				<h4>Improved CMS User Interface (UI) and Documentation</h4>
-				<p>Perhaps the most significant improvement to the Purdue templates in 2015 was the UI within our CMS. In 2014, the UI consisted of multiple <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYGs</a> to edit content. The problem with this approach is that many elements within the templates called for customized class names or markup that were not easy to recreate within a WYSIWYG. A client would initially receive a working but would find it difficult to update without removing those needed elements.</p>
-				<p>In an effort to fix this issue, I independently sought out advanced training within our CMS, <a href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</a>. In the end, I was able to create an interface that only needed copy input rather than copy with HTML. After the interface was completed, I also created documentation over the interface that clients could reference later. This documentation included:</p>
+				<p>Perhaps the most significant improvement to the Purdue templates in 2015 was the UI within our CMS. In 2014, the UI consisted of multiple <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYGs</a> to edit content. The problem with this approach is that many elements within the templates called for customized class names or markup that were not easy to recreate within a WYSIWYG. A client would initially receive a working version but would find it difficult to update without removing those needed attributes.</p>
+				<p>In an effort to fix this issue, I independently sought out advanced training within our CMS, <a href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</a>. In the end, I was able to create an interface that only needed text input rather than HTML. After the interface was completed, I also created documentation about the interface that clients could reference later. This documentation included:</p>
 				<ul>
-					<li>Step-by-step directions for common edits on a site</li>
-					<li>Screenshots showing expected views and locations of referenced controls</li>
-					<li>General explanations for concepts such as how Cascade interacts with Purdue servers, SEO, and best practices</li>
+					<li>step-by-step directions for common edits on a site</li>
+					<li>screenshots showing expected views and locations of referenced controls</li>
+					<li>general explanations for concepts such as how Cascade interacts with Purdue servers, SEO, and best practices</li>
 				</ul>
 				<p><mark>The new user interface and documentation resulted in decreasing the amount of support needed of our team.</mark></p>
 				<h3 className="heading--underline">Adding Gulp.js</h3>
 				<p>Originally, SASS was implemented using using <a href="http://koala-app.com/">Koala</a>, a GUI application that can compile SASS. While this made jumping into SASS much easier, I still wasn't receiving the full flexibility and benefits of a task runner.</p>
 				<p>In order to further improve our development workflow, to took it upon myself to learn and implement GulpJS. During this training, I decided to start simple and implement GulpJS to handle the following tasks:</p>
 				<ul>
-					<li><mark>HTML templating</mark> &#8212; most sites we build were implemented into a CMS, so I used a simple library that allowed including HTML files. This allowed the team to create small snippets for various elements used throughout a site</li>
-					<li><mark>SASS compiling</mark> &amp; minification &#8212; compiling our SASS files within the task runner allowed us to have more customization in how our files output and automate other features, such as autoprefixing</li>
-					<li><mark>live reload</mark> &#8212; this tool was one I didn't know I needed. Having the ability to have GulpJS watch your files and reload a page based when it notices a change was a huge timesaver.</li>
+					<li><mark>HTML templating</mark> &#8212; most sites we built were implemented into a CMS, so I used a simple library that allowed including HTML files. This allowed the team to create small snippets for various elements used throughout a site</li>
+					<li><mark>SASS compiling &amp; minification</mark> &#8212; compiling our SASS files within the task runner allowed us to have more customization in how our files output and automate other features, such as autoprefixing</li>
+					<li><mark>live reload</mark> &#8212; this tool was one I didn't know I needed. Having GulpJS watch your files and reload a page when it notices a change is a huge timesaver.</li>
 				</ul>
 				<p>Each of these tasks would run dependent on the environment they were built for. For example, minification of CSS would only occur if it was building for the production environment.</p>
 				<h3 className="heading--underline">Implementing Git + Github</h3>
-				<p>While multiple issues were addressed with the updates released in 2015, most fixes affected our immediate team and end-users of the CMS. A complaint we often received came from other developers on campus was, </p>
+				<p>While multiple issues were addressed with the 2015 updates, most of these fixes affected our immediate team and end-users of the CMS; however, a complaint we often received came from other developers on campus.</p>
 				<p><q>Most template updates we receive come periodically and in large chunks. By the time I finish implementing these updates, it feels like there is another batch to implement.</q></p>
-				<p>Often we would be requested to provide a preliminary version of the update, so they could start before their release; however, this meant that we would need to manually track any changes made afterwards.</p>
+				<p>Often we'd receive a request to provide a preliminary version of the update, so they could start before our upcoming release; however, this meant that we would need to manually track any changes made afterwards.</p>
 				<p>After training myself in using Git and Github on the <Link to="/work/boiler-life">Boiler Life site</Link>, I believed it to be the solution to this problem. With Git, there would be no need to manually track changes, and with GitHub we could easily communicate upcoming releases. Other benefits included:</p>
 				<ul>
-					<li>make developer collaboration within our own team easier</li>
-					<li>provide an avenue to make feature requests or submit issues</li>
-					<li>allow other campus developers to contribute to the templates.</li>
+					<li>easier developer collaboration within our own team</li>
+					<li>feature requests or issue submissions</li>
+					<li>more simple external developer contributions</li>
 				</ul>
 				<p>Throwing our code on GitHub wasn't enough though. We needed a set of standards so that we understood how changes would be developed and how they would be batched into a release. The workflow I decided was best for our situation was one coined "Gitflow" and first outlined by <a href="http://nvie.com/about/">Vincent Driessen</a>.</p>
 				<p>Using this workflow, I <a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documented</a> our branch naming conventions and how the branches interact.</p>

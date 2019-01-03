@@ -66,11 +66,11 @@ const SkillsPage = ({ data }) => (
 					<ul className="skill">
 						<li className="skill__item">
 							<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
-							Flexbox
+							flexbox
 						</li>
 						<li className="skill__item">
 							<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
-							Grid
+							grid
 						</li>
 						<li className="skill__item">
 							<FontAwesomeIcon icon={faCheck} className='skill__icon'/>
@@ -97,7 +97,7 @@ const SkillsPage = ({ data }) => (
 							</p>
 						</div>
 						<div className="container__column container__column--padded panel__column">
-							<p className="panel__description">I've had a love-hate relationship with CSS. I've needed to support browsers as far back as IE9 while also optimizing for the latest. It took me some time to determine that it's ok that a site doesn't look the same in old vs new browsers, as long as it starts useable and progressively enhances to that optimized experience.</p>
+							<p className="panel__description">I've had a love-hate relationship with CSS. I've needed to support browsers as far back as IE9 while also optimizing for the latest. It took me some time to determine that it's ok a site doesn't look the same in old browsers as it does in new browsers. As long as it starts useable and progressively enhances, you can use those newer, amazing, lovely, time-saving features (praise to flexbox and grid).</p>
 							<p className="panel__description">When I started using SASS 3 years ago, managing CSS became so much easier. Nowadays, I've been working towards setting up styles in a way that is readable and scalable. I've found using a combination of <a href="http://getbem.com/">BEM</a> and <a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS</a> has worked out really well.</p>
 						</div>
 					</div>
@@ -138,7 +138,7 @@ const SkillsPage = ({ data }) => (
 								</p>
 							</div>
 							<div className="container__column container__column--padded panel__column">
-								<p className="panel__description">It feels like my understanding of JavaScript has changed the most throughout my career. Maybe that's because it has changed the most, or its use has changed the most, since I first started. When I thought jQuery and libraries were the end of the road, I discovered that my journey had only just begun.</p>
+								<p className="panel__description">It feels like my understanding of JavaScript has changed the most throughout my career. Maybe that's because it has changed the most, or its use has changed the most. When I thought jQuery and libraries were the end of the road, I discovered that my journey had only just begun.</p>
 								<p className="panel__description">Now I feel I have a solid foundation of the core, vanilla language and feel comfortable in determining when to use the language by itself, or implement a library/framework. Most of my experience with JavaScript is client-side with the exception of some scripting done in Node.js for the sake of workflow.</p>
 							</div>
 						</div>
@@ -172,7 +172,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">My interest in React was born after the initial version of the <Link to="/work/purdue-home-page">Purdue home page customization</Link>. Although it was a good exercise, limiting interaction with the DOM without the help of a framework was tolling on progress.</p>
-								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reuseable components. I went as far as rebuilding this site using <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, a static site generator that you build with React.</p>
+								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reuseable components. I went as far as rebuilding this site using <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, a static site generator that you can use to build a site with React.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
@@ -241,7 +241,7 @@ const SkillsPage = ({ data }) => (
 								</p>
 							</div>
 							<div className="container__column container__column--padded panel__column">
-								<p className="panel__description">Working for a public university, accessibility has always been a top priority for my position. It started as a requirement for our sites; however, it has evolved into a cause for what's right. If you can build a tool that is built for everyone despite impairments, why wouldn't you?</p>
+								<p className="panel__description">Working for a public university, accessibility started as a base requirement for any site I built; however, it has evolved into a cause for what's right. If you can make a tool that can be used by everyone regardless of impairments, why wouldn't you?</p>
 								<p className="panel__description">I've had both self-driven and formal training on accessibility through the <a href="https://www.disability.illinois.edu/academic-support/accessible-it-group/badging">University of Illinois</a>. I understand the implications of creating custom widgets, the importance of proper (and improper) ARIA attributes, and can perform manual accessibility testing.</p>
 							</div>
 						</div>
@@ -293,7 +293,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">Yes, my specialty is front-end development, but who says I can't have it all? While, I don't necessarily use it everyday, I'll regularly turn to it when I need to protect API keys, setup authentication, etc.</p>
-								<p className="panel__description">I've also used PHP to setup some basic templating that follows an OOP approach to create templated elements.</p>
+								<p className="panel__description">I've also used PHP to setup some basic templating that follows an OOP approach in creating templated elements.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
@@ -326,7 +326,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">A large portion of my time is not only working with other developers, but also with other disciplines. I understand that it's important to listen to other's points of view, because I know I would want the same.</p>
-								<p className="panel__description">At Purdue, I was responsible with creating the end-user documentation for our content management system. I've also facilitated over 15 CMS training sessions with end-users in groups ranging from 2 - 15 individuals.</p>
+								<p className="panel__description">At Purdue, I was responsible for creating the end-user documentation of our content management system. I've also facilitated over 15 CMS training sessions with end-users in groups ranging from 2 - 15 individuals.</p>
 							</div>
 						</div>
 				</Accordions>

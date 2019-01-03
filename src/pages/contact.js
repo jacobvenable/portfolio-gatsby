@@ -17,7 +17,7 @@ const ContactPage = ({ data }) => (
 			<div className="container__row contact">
 				<div className="container__column contact__copy">
 					<p>Have an idea for a project, or want to discuss a new opportunity? Let's have a chat!</p>
-					<p>You can use the form to send me a direct message or connect with me with any of the networks below.</p>
+					<p>You can use the form to send me a direct message or connect with me through any of the networks below.</p>
 					<ul className="container__row contact__networks">
 						<li className="container__column contact__network">
 							<a href="https://www.linkedin.com/in/jacob-venable/" className="contact__link contact__link--network">

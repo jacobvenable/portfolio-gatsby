@@ -9,18 +9,18 @@ import CodeSection from './../../components/CodeSection';
 
 export const frontmatter = {
     title: 'Life 360',
-    role: 'Front-end Development',
-    blurb: 'Custom-built magazine site to showcase people, places and events from across the College of Health and Human Sciences.',
+    role: 'Front-End Development',
+    blurb: 'custom-built magazine site to showcase people, places and events from across the College of Health and Human Sciences',
     thumb: 'portfolio_life360-thumb.jpg',
     date: '2016-11-01',
-    tech: ['GulpJS','HTML5','responsive','PostCSS','cssnext','Vanilla JS','lazy loading']
+    tech: ['GulpJS','HTML5','responsive','PostCSS','cssnext','vanilla JS','lazy loading']
 }
 
 const Life360Page = ({data}) => (
 	<Layout>
 	  <div className="container">
 			<h1 aria-describedby="intro">Life 360</h1>
-			<p className="intro" id="intro">The online magazine of the Purdue College of Health and Human Sciences (HHS)</p>
+			<p className="intro" id="intro">the online magazine of the Purdue College of Health and Human Sciences (HHS)</p>
 			<div className="container__row">
 				<div className="container__column">
 					<a href="https://www.purdue.edu/hhs/life360/index-old.html" className="button button--blue-dark">View Live Site</a>
@@ -35,9 +35,9 @@ const Life360Page = ({data}) => (
 							<dt>Task Runner</dt>
 							<dd>Gulp.js</dd>
 							<dt>CSS</dt>
-							<dd>Structured with BEM and processed by PostCSS-cssnext</dd>
+							<dd>structured with BEM and processed by PostCSS-cssnext</dd>
 							<dt>JS</dt>
-							<dd>Vanilla JS linted by JSHint and minified via UglifyJS</dd>
+							<dd>vanilla JS linted by JSHint and minified via UglifyJS</dd>
 							<dt>CMS</dt>
 							<dd>UI built & data stored in Cascade Server and compiled via Apache Velocity</dd>
 						</dl>
@@ -66,7 +66,7 @@ const Life360Page = ({data}) => (
 			/>
 			<section aria-labelledby="dev">
 				<h2 id="dev">Development Notes</h2>
-				<p>After being inspired at the University of Illinois' <a href="http://webcon.illinois.edu/">Webcon</a>, I decided this site as an opportunity to implement new methodology and tech:</p>
+				<p>After being inspired at the University of Illinois' <a href="http://webcon.illinois.edu/">Webcon</a>, I decided this site was an opportunity to implement new methodology and tech:</p>
 				<ul>
 					<li>using <a href="http://getbem.com/">BEM</a> to structure CSS classes</li>
 					<li>using <a href="http://cssnext.io/">PostCSS-cssnext</a> to compile CSS</li>
@@ -100,7 +100,7 @@ const Life360Page = ({data}) => (
 					<li>mixins with parameter support</li>
 					<li>functions with the ability to return a value rather than a CSS property</li>
 				</ul>
-				<p>For example, I usually convert my font-sizes, that I usually receive as a pixel value, to rems in order to allow the user to resize them via the browser. This also removes the issue of tracking if the font-size property on a parent element was set.</p>
+				<p>For example, I usually convert my font-sizes, usually received as a pixel value, to rems in order to allow the user to resize them via the browser.</p>
 				<CodeSection language="css" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('css-cssnext');

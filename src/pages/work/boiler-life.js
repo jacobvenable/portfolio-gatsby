@@ -8,8 +8,8 @@ import Figure from './../../components/Figure';
 
 export const frontmatter = {
     title: 'Boiler Life',
-    role: 'Front-end Development , CMS Implementation',
-    blurb: 'A social media marketing campaign with a custom-designed microsite, showcasing stories of Purdue students, groups, and alumni.',
+    role: 'Front-End Development , CMS Implementation',
+    blurb: 'a social media marketing campaign with a custom-designed microsite, showcasing stories of Purdue students, groups, and alumni',
     thumb: 'portfolio_boilerLife-thumb.jpg',
     date: '2015-11-01',
     tech: ['GulpJS','HTML5','responsive','Bootstrap','SASS','jQuery','lazy loading']
@@ -79,14 +79,13 @@ const BoilerLifePage = ({data}) => (
                         }).node.fluid
                     }
                 />
-                <p>It's probably uneccessary to argue about the importance of version control here, but I'll say that Git was certainly a large step-up from our previous method, e.g., myFilev1.js, myFilev2-validation.js, etc. The biggest advantage I found was the ability to easily create a branch to experiment with a new feature, while being able to continue work on the items that would definitely be on a different branch.</p>
-                <p>I was also able to get my feet wet with GitHub as well but I can't but feel that I only scratched the surface of its capabilties. Being a developer of one, GitHub acted more as a place to backup my work rather than a collaboration tool.</p>
+                <p>It's probably uneccessary to argue about the importance of version control here, but I'll say that Git was certainly a large step-up from our previous method, e.g., myFilev1.js, myFilev2-validation.js, etc. The biggest advantage I found was the ability to easily create a branch to experiment with a new feature, while being able to continue work on the items that would definitely be implemented.</p>
+                <p>I was also able to get my feet wet with GitHub as well but I can't but feel that I only scratched the surface of its capabilities. Being a developer of one, GitHub acted more as a place to backup my work rather than as a collaboration tool.</p>
                 <h3 className="heading--underline">Gulp.js</h3>
-                <p>The addition of Gulp.js to my workflow was definitely the most exciting development. After using it for a few hours, I wondered how I survived without one for so long.</p>
-                <p>While the source code is no longer available, I figured I could include my first stab at a development workflow in Gulp.</p>
+                <p>The addition of Gulp.js to my workflow was definitely the most exciting development. After using it for a few hours, I wondered how I survived without a task runner for so long.</p>
                 <p>For setting up HTML templates locally, I had been writing full HTML pages; however, adding <a href="https://www.npmjs.com/package/gulp-file-include">gulp-file-include</a> gave me the ability to easily create HTML components and automatically compile them into one page.</p>
                 <p>For compiling my SCSS, I no longer had to rely on using <a href="http://koala-app.com/">Koala</a>, a SASS-compiling GUI application. Now, I could add even more CSS tools, such as autoprefixer, with little difficulty.</p>
-                <p>The icing on the cake was setting up a local server via <a href="https://www.npmjs.com/package/gulp-connect">gulp-connect</a> and setting up <a href="https://www.npmjs.com/package/gulp-watch">gulp-watch</a>, a file watcher. How many seconds I have saved by having an auto-refresh everytime I save changes to my SCSS?</p>
+                <p>The icing on the cake was setting up a local server via <a href="https://www.npmjs.com/package/gulp-connect">gulp-connect</a> and setting up <a href="https://www.npmjs.com/package/gulp-watch">gulp-watch</a>, a file watcher. I truly didn't realize how the amount of time you save from automatic refreshes really builds up.</p>
             </section>
         </div>
     </Layout>

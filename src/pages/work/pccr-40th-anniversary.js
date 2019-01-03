@@ -9,11 +9,11 @@ import CodeSection from './../../components/CodeSection';
 
 export const frontmatter = {
     title: 'PCCR Anniversary Celebration',
-    role: 'Front-end Development',
-    blurb: 'A site celebrating the 40th anniversary of the Purdue Center for Cancer Research',
+    role: 'Front-End Development',
+    blurb: 'a site celebrating the 40th anniversary of the Purdue Center for Cancer Research',
     thumb: 'portfolio_pccr40thAnniversary-thumb.png',
     date: '2018-05-01',
-    tech: ['GulpJS','HTML5','responsive','Flexbox','Grid','SCSS','PostCSS','BEM','ITCSS','Vanilla JS','Browserify','Watchify']
+    tech: ['GulpJS','HTML5','responsive','flexbox','grid','SCSS','PostCSS','BEM','ITCSS','vanilla JS','Browserify','Watchify']
 }
 
 const Pccr40thPage = ({data}) => (
@@ -37,7 +37,7 @@ const Pccr40thPage = ({data}) => (
 							<dt>CSS</dt>
 							<dd>flexbox and grid layout structured with BEM and ITCSS</dd>
 							<dt>JS</dt>
-							<dd>Vanilla JS bundled with Browserify and Watchify</dd>
+							<dd>vanilla JS bundled with Browserify and Watchify</dd>
 						</dl>
 					</div>
 					<div className="overview__section overview__section--slim">
