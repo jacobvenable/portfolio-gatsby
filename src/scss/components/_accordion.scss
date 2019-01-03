@@ -30,6 +30,7 @@ $block:'accordion';
 			}
 		}
 		&--single{
+			width:auto;
 			&-hidden{
 				animation-duration:0.5s;
 				animation-fill-mode:forwards;
