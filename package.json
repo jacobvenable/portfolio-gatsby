@@ -9,7 +9,7 @@
     "@fortawesome/fontawesome-pro-light": "^5.0.13",
     "@fortawesome/fontawesome-pro-regular": "^5.0.13",
     "@fortawesome/fontawesome-pro-solid": "^5.0.13",
-    "@fortawesome/fontawesome-svg-core": "^1.2.6",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
     "@fortawesome/react-fontawesome": "^0.1.3",
     "autoprefixer": "^9.2.1",
     "gatsby": "^2.0.28",

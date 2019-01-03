@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import SkipToMain from './../SkipToMain';
 import Header from './../Header';
