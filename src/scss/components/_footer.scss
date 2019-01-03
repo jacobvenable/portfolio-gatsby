@@ -1,0 +1,18 @@
+.footer{
+	display:block;
+	padding:convert-toRem(20) 0;
+	&__copy{
+		display:block;
+		margin:0 auto;
+		font-size:convert-toRem(12);
+		text-align:center;
+		&::before,&::after{
+			content:'';
+			display:inline-block;
+			width:convert-toRem(10);
+			height:convert-toRem(1);
+			margin:0 convert-toRem(5) 0.25em;
+			background:$color-yellow-light;
+		}
+	}
+}

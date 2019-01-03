@@ -5,6 +5,7 @@ import './../../scss/all.scss';
 
 import SkipToMain from './../SkipToMain';
 import Header from './../Header';
+import Footer from './../Footer';
 
 import favIconAppleTouchIcon from './../../images/favicon_apple-touch-icon.png';
 import favIcon32 from './../../images/favicon_32x32.png';
@@ -35,6 +36,7 @@ const TemplateWrapper = ({ children }) => (
     <main id="main">
       {children}
     </main>
+    <Footer />
   </div>
 );
 
