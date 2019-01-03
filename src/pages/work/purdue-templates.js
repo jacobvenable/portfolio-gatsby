@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +8,8 @@ import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import Figure from './../../components/Figure';
+
+import ogImage from './../../images/purdueTemplates_ogImage.png';
 
 export const frontmatter = {
     title: 'Purdue Web Templates (Ongoing)',
@@ -19,6 +22,12 @@ export const frontmatter = {
 
 const PurdueHomePage = ({data}) => (
 	<Layout>
+    <Head
+      title="Purdue Web Templates (Ongoing)"
+      description="The official web templates provided by the Office of Marketing and Media and regularly contributed to by Jacob Venable."
+      ogImage={ogImage}
+      ogImageAlt='screenshot of a page using the Purdue web templates'
+    />
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Web Templates (Ongoing)</h1>
 			<p className="intro" id="intro">the free, web templates made available by Marketing and Media for other organizations across Purdue University</p>

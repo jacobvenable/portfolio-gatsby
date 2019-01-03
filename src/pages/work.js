@@ -1,11 +1,16 @@
 import React from 'react';
 import Layout from './../components/Layout';
+import Head from './../components/Head';
 import { graphql } from 'gatsby';
 import PortfolioItems from './../components/PortfolioItems';
 import TriangleMask from './../components/TriangleMask';
 
 const WorkPage = ({ data }) => (
 	<Layout>
+		<Head
+			title="Work"
+			description="Examples of Jacob Venable's past projects including web sites and applications."
+		/>
 	  <div className="container">
 			<h1>Work</h1>
 			{console.log(data)}

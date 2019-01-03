@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './../components/Layout';
+import Head from './../components/Head';
 import Link from 'gatsby-link';
 import Accordions from './../components/Accordions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,6 +21,10 @@ import { faUsers } from '@fortawesome/fontawesome-pro-light';
 
 const SkillsPage = ({ data }) => (
 	<Layout>
+		<Head
+			title="Skills"
+			description="A list of Jacob Venable's technical and soft skills."
+		/>
 	  <div className="container">
 			<h1>Skills</h1>
 			<div className="tiles">

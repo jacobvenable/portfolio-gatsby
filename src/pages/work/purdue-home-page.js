@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
@@ -7,6 +8,8 @@ import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import Video from './../../components/Video';
 import CodeSection from './../../components/CodeSection';
+
+import ogImage from './../../images/purdueHomePage_ogImage.png';
 
 export const frontmatter = {
     title: 'Purdue Home Page Redesign',
@@ -19,6 +22,12 @@ export const frontmatter = {
 
 const PurdueHomePage = ({data}) => (
 	<Layout>
+    <Head
+      title="Purdue Home Page Redesign"
+      description="A revamp of Purdue's home page, developed by Jacob Venable, that gives visitors a chance to customize their page."
+      ogImage={ogImage}
+      ogImageAlt='screenshot of the Purdue home page redesign'
+    />
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Home Page Redesign</h1>
 			<p className="intro" id="intro">a revamp of Purdue's home page that gives visitors a chance to customize their page</p>

@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
+
+import ogImage from './../../images/pccr40thAnniversary_ogImage.png';
 
 export const frontmatter = {
     title: 'PCCR Anniversary Celebration',
@@ -18,6 +21,12 @@ export const frontmatter = {
 
 const Pccr40thPage = ({data}) => (
 	<Layout>
+    <Head
+      title="PCCR 40th Anniversary Celebration"
+      description="A site, developed by Jacob Venable, celebrating the 40th anniversary of the Purdue Center for Cancer Research."
+      ogImage={ogImage}
+      ogImageAlt='screenshot of the PCCR 40th Anniversary site'
+    />
 	  <div className="container">
 			<h1 aria-describedby="intro">PCCR 40th Anniversary Site</h1>
 			<p className="intro" id="intro">a site celebrating the 40th anniversary of the Purdue Center for Cancer Research</p>

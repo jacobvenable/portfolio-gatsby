@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './../components/Layout';
+import Head from './../components/Head';
 import Accordions from './../components/Accordions';
 import Disclosure from './../components/Disclosure';
 import Link from 'gatsby-link';
@@ -12,6 +13,10 @@ import { faStar } from '@fortawesome/fontawesome-pro-solid';
 
 const IndexPage = () => (
 	<Layout>
+		<Head
+			title="Home"
+			description="The portfolio of Jacob Venable, a senior front-end developer at Purdue University."
+		/>
     <div className="container">
 			<div className="about">
 				<div className="about__intro">

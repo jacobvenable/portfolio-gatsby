@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './../components/Layout';
-import Helmet from 'react-helmet';
+import Head from './../components/Head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/fontawesome-free-brands';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
@@ -8,10 +8,10 @@ import ContactForm from './../components/ContactForm';
 
 const ContactPage = ({ data }) => (
 	<Layout>
-  	<Helmet>
-			<meta charSet="utf-8" />
-			<title>Contact</title>
-		</Helmet>
+		<Head
+			title="Contact"
+			description="Different ways to get in touch with Jacob Venable including a form and social media."
+		/>
 	  <div className="container">
 			<h1>Want to talk?</h1>
 			<div className="container__row contact">

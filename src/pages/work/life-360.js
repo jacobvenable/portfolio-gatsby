@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
+
+import ogImage from './../../images/life360_ogImage.png';
 
 export const frontmatter = {
     title: 'Life 360',
@@ -18,6 +21,12 @@ export const frontmatter = {
 
 const Life360Page = ({data}) => (
 	<Layout>
+    <Head
+      title="Life 360"
+      description="A custom-built magazine site, developed by Jacob Venable, to showcase people, places and events from across the College of Health and Human Sciences."
+      ogImage={ogImage}
+      ogImageAlt='screenshot of the Life 360 site'
+    />
 	  <div className="container">
 			<h1 aria-describedby="intro">Life 360</h1>
 			<p className="intro" id="intro">the online magazine of the Purdue College of Health and Human Sciences (HHS)</p>

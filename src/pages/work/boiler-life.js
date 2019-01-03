@@ -1,10 +1,13 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
+
+import ogImage from './../../images/boilerLife_ogImage.png';
 
 export const frontmatter = {
     title: 'Boiler Life',
@@ -17,6 +20,12 @@ export const frontmatter = {
 
 const BoilerLifePage = ({data}) => (
     <Layout>
+        <Head
+            title="Boiler Life"
+            description="A social media marketing campaign with a custom-designed microsite, developed by Jacob Venable, showcasing stories of Purdue students, groups, and alumni."
+            ogImage={ogImage}
+            ogImageAlt='screenshot of the Boiler Life site'
+        />
         <div className="container">
     	   <h1>Boiler Life</h1>
            <p className="intro" id="intro">the campaign featuring Boilermakers that move the world forward</p>

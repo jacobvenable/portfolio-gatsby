@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from './../../components/Layout';
+import Head from './../../components/Head';
 import { graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
+
+import ogImage from './../../images/purdueConferences_ogImage.png';
 
 export const frontmatter = {
     title: 'Purdue Conferences',
@@ -18,6 +21,12 @@ export const frontmatter = {
 
 const PurdueConferencesPage = ({data}) => (
 	<Layout>
+    <Head
+      title="Purdue Conferences"
+      description="The main landing site for Purdue Conferences, which was developed by Jacob Venable."
+      ogImage={ogImage}
+      ogImageAlt='screenshot of the Purdue Conferences site'
+    />
 	  <div className="container">
 			<h1 aria-describedby="intro">Purdue Conferences</h1>
 			<p className="intro" id="intro">the main landing site for Purdue Conferences</p>

@@ -7,6 +7,18 @@ module.exports = {
   plugins: [
   	'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Jacob Venable",
+        short_name:"JacobVenable",
+        start_url:"/",
+        background_color:"#ffffff",
+        theme_color:"#ffffff",
+        display: "standalone",
+        icon: "src/images/favicon_android-chrome-256x256.png"
+      }
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
