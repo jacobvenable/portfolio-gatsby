@@ -29,8 +29,8 @@ class ContactForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     let invalidInput = this.inputs.find((input) => {return !input.current.validate('submit')});
-    console.log(invalidInput);
     if(typeof invalidInput === 'undefined'){
+      localStorage.setItem('contacted',true);
       e.target.submit();
     }
     else{
@@ -40,7 +40,7 @@ class ContactForm extends React.Component {
 
   render(){
     return (
-      <form name="contact" className="container__column contact__form" method="post" data-netlify="true" data-netlify-honeypot="sweet-honey" data-netlify-recaptcha="true" onSubmit={(e) => this.handleSubmit(e)}>
+      <form name="contact" className="container__column contact__form" method="post" data-netlify="true" data-netlify-honeypot="sweet-honey" data-netlify-recaptcha="true" onSubmit={(e) => this.handleSubmit(e)} action="/contact">
         <div className="sr-only">
           <input type="hidden" name="form-name" value="contact" />
         </div>
