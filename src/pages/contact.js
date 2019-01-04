@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/fontawesome-free-brands';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import ContactForm from './../components/ContactForm';
+import ContactMessage from './../components/ContactMessage';
 
-let message = (localStorage.getItem('contacted') ? <p className="intro">Thanks, your message has been received!</p> : null);
 const ContactPage = ({ data }) => (
 	<Layout>
 		<Head
@@ -15,7 +15,7 @@ const ContactPage = ({ data }) => (
 		/>
 	  <div className="container">
 			<h1>Want to talk?</h1>
-			{message}
+			<ContactMessage/>
 			<div className="container__row contact">
 				<div className="container__column contact__copy">
 					<p>Have an idea for a project, or want to discuss a new opportunity? Let's have a chat!</p>
