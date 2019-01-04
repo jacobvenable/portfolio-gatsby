@@ -11,10 +11,13 @@ class ContactMessage extends React.Component {
   }
 
   onComponentDidMount(){
-    if(localStorage.getItem('contacted'))
-    this.setState({
-      contacted:true
-    })
+    window.addEventListener('storage', e => {
+      if(localStorage.getItem('contacted')){
+        this.setState({
+          contacted:true
+        });
+      }
+    });
   }
 
   message(){
