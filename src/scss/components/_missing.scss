@@ -39,43 +39,11 @@
 	&__svg{
 		padding-bottom:383.07122100/434.95782*100%;
 	}
-	&__list{
-		flex-grow:0;
-		flex-shrink:0;
-		flex-basis:auto;
-		display:flex;
-		flex-direction:column;
-		margin:convert-toRem(45) auto 0;
-		padding:0;
-	}
-	&__item{
-		margin:convert-toRem(10) 0;
-		&::before{
-			display:none;
-		}
-	}
-	&__link{
-		&:link,&:visited{
-			text-decoration:none;
-		}
-		&:hover,&:active{
-			text-decoration:underline;
-		}
-	}
 	@media #{$mq-tablet-min}{
 		&__container{
 			&--svg{
 				width:30%;
 				max-width:none;
-			}
-		}
-		&__list{
-			flex-direction:row;
-		}
-		&__item{
-			margin:0 convert-toRem(30);
-			&::before{
-				display:none;
 			}
 		}
 	}
