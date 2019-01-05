@@ -34,10 +34,11 @@ class Input extends React.Component {
         }}
         onExpired={(e)=>{
           this.valid = false;
-          this.validate('');
+          if(!this.disabled){
+            this.validate('');
+          }
         }}
         onErrored={(e)=>{
-          console.log('error');
           console.log(e);
         }}
         theme="dark"
@@ -54,11 +55,13 @@ class Input extends React.Component {
     this.required = props.required;
     this.errorMessage = props.errorMessage;
     this.valid = this.required?false:true;
+    this.diabled = false;
     this.state = {
       valid:this.valid,
       validated:false,
       message:'',
-      recaptchaErrorClass:''
+      recaptchaErrorClass:'',
+      disabled:false
     }
     this.containerRef = React.createRef();
     this.labelRef = React.createRef();
@@ -99,41 +102,57 @@ class Input extends React.Component {
     }
   }
 
-  validate(eventType){
-    if(this.type === 'recaptcha'){
+  disable(){
+    if(this.type !== 'recaptcha'){
       this.setState({
-        valid:this.valid,
-        validated:true,
-        recaptchaErrorClass:`${!this.valid ? 'contact__recaptcha--error' : ''}`,
-        message:`${!this.valid ? 'Please proove you aren\'t a robot.':''}`
+        disabled:true
       });
+      this.disabled = true;
+      this.inputRef.current.disabled = true;
     }
-    else{
-      //an event was passed where it was either a blur event or an input change event after the input has already been validated or is currently not valid
-      let value = this.inputRef.current.value.trim();
-      this.valid = false;
-      let message = '';
-      if(this.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
-        message = 'Please fill out this required field.';
-      }
-      else if(this.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-        message = this.errorMessage?this.errorMessage:'Please provide a valid email';
+  }
+
+  validate(eventType){
+    if(!this.disabled){
+      if(this.type === 'recaptcha'){
+        this.setState({
+          valid:this.valid,
+          validated:true,
+          recaptchaErrorClass:`${!this.valid ? 'contact__recaptcha--error' : ''}`,
+          message:`${!this.valid ? 'Please proove you aren\'t a Cyberman (robot).':''}`
+        });
       }
       else{
-        this.valid = true;
+        //an event was passed where it was either a blur event or an input change event after the input has already been validated or is currently not valid
+        let value = this.inputRef.current.value.trim();
+        this.valid = false;
+        let message = '';
+        if(this.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
+          message = 'Please fill out this required field.';
+        }
+        else if(this.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+          message = this.errorMessage?this.errorMessage:'Please provide a valid email';
+        }
+        else{
+          this.valid = true;
+        }
+        this.setState({
+          valid:this.valid,
+          validated:true,
+          message:message
+        });
       }
-      this.setState({
-        valid:this.valid,
-        validated:true,
-        message:message
-      });
     }
     return this.valid;
   }
 
   render(){
     return (
-      <div tabIndex='-1' aria-label='Google Recaptcha' className={this.type === 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''} ref={this.containerRef}>
+      <div
+        tabIndex='-1'
+        aria-label={this.type === 'recaptcha'?'Google Recaptcha':''}
+        className={this.type === 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''}
+        ref={this.containerRef}>
         {this.label}
         {this.input}
         <p id={`${this.name}-tooltip`} aria-hidden={`${this.state.validated && !this.state.valid?'false':'true'}`} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>
