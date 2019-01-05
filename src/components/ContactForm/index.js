@@ -121,7 +121,7 @@ class ContactForm extends React.Component {
         <div className="contact__submit">
           <button className="button button--yellow-light contact__button" type="submit" disabled={this.state.submitting || this.state.submittedSuccess ? true : false}>Send</button>
           <FontAwesomeIcon icon={this.state.submitting?faSpinnerThird:(this.state.submittedError?faExclamationTriangle:faCheck)} className={`contact__icon contact__icon--submit ${this.state.submitting?'fa-spin':''} ${this.state.submitting || this.state.submittedSuccess || this.state.submittedError?'contact__icon--submit-visible':''}`} aria-hidden={'true'}/>
-          <p className={`contact__message ${(this.state.submittedSuccess || this.state.submittedError) && !this.state.submitting?'contact__message--visible':''}`} aria-live="polite" role="">
+          <p className={`contact__message ${(this.state.submittedSuccess || this.state.submittedError) && !this.state.submitting?'contact__message--visible':''}`} aria-live="polite" role="alert">
             {this.state.submitting?' Submitting your message':''}
             {this.state.submittedSuccess && !this.state.submitting ?' Thanks! Your message has been dispatched with two droids to the planet\'s surface.':''}
             {this.state.submittedError && !this.state.submitting ?' Whoops. Looks like some wires got crossed and I didn\'t receive your message. Maybe try again?':''}

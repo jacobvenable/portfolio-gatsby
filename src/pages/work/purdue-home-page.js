@@ -8,6 +8,7 @@ import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import Video from './../../components/Video';
 import CodeSection from './../../components/CodeSection';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ogImage from './../../images/purdueHomePage_ogImage.png';
 
@@ -33,7 +34,12 @@ const PurdueHomePage = ({data}) => (
 			<p className="intro" id="intro">a revamp of Purdue's home page that gives visitors a chance to customize their page</p>
 			<div className="container__row">
 				<div className="container__column">
-					<a href="https://www.purdue.edu/" className="button button--blue-dark">View Live Site</a>
+					<OutboundLink
+			      href="https://www.purdue.edu/"
+			      className="button button--blue-dark"
+					>
+						View Live Site
+					</OutboundLink>
 				</div>
 			</div>
 			<section aria-labelledby="overview">
@@ -127,14 +133,14 @@ const PurdueHomePage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('scss-accessibility-02');
 					}).node.html
 				}/>
-				<p>Other keyboard support features included implementing the recommended keyboard controls for custom elements listed in <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</a>. More information about using those best practices can be found in the next section.</p>
+				<p>Other keyboard support features included implementing the recommended keyboard controls for custom elements listed in <OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</OutboundLink>. More information about using those best practices can be found in the next section.</p>
 				<h5>Screen Reader Support</h5>
 				<p>While the tiles being customized are easily interacted with as links, the customization modal was an entirely different story. Modals aren't prebaked into browsers, so it was important to build a way to communicate with screen-reader-users about how to interact with the customization component. On top of that, the design called for creating custom elements that mimicked elements pre-built into the browser. </p>
-				<p>Luckily, there is already a way to communicate this through <a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications</a> (ARIA). By following <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</a>, I was able to setup these custom elements in a way that users would expect. The following patterns were most useful:</p>
+				<p>Luckily, there is already a way to communicate this through <OutboundLink href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications</OutboundLink> (ARIA). By following <OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Best Authoring Practices</OutboundLink>, I was able to setup these custom elements in a way that users would expect. The following patterns were most useful:</p>
 				<ul>
-					<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Dialog (Modal)</a> &#8212; used when setting up the modal</li>
-					<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox">Checkbox</a> &#8212; used when creating the custom checkbox elements</li>
-					<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox">Listbox</a> &#8212; used when creating the custom dropdown element</li>
+					<li><OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Dialog (Modal)</OutboundLink> &#8212; used when setting up the modal</li>
+					<li><OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox">Checkbox</OutboundLink> &#8212; used when creating the custom checkbox elements</li>
+					<li><OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox">Listbox</OutboundLink> &#8212; used when creating the custom dropdown element</li>
 				</ul>
 			</section>
 		</div>

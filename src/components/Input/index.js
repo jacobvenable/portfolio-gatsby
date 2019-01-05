@@ -71,10 +71,8 @@ class Input extends React.Component {
       switch(type){
         case 'recaptcha':
           return this.Recaptcha();
-          break;
         case 'textarea':
           return this.TextArea();
-          break;
         default:
           return this.Input();
       }
@@ -130,6 +128,7 @@ class Input extends React.Component {
         if(this.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
           message = 'Please fill out this required field.';
         }
+        // eslint-disable-next-line
         else if(this.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
           message = this.errorMessage?this.errorMessage:'Please provide a valid email';
         }
@@ -155,7 +154,7 @@ class Input extends React.Component {
         ref={this.containerRef}>
         {this.label}
         {this.input}
-        <p id={`${this.name}-tooltip`} aria-hidden={`${this.state.validated && !this.state.valid?'false':'true'}`} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>
+        <p id={`${this.name}-tooltip`} aria-hidden={this.state.validated && !this.state.valid?false:true} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>
       </div>
     );
   }

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
-import CodeSection from './../../components/CodeSection';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ogImage from './../../images/pccr40thAnniversary_ogImage.png';
 
@@ -32,7 +32,12 @@ const Pccr40thPage = ({data}) => (
 			<p className="intro" id="intro">a site celebrating the 40th anniversary of the Purdue Center for Cancer Research</p>
 			<div className="container__row">
 				<div className="container__column">
-					<a href="https://www.cancerresearch.purdue.edu/research-that-delivers/" className="button button--blue-dark">View Live Site</a>
+					<OutboundLink
+			      href="https://www.cancerresearch.purdue.edu/research-that-delivers/"
+			      className="button button--blue-dark"
+					>
+						View Live Site
+					</OutboundLink>
 				</div>
 			</div>
 			<section aria-labelledby="overview">

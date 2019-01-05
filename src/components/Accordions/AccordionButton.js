@@ -41,7 +41,7 @@ class AccordionButton extends React.Component {
       ref={this.buttonRef}
       onClick={this.toggle}
       aria-controls={this.props.contentKey}
-      aria-expanded={`${this.state.open}`}
+      aria-expanded={this.state.open}
       className={`
         ${this.props.element.props.className} 
         ${typeof(this.props.classButtonToggle) === 'string' && this.state.open ? this.props.classButtonToggle:''}

@@ -7,6 +7,7 @@ import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ogImage from './../../images/life360_ogImage.png';
 
@@ -32,7 +33,12 @@ const Life360Page = ({data}) => (
 			<p className="intro" id="intro">the online magazine of the Purdue College of Health and Human Sciences (HHS)</p>
 			<div className="container__row">
 				<div className="container__column">
-					<a href="https://www.purdue.edu/hhs/life360/index-old.html" className="button button--blue-dark">View Live Site</a>
+					<OutboundLink
+			      href="https://www.purdue.edu/hhs/life360/index-old.html"
+			      className="button button--blue-dark"
+					>
+						View Live Site
+					</OutboundLink>
 				</div>
 			</div>
 			<section aria-labelledby="overview">
@@ -75,10 +81,10 @@ const Life360Page = ({data}) => (
 			/>
 			<section aria-labelledby="dev">
 				<h2 id="dev">Development Notes</h2>
-				<p>After being inspired at the University of Illinois' <a href="http://webcon.illinois.edu/">Webcon</a>, I decided this site was an opportunity to implement new methodology and tech:</p>
+				<p>After being inspired at the University of Illinois' <OutboundLink href="http://webcon.illinois.edu/">Webcon</OutboundLink>, I decided this site was an opportunity to implement new methodology and tech:</p>
 				<ul>
-					<li>using <a href="http://getbem.com/">BEM</a> to structure CSS classes</li>
-					<li>using <a href="http://cssnext.io/">PostCSS-cssnext</a> to compile CSS</li>
+					<li>using <OutboundLink href="http://getbem.com/">BEM</OutboundLink> to structure CSS classes</li>
+					<li>using <OutboundLink href="http://cssnext.io/">PostCSS-cssnext</OutboundLink> to compile CSS</li>
 				</ul>
 				<h3 className="heading--underline">BEM &#8212; Block Element Modifier</h3>
 				<p>Implementing BEM in this project was my first, hands-on experience with using a CSS methodology, and I'm not sure how I survived without one. While I tried using descriptive class names before, having a clear organization to the type of element being styled was a game-changer.</p>

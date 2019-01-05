@@ -7,6 +7,7 @@ import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ogImage from './../../images/purdueConferences_ogImage.png';
 
@@ -32,7 +33,12 @@ const PurdueConferencesPage = ({data}) => (
 			<p className="intro" id="intro">the main landing site for Purdue Conferences</p>
 			<div className="container__row">
 				<div className="container__column">
-					<a href="https://www.purdue.edu/conferences/index.php" className="button button--blue-dark">View Live Site</a>
+					<OutboundLink
+			      href="https://www.purdue.edu/conferences/index.php"
+			      className="button button--blue-dark"
+					>
+						View Live Site
+					</OutboundLink>
 				</div>
 			</div>
 			<section aria-labelledby="overview">
@@ -80,7 +86,7 @@ const PurdueConferencesPage = ({data}) => (
 				<p>The layouts proposed in the design of this site were trickier than others I've done in the past. This and difficulties with past projects called for some new approaches:</p>
 				<ul>
 					<li>using CSS grid and flexbox</li>
-					<li>implementing <a href="https://handlebarsjs.com/">Handlebars</a> to handle templating</li>
+					<li>implementing <OutboundLink href="https://handlebarsjs.com/">Handlebars</OutboundLink> to handle templating</li>
 				</ul>
 				<h3 className="heading--underline">Using CSS Grid and Flexbox</h3>
 				<p>CSS flexbox had been in my toolset for over a year since the start of this project; however, the overlapping rows of the home page along with the desired order of content didn't really work for flexbox.</p>
@@ -95,7 +101,7 @@ const PurdueConferencesPage = ({data}) => (
 					}
 				/>
 				<p>Instead, I decided to use CSS grid to create this layout. I had avoided grid in the past because it had proven difficult to manage within IE11, the oldest browser we needed to support. Most of the layouts we created in the past could be handled with flexbox anyways, so there was no point in spending extra time to implement grid. Grid was acceptable to use in this instance since flexbox wouldn't work.</p>
-				<p>As a fallback for IE11, I decided to take a similar <a href="https://slack.engineering/rebuilding-slack-com-b124c405c193">approach</a> that the Slack team used in their latest redesign. This called for wrapping any use of grid within <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">@supports rule</a>. Since IE doesn't understand @supports, I was free to provide a flexbox backup.</p>
+				<p>As a fallback for IE11, I decided to take a similar <OutboundLink href="https://slack.engineering/rebuilding-slack-com-b124c405c193">approach</OutboundLink> that the Slack team used in their latest redesign. This called for wrapping any use of grid within <OutboundLink href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">@supports rule</OutboundLink>. Since IE doesn't understand @supports, I was free to provide a flexbox backup.</p>
 				<CodeSection language="scss" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('scss-grid-01');
@@ -103,7 +109,7 @@ const PurdueConferencesPage = ({data}) => (
 				}/>
 				<p>This approach did mean that IE11 would not have the desired layout, but still have a useable, appealing fallback.</p>
 				<h3 className="heading--underline">Implementing Handlebars</h3>
-				<p>The reason for using <a href="https://handlebarsjs.com/">Handlebars</a> during development was to have the ability to create more flexible components. In the past, I had simply used <a href="https://github.com/coderhaoxin/gulp-file-include">gulp-file-include</a> in order to handle templating various components and page types. The problem with this plugin is that it didn't provide enough flexibility with its conditionals. For example, if I wanted to include a button that has four different looks depending on the used modifiers, I'd have to have multiple conditionals.</p>
+				<p>The reason for using <OutboundLink href="https://handlebarsjs.com/">Handlebars</OutboundLink> during development was to have the ability to create more flexible components. In the past, I had simply used <OutboundLink href="https://github.com/coderhaoxin/gulp-file-include">gulp-file-include</OutboundLink> in order to handle templating various components and page types. The problem with this plugin is that it didn't provide enough flexibility with its conditionals. For example, if I wanted to include a button that has four different looks depending on the used modifiers, I'd have to have multiple conditionals.</p>
 				<CodeSection language="html" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('html-handlebars-01');

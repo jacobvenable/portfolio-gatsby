@@ -81,5 +81,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId:'UA-50368072-1',
+        head:false,
+        anonymize:true,
+        respectDNT:true,
+        sampleRate:5,
+        siteSpeedSampleRate: 0,
+        cookieDomain:'jacob.venable.com',
+      },
+    }
   ],
 };

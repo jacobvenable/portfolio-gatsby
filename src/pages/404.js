@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from './../components/Layout';
 import Head from './../components/Head';
-import Link from 'gatsby-link';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import './../scss/all.scss';
 

@@ -8,6 +8,7 @@ import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
 import Figure from './../../components/Figure';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import ogImage from './../../images/purdueTemplates_ogImage.png';
 
@@ -33,10 +34,20 @@ const PurdueHomePage = ({data}) => (
 			<p className="intro" id="intro">the free, web templates made available by Marketing and Media for other organizations across Purdue University</p>
 			<div className="container__row">
 				<div className="container__column">
-					<a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015" className="button button--icon button--yellow-light-reverse"><span className="sr-only">View GitHub Repository</span><FontAwesomeIcon icon={faGithub}/></a>
+					<OutboundLink
+			      href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015"
+			      className="button button--icon button--yellow-light-reverse"
+					>
+						<span className="sr-only">View GitHub Repository</span><FontAwesomeIcon icon={faGithub}/>
+					</OutboundLink>
 				</div>
 				<div className="container__column">
-					<a href="https://purduemarketingandmedia.github.io/purdueTemplates-2015/builds/development/templates/audience.html" className="button button--blue-dark">View Example Site</a>
+					<OutboundLink
+			      href="https://purduemarketingandmedia.github.io/purdueTemplates-2015/builds/development/templates/audience.html"
+			      className="button button--blue-dark"
+					>
+						View Live Site
+					</OutboundLink>
 				</div>
 			</div>
 			<section aria-labelledby="overview">
@@ -82,8 +93,8 @@ const PurdueHomePage = ({data}) => (
 			/>
 			<section aria-labelledby="about">
 				<h2 id="about">About</h2>
-				<p>The Purdue web templates have been a product that the Purdue Office Marketing and Media (MM) has provided to the University since the late 2000s. After development, MM makes the HTML, CSS, and JS available for download so that other developers on campus can implement them in their own systems. A separate service provided by MM includes a CMS implementation of the templates within the centrally supported CMS, <a href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</a>.</p>
-				<p>When I joined the team 2014, they were in the midst of implementing a new version that most notably included a new responsive design using <a href="https://getbootstrap.com/docs/3.3/css/#grid">Bootstrap 3's grid system</a>. At this point, development was mostly complete, and my initial responsibilities included assisting in migrating sites to the new templates.</p>
+				<p>The Purdue web templates have been a product that the Purdue Office Marketing and Media (MM) has provided to the University since the late 2000s. After development, MM makes the HTML, CSS, and JS available for download so that other developers on campus can implement them in their own systems. A separate service provided by MM includes a CMS implementation of the templates within the centrally supported CMS, <OutboundLink href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</OutboundLink>.</p>
+				<p>When I joined the team 2014, they were in the midst of implementing a new version that most notably included a new responsive design using <OutboundLink href="https://getbootstrap.com/docs/3.3/css/#grid">Bootstrap 3's grid system</OutboundLink>. At this point, development was mostly complete, and my initial responsibilities included assisting in migrating sites to the new templates.</p>
 				<p>I didn't play a more prominent role in their development until the next update.</p>
 			</section>
 			<section aria-labelledby="contributions">
@@ -131,8 +142,8 @@ const PurdueHomePage = ({data}) => (
 				<p>The events feed was created using server-side PHP rather than client-side JS. This decision was made in an effort to improve progressive enhancement by having the feed independent of browser version and whether JS was enabled.</p>
 				<p><mark>Since its creation, multiple groups at the University have moved from their own, separate calendaring system into the shared, central system.</mark></p>
 				<h4>Improved CMS User Interface (UI) and Documentation</h4>
-				<p>Perhaps the most significant improvement to the Purdue templates in 2015 was the UI within our CMS. In 2014, the UI consisted of multiple <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYGs</a> to edit content. The problem with this approach is that many elements within the templates called for customized class names or markup that were not easy to recreate within a WYSIWYG. A client would initially receive a working version but would find it difficult to update without removing those needed attributes.</p>
-				<p>In an effort to fix this issue, I independently sought out advanced training within our CMS, <a href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</a>. In the end, I was able to create an interface that only needed text input rather than HTML. After the interface was completed, I also created documentation about the interface that clients could reference later. This documentation included:</p>
+				<p>Perhaps the most significant improvement to the Purdue templates in 2015 was the UI within our CMS. In 2014, the UI consisted of multiple <OutboundLink href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYGs</OutboundLink> to edit content. The problem with this approach is that many elements within the templates called for customized class names or markup that were not easy to recreate within a WYSIWYG. A client would initially receive a working version but would find it difficult to update without removing those needed attributes.</p>
+				<p>In an effort to fix this issue, I independently sought out advanced training within our CMS, <OutboundLink href="https://www.hannonhill.com/products/cascade-cms/index.html">Cascade Server</OutboundLink>. In the end, I was able to create an interface that only needed text input rather than HTML. After the interface was completed, I also created documentation about the interface that clients could reference later. This documentation included:</p>
 				<ul>
 					<li>step-by-step directions for common edits on a site</li>
 					<li>screenshots showing expected views and locations of referenced controls</li>
@@ -140,7 +151,7 @@ const PurdueHomePage = ({data}) => (
 				</ul>
 				<p><mark>The new user interface and documentation resulted in decreasing the amount of support needed of our team.</mark></p>
 				<h3 className="heading--underline">Adding Gulp.js</h3>
-				<p>Originally, SASS was implemented using using <a href="http://koala-app.com/">Koala</a>, a GUI application that can compile SASS. While this made jumping into SASS much easier, I still wasn't receiving the full flexibility and benefits of a task runner.</p>
+				<p>Originally, SASS was implemented using using <OutboundLink href="http://koala-app.com/">Koala</OutboundLink>, a GUI application that can compile SASS. While this made jumping into SASS much easier, I still wasn't receiving the full flexibility and benefits of a task runner.</p>
 				<p>In order to further improve our development workflow, to took it upon myself to learn and implement GulpJS. During this training, I decided to start simple and implement GulpJS to handle the following tasks:</p>
 				<ul>
 					<li><mark>HTML templating</mark> &#8212; most sites we built were implemented into a CMS, so I used a simple library that allowed including HTML files. This allowed the team to create small snippets for various elements used throughout a site</li>
@@ -159,7 +170,7 @@ const PurdueHomePage = ({data}) => (
 					<li>more simple external developer contributions</li>
 				</ul>
 				<p>Throwing our code on GitHub wasn't enough though. We needed a set of standards so that we understood how changes would be developed and how they would be batched into a release. The workflow I decided was best for our situation was one coined "Gitflow" and first outlined by <a href="http://nvie.com/about/">Vincent Driessen</a>.</p>
-				<p>Using this workflow, I <a href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documented</a> our branch naming conventions and how the branches interact.</p>
+				<p>Using this workflow, I <OutboundLink href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015/wiki/Branching-Model">documented</OutboundLink> our branch naming conventions and how the branches interact.</p>
 				<p><mark>Since it's implementation, we've been able to successfully implement multiple minor updates/patches and easily communicate them to the rest of campus.</mark></p>
 			</section>
 		</div>
