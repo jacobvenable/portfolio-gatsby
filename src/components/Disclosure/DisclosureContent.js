@@ -63,7 +63,8 @@ class DisclosureContent extends React.Component {
       ref={this.containerRef} 
       key={generateId('disclosureContent_container')} 
       className={`
-        accordion__content
+        ${this.props.className} 
+        ${this.state.open?this.props.classNameToggle:''}
       `}
       style={{
         maxHeight:this.state.contentMaxHeight

@@ -53,7 +53,7 @@ class Disclosure extends React.Component {
       return(
         <React.Fragment key={generateId('disclosure')}>
           {this.disclosureButton}
-          <DisclosureContent ref={this.contentRef} key={generateId('disclosure__content')} classContent={this.props.classContent} childElements={this.props.children.filter(child => !this.isButton(child),this)} />
+          <DisclosureContent ref={this.contentRef} key={generateId('disclosure__content')} className={this.props.classContent} classNameToggle={this.props.classContentToggle} childElements={this.props.children.filter(child => !this.isButton(child),this)} />
         </React.Fragment>
       );
     }
