@@ -11,6 +11,7 @@ $block:'accordion';
 		color:$color-yellow-light;
 		margin:convert-toRem(20) 0 convert-toRem(5);
 		padding:0;
+		font-size:convert-toRem(20);
 		text-align:left;
 		&::before,&::after{
 			display:none;

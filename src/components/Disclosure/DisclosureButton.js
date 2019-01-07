@@ -9,9 +9,11 @@ class DisclosureButton extends React.Component {
     this.toggle = this.toggle.bind(this);
 
     this.buttonRef = React.createRef();
+    this.mounted = false;
     this.open = true;
 
     this.state = {
+      mounted:this.mounted,
       open:this.open,
       removed:false
     };
@@ -34,9 +36,11 @@ class DisclosureButton extends React.Component {
   }
 
   componentDidMount(){
+    this.mounted = true;
     this.open = false;
     this.setState({
-      open:false
+      mounted:this.mounted,
+      open:this.open
     });
   }
 
@@ -49,7 +53,7 @@ class DisclosureButton extends React.Component {
       onBlur={this.handleBlur} 
       className={`
         ${this.props.element.props.className} 
-        ${typeof(this.props.classButtonToggle) === 'string' && this.state.open ? this.props.classButtonToggle:''} 
+        ${typeof(this.props.classButtonToggle) === 'string' && this.state.mounted && this.state.open ? this.props.classButtonToggle:''} 
         ${typeof(this.props.classButtonBlur) === 'string' && this.state.removed ? this.props.classButtonBlur:''}
       `}
     >
