@@ -51,12 +51,22 @@ $block:'accordion';
 		overflow:hidden;
 		transition:max-height 0.2s ease-in;
 		width:100%;
-		max-height:0px;
 	}
 	@media #{$mq-tablet-min}{
 		&__button{
-			display:inline-flex;
 			width:auto;
+		}
+	}
+}
+.js{
+	.accordion{
+		&__content{
+			position:absolute;
+			opacity:0;
+			&--visible{
+				position:static;
+				opacity:1;
+			}
 		}
 	}
 }
