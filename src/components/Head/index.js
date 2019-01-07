@@ -18,7 +18,7 @@ class Head extends React.Component {
           <title>{this.title}</title>
           <meta property="og:title" content={this.title}/>
           <meta name="description" property="og:description" content={this.props.description}/>
-          <meta property="og:image" name="twitter:image" content={this.props.ogImage || this.ogImageDefault}/>
+          <meta property="og:image" name="twitter:image" content={`https://www.jacobvenable.com${this.props.ogImage || this.ogImageDefault}`}/>
           <meta property="og:image:alt" name="twitter:image:alt" content={this.props.ogImageAlt || this.ogImageAltDefault}/>
         </Helmet>
       </React.Fragment>
