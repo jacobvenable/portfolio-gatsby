@@ -33,14 +33,6 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-sass',
-    {
-      resolve: "gatsby-source-filesystem",
-      options:{
-        name: "img",
-        path:`${__dirname}/src/images`
-      }
-    },
     {
       resolve: "gatsby-source-filesystem",
       options:{
@@ -92,6 +84,14 @@ module.exports = {
         siteSpeedSampleRate: 0,
         cookieDomain:'jacob.venable.com',
       },
+    },
+    'gatsby-plugin-sass',
+    {
+      resolve: "gatsby-source-filesystem",
+      options:{
+        name: "img",
+        path:`${__dirname}/src/images`
+      }
     }
   ],
 };

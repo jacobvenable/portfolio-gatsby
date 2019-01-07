@@ -1,5 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import 'normalize.css/normalize.css';
+import 'prismjs/themes/prism-okaidia.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import './../../scss/all.scss';
 

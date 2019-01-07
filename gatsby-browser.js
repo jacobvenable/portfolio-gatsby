@@ -1,5 +1,7 @@
 import 'normalize.css/normalize.css';
-require('prismjs/themes/prism-okaidia.css')
+import 'prismjs/themes/prism-okaidia.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import './src/scss/all.scss';
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
