@@ -60,12 +60,25 @@ $block:'accordion';
 }
 .js{
 	.accordion{
-		&__content{
+		$element:'content';
+		&__#{$element}{
 			position:absolute;
 			opacity:0;
+			.#{$block}__#{$element}{
+				position:static;
+				opacity:1;
+			}
 			&--visible{
 				position:static;
 				opacity:1;
+				.#{$block}__#{$element}{
+					position:absolute;
+					opacity:0;
+					&--visible{
+						position:static;
+						opacity:1;
+					}
+				}
 			}
 		}
 	}
