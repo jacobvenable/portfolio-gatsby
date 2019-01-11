@@ -85,6 +85,7 @@ $bem-block:'video';
 		left:0;
 		width:100%;
 		height:1vw;
+		padding:0;
 		background:#000;
 		transition:opacity 0.5s ease-in;
 		cursor:pointer;
@@ -137,7 +138,7 @@ $bem-block:'video';
 	}
 	@media #{$mq-tablet-min}{
 		&__button{
-			top:initial;
+			top:auto;
 			margin-top:0;
 			margin-left:0;
 		}
