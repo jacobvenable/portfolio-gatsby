@@ -118,7 +118,7 @@ class Video extends React.Component {
         <FontAwesomeIcon
           icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:(this.state.buffered?faPause:faSpinnerThird))}
           flip={this.state.reset?'horizontal':null}
-          rotate={!this.state.paused && !this.state.buffered ? faSpinnerThird : null)}
+          rotate={!this.state.paused && !this.state.buffered ? faSpinnerThird : null}
           className="video__icon"
         />
       </button>
