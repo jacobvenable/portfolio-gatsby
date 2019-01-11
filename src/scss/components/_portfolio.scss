@@ -19,7 +19,8 @@
 			margin:convert-toRem(38) auto;
 		}
 		@media #{$mq-mobile}{
-			display:block;
+			display:flex;
+			flex-direction:column;
 			margin:convert-toRemMo(60) auto;
 		}
 	}
@@ -60,6 +61,9 @@
 				width:100%;
 				padding-left:0;
 				padding-right:0;
+				flex-grow:0;
+				flex-shrink:1;
+				flex-basis:auto;
 			}
 		}
 		&-details{
@@ -76,9 +80,11 @@
 			}
 		}
 		&-thumb{
+			order:3;
 			display:block;
 			float:right;
 			width:40%;
+			max-width:convert-toRem(365);
 			@supports (display: grid){
 				width:auto;
 				grid-column-start:2;
@@ -107,6 +113,7 @@
 			}
 		}
 		&-tech{
+			order:2;
 			grid-column-start:1;
 			grid-column-end:span 1;
 			grid-row-start:2;
@@ -120,6 +127,7 @@
 			}
 		}
 		&-summary{
+			order:4;
 			grid-column-start:1;
 			grid-column-end:span 1;
 			grid-row-start:3;
