@@ -12,6 +12,7 @@
 		flex-grow:1;
 		flex-shrink:1;
 		flex-basis:50%;
+		max-width:50%;
 		padding:0 convert-toRem(45);
 	}
 	&__item{
@@ -22,6 +23,7 @@
 	@media #{$mq-tablet-max}{
 		&__section{
 			flex-basis:100%;
+			max-width:100%;
 		}
 	}
 }
