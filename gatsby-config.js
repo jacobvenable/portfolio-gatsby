@@ -89,6 +89,12 @@ module.exports = {
         name: "img",
         path:`${__dirname}/src/images`
       }
+    },
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options:{
+        features:[`Array.prototype.map`,`fetch`]
+      }
     }
   ],
 };

@@ -88,6 +88,10 @@ class ContactForm extends React.Component {
     }
   }
 
+  componentDidMount(){
+    const FormData = require('formdata-polyfill');
+  }
+
   render(){
     return (
       <form
