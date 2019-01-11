@@ -93,7 +93,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options:{
-        features:[`Array.prototype.map`,`fetch`]
+        features:[`Array.prototype.find`,`fetch`]
       }
     }
   ],
