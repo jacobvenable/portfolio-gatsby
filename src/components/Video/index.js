@@ -2,6 +2,7 @@ import React from 'react';
 import generateId from './../../utils/generateId';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo } from '@fortawesome/fontawesome-pro-light';
+import { faSpinnerThird } from '@fortawesome/fontawesome-pro-regular';
 import { faPlay } from '@fortawesome/fontawesome-pro-solid';
 import { faPause } from '@fortawesome/fontawesome-pro-solid';
 import { faRedoAlt } from '@fortawesome/fontawesome-pro-regular';
@@ -21,6 +22,7 @@ class Video extends React.Component {
     this.mp4 = props.mp4 || null;
     this.state = {
       controls:true,
+      buffered:false,
       paused:true,
       progress:0,
       reset:false,
@@ -28,6 +30,7 @@ class Video extends React.Component {
     };
     this.resetVideo = this.resetVideo.bind(this);
     this.toggleVideo = this.toggleVideo.bind(this);
+    this.bufferedVideo = this.bufferedVideo.bind(this);
     this.playVideo = this.playVideo.bind(this);
     this.pauseVideo = this.pauseVideo.bind(this);
     this.showControls = this.showControls.bind(this);
@@ -41,9 +44,10 @@ class Video extends React.Component {
     this.videoElement.current.removeAttribute('controls');
 
     //attach event listeners to elements
-    this.videoElement.current.addEventListener('ended',this.resetVideo);
     this.videoMask.current.addEventListener('click',this.toggleVideo);
+    this.videoElement.current.addEventListener('ended',this.resetVideo);
     this.videoElement.current.addEventListener('timeupdate',this.updateProgress);
+    this.videoElement.current.addEventListener('canplaythrough',this.bufferedVideo);
     this.videoMask.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
     this.videoPlayPauseButton.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
     this.videoPlayPauseButton.current.addEventListener('focus',() => this.showControls(!this.state.paused));
@@ -65,6 +69,12 @@ class Video extends React.Component {
       paused:!this.state.paused,
       reset:false,
       interaction:true
+    });
+  }
+
+  bufferedVideo(){
+    this.setState({
+      buffered:true
     });
   }
 
@@ -105,7 +115,12 @@ class Video extends React.Component {
     return(
       <button ref={this.videoPlayPauseButton} aria-controls={this.videoId} className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`} onClick={this.toggleVideo}>
         <span className="sr-only">{this.state.reset?'replay':(this.state.paused?'play':'pause')}</span>
-        <FontAwesomeIcon icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:faPause)} flip={this.state.reset?'horizontal':null} className="video__icon"/>
+        <FontAwesomeIcon
+          icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:(this.state.buffered?faPause:faSpinnerThird))}
+          flip={this.state.reset?'horizontal':null}
+          rotate={!this.state.paused && !this.state.buffered ? faSpinnerThird : null)}
+          className="video__icon"
+        />
       </button>
     );
   }
