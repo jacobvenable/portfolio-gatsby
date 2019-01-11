@@ -89,39 +89,49 @@
 		top:100%;
 	}
 	@media #{$mq-tablet-min}{
-		&__form{
-			display:grid;
-			grid-template-columns:50% 50%;
-			grid-template-rows:auto auto auto auto;
-			grid-gap:convert-toRem(45) convert-toRem(30);
-		}
 		&__input{
-			margin:0;
-			&--detail{
-				grid-column-start:auto;
-				grid-column-end:span 1;
-				grid-row-start:1;
-				grid-row-end:span 1;
-			}
-			&--message{
-				grid-column-start:1;
-				grid-column-end:span 2;
-				grid-row-start:2;
-				grid-row-end:span 1;
-			}
-			&--recaptcha{
-				grid-column-start:1;
-				grid-column-end:span 2;
-				grid-row-start:3;
-				grid-row-end:span 1;
+			margin-top:0;
+			&+&{
+				margin-top:convert-toRem(45);
 			}
 		}
-		&__submit{
-			grid-column-start:1;
-			grid-column-end:span 2;
-			grid-row-start:4;
-			grid-row-end:span 1;
-			margin-top:0;
+		@supports (display: grid){
+			&__form{
+				display:grid;
+				grid-template-columns:50% 50%;
+				grid-template-rows:auto auto auto auto;
+				grid-gap:convert-toRem(45) convert-toRem(30);
+			}
+			&__input{
+				&,&+&{
+					margin:0;
+				}
+				&--detail{
+					grid-column-start:auto;
+					grid-column-end:span 1;
+					grid-row-start:1;
+					grid-row-end:span 1;
+				}
+				&--message{
+					grid-column-start:1;
+					grid-column-end:span 2;
+					grid-row-start:2;
+					grid-row-end:span 1;
+				}
+				&--recaptcha{
+					grid-column-start:1;
+					grid-column-end:span 2;
+					grid-row-start:3;
+					grid-row-end:span 1;
+				}
+			}
+			&__submit{
+				grid-column-start:1;
+				grid-column-end:span 2;
+				grid-row-start:4;
+				grid-row-end:span 1;
+				margin-top:0;
+			}
 		}
 	}
 	@media #{$mq-medium-min}{
