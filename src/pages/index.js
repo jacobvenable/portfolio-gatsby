@@ -20,6 +20,7 @@ const IndexPage = () => (
     <div className="container">
 			<div className="about">
 				<div className="about__intro">
+					<h1 class="sr-only">Jacob Venable</h1>
 					<p className="about__greeting">Hello,</p>
 					<p>I'm Jacob, a front-end web developer. I've been developing since high school, but found a love for the practicality and reach of the web.</p>
 					<p>Currently, I'm a senior front-end web developer at Purdue University's Office of Marketing and Media. Boiler Up!</p>

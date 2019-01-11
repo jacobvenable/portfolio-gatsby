@@ -27,6 +27,7 @@ class Header extends React.Component {
       togglerIcon:faBars,
       togglerText:"open navigation"
     };
+    console.log(logoSvg);
     this.toggleOpen = this.toggleOpen.bind(this);
   }
 
@@ -85,16 +86,14 @@ class Header extends React.Component {
             <div to="/" className="header__container header__container-logo">
               <span className="sr-hidden">Home</span> 
               <div className="svg header__logo">
-                <object data={logoSvg} type="image/svg+xml" className="svg__object" tabIndex="-1">
-                  <img src={logoPng} alt="logo" className="header__logo"/>
-                </object>
+                <img src={logoSvg} alt="logo" className="svg__object"/>
               </div>
             </div>
-            <h1 className="header__heading">
+            <div className="header__heading">
               <span className="header__name">Jacob Venable </span>
               <span className="sr-hidden">&#8212;</span> 
               <span className="header__title">Front-End Web Developer</span>
-            </h1>
+            </div>
           </Link>
           <nav className={`header__nav nav nav-main${this.state.mobileNavOpenClass}`} role="navigation">
             <div className="container nav__container nav__container-toggler">
