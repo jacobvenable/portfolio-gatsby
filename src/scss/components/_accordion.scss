@@ -69,13 +69,13 @@ $block:'accordion';
 				opacity:1;
 			}
 			&--visible{
-				position:static;
+				position:relative;
 				opacity:1;
 				.#{$block}__#{$element}{
 					position:absolute;
 					opacity:0;
 					&--visible{
-						position:static;
+						position:relative;
 						opacity:1;
 					}
 				}
