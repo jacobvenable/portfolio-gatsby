@@ -35,7 +35,7 @@ $block:'accordion';
 			&-hidden{
 				animation-duration:0.5s;
 				animation-fill-mode:forwards;
-				animation-name:$animation-hide-grow-shrink;
+				animation-name:#{$animation-hide-grow-shrink};
 			}
 			&-removed{
 				visibility:hidden;

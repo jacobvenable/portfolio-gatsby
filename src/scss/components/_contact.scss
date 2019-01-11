@@ -47,7 +47,7 @@
 		&--visible{
 			animation-duration:0.5s;
 			animation-fill-mode:forwards;
-			animation-name:$animation-show-shrink-grow;
+			animation-name:#{$animation-show-shrink-grow};
 		}
 	}
 	&__networks{

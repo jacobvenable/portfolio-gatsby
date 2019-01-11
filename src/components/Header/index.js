@@ -12,7 +12,7 @@ import faEnvelope from '@fortawesome/fontawesome-pro-solid/faEnvelope';
 
 
 import logoSvg from './../../images/logo.svg';
-import logoPng from './../../images/logo.png';
+//import logoPng from './../../images/logo.png';
 
 class Header extends React.Component {
 
@@ -27,7 +27,6 @@ class Header extends React.Component {
       togglerIcon:faBars,
       togglerText:"open navigation"
     };
-    console.log(logoSvg);
     this.toggleOpen = this.toggleOpen.bind(this);
   }
 
