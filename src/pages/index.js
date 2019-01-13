@@ -91,7 +91,7 @@ const IndexPage = () => (
 							<p>In my current role as a senior front-end developer for Purdue Marketing and Media, I have a wide range of duties:</p>
 							<ul>
 								<li>create sites based on mockups provided by UX/UI designers (HTML, CSS, and JS)</li>
-								<li>setup sites within the univerity's content management system (Cascade Server)</li>
+								<li>setup sites within the university's content management system (Cascade Server)</li>
 								<li>train end-users in using the content management system</li>
 								<li>setup and improve the team's development workflows and standards</li>
 								<li>guide other web developers on the team</li>
