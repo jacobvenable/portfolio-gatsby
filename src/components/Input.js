@@ -8,25 +8,73 @@ import Recaptcha from 'react-google-recaptcha';
  */
 class Input extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.valid = !props.required;
+    this.disabled = false;
+    this.state = {
+      valid:this.valid,
+      validated:false,
+      message:'',
+      recaptchaErrorClass:'',
+      disabled:false
+    }
+    this.containerRef = React.createRef();
+    this.labelRef = React.createRef();
+    this.inputRef = React.createRef();
+    this.label = this.Label();
+    this.input = ((type) => {
+      switch(type){
+        case 'recaptcha':
+          return this.Recaptcha();
+        case 'textarea':
+          return this.TextArea();
+        default:
+          return this.Input();
+      }
+    })(props.type);
+
+    //bind this object to methods
+    this.validate = this.validate.bind(this);
+    this.focusInput = this.focusInput.bind(this);
+  }
+
+  /**
+   * Function used to determine the <label> element associated with the label, input group.
+   * @return {object} The JSX of the <label> element or null if it is a recaptcha input
+   */
   Label(){
-    if(this.type !== 'recaptcha'){
-      return <label ref={this.labelRef} htmlFor={this.name}>{this.label}</label>
+    if(this.props.type !== 'recaptcha'){
+      return <label ref={this.labelRef} htmlFor={this.props.name}>{this.props.label}</label>
     }
     return null;
   }
 
+  /**
+   * Function used to build a <input> associated with the label, input group.
+   * @return {object} The JSX of the <input> element
+   */
   Input(){
     return(
-      <input ref={this.inputRef} aria-describedby={`${this.name}-tooltip`} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} type={this.type} name={this.name} id={this.name}/> //required={this.required}/>
+      <input ref={this.inputRef} aria-describedby={`${this.props.name}-tooltip`} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} type={this.props.type} name={this.props.name} id={this.props.name}/> //required={this.props.required}/>
     );
   }
 
+  /**
+   * Function used to build a <textarea> associated with the label, input group.
+   * @return {object} The JSX of the <textarea> element
+   */
   TextArea(){
     return(
-      <textarea ref={this.inputRef} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} name={this.name} id={this.name}></textarea> //required={this.required}></textarea>
+      <textarea ref={this.inputRef} onChange={(e) => this.handleInputChange(e)} onBlur={(e) => this.validate(e.type)} name={this.props.name} id={this.props.name}></textarea> //required={this.props.required}></textarea>
     );
   }
 
+  /**
+   * Function used to build a Recaptcha component if the input is a Recaptcha.
+   * @return {object} The Recaptcha component
+   */
   Recaptcha(){
     return(
       <Recaptcha
@@ -49,44 +97,8 @@ class Input extends React.Component {
     );
   }
 
-	constructor(props) {
-    super(props);
-
-    this.type = props.type;
-    this.name = props.name;
-    this.label = props.label;
-    this.required = props.required;
-    this.errorMessage = props.errorMessage;
-    this.valid = this.required?false:true;
-    this.diabled = false;
-    this.state = {
-      valid:this.valid,
-      validated:false,
-      message:'',
-      recaptchaErrorClass:'',
-      disabled:false
-    }
-    this.containerRef = React.createRef();
-    this.labelRef = React.createRef();
-    this.inputRef = React.createRef();
-    this.label = this.Label();
-    this.input = ((type) => {
-      switch(type){
-        case 'recaptcha':
-          return this.Recaptcha();
-        case 'textarea':
-          return this.TextArea();
-        default:
-          return this.Input();
-      }
-    })(this.type);
-
-    this.validate = this.validate.bind(this);
-    this.focusInput = this.focusInput.bind(this);
-  }
-
   focusInput(smooth){
-    let scrollTarget = (this.type === 'recaptcha' ? this.containerRef : this.labelRef);
+    let scrollTarget = (this.props.type === 'recaptcha' ? this.containerRef : this.labelRef);
     scrollTarget.current.scrollIntoView({
       behavior:smooth?"smooth":"auto",
       block:"start",
@@ -104,7 +116,7 @@ class Input extends React.Component {
   }
 
   disable(){
-    if(this.type !== 'recaptcha'){
+    if(this.props.type !== 'recaptcha'){
       this.setState({
         disabled:true
       });
@@ -115,7 +127,7 @@ class Input extends React.Component {
 
   validate(eventType){
     if(!this.disabled){
-      if(this.type === 'recaptcha'){
+      if(this.props.type === 'recaptcha'){
         this.setState({
           valid:this.valid,
           validated:true,
@@ -128,12 +140,12 @@ class Input extends React.Component {
         let value = this.inputRef.current.value.trim();
         this.valid = false;
         let message = '';
-        if(this.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
+        if(this.props.required && value === '' && (eventType === 'blur' || eventType === 'submit')){
           message = 'Please fill out this required field.';
         }
         // eslint-disable-next-line
-        else if(this.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-          message = this.errorMessage?this.errorMessage:'Please provide a valid email';
+        else if(this.props.type === 'email' && (eventType === 'blur' || eventType === 'submit') && !value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+          message = this.props.errorMessage?this.props.errorMessage:'Please provide a valid email';
         }
         else{
           this.valid = true;
@@ -152,12 +164,12 @@ class Input extends React.Component {
     return (
       <div
         tabIndex='-1'
-        aria-label={this.type === 'recaptcha'?'Google Recaptcha':''}
-        className={this.type === 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''}
+        aria-label={this.props.type === 'recaptcha'?'Google Recaptcha':''}
+        className={this.props.type === 'recaptcha' ? `contact__recaptcha ${this.state.recaptchaErrorClass}` : ''}
         ref={this.containerRef}>
         {this.label}
         {this.input}
-        <p id={`${this.name}-tooltip`} aria-hidden={this.state.validated && !this.state.valid?false:true} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>
+        <p id={`${this.props.name}-tooltip`} aria-hidden={this.state.validated && !this.state.valid?false:true} className={`tooltip ${this.state.validated && !this.state.valid?'tooltip--visible':''}`}><FontAwesomeIcon icon={faExclamationCircle} className='tooltip__icon'/>{this.state.message}</p>
       </div>
     );
   }
