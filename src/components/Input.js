@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle } from '@fortawesome/fontawesome-pro-solid';
 import Recaptcha from 'react-google-recaptcha';
 
+/**
+ * A class React component used to place a label, input combination.
+ */
 class Input extends React.Component {
 
   Label(){
