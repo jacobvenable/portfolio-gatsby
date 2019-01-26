@@ -3,8 +3,7 @@ export default function(element){
     windowScroll = window.scrollY,
     contentTop = element.getBoundingClientRect().top,
     contentHeight = element.clientHeight;
-
-  if(contentTop+contentHeight>windowHeight){
+  if(contentTop+contentHeight>windowHeight || contentTop+contentHeight < 0){
     //all of the expanded content is not currently visible on the screen
     window.scroll({
       top:(contentHeight > windowHeight)?contentTop:(windowScroll+(contentHeight-(windowHeight-contentTop))),
