@@ -1,25 +1,16 @@
 import React from 'react';
 
-class CodeSection extends React.Component {
-
-	constructor(props) {
-    super(props);
-    this.language = props.language || '';
-    this.code = props.code || '';
-  }
-
-  getHtml(){
-    return {__html: this.code};
-  }
-
-  render(props){
-    return (
-      <pre className={`language-${this.language}`}>
-        <code dangerouslySetInnerHTML={this.getHtml()}/>
-      </pre>
-    );
-  }
-
+/**
+ * A functional React component used to place a code section, highlighted via PrismJS, on a page.
+ * @param {string} props.language - The language of the code being highlighted.
+ * @param {string} props.code - The actual code being placed within the code section. This should already be passed through the gatsby-remark-prismjs plugin https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/?=prismjs.
+ */
+function CodeSection(props) {
+  return (
+    <pre className={`language-${props.language}`}>
+      <code dangerouslySetInnerHTML={{__html:props.code}}/>
+    </pre>
+  );
 }
 
 export default CodeSection;
