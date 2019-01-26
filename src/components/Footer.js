@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * A functional React component used to place the footer section of the page.
+ */
 function Footer() {
   let today = new Date();
   return (
