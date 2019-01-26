@@ -1,29 +1,31 @@
-<div>@@if (type === 'default'){
+```html
+@@if (type === 'default'){
 	@@if(light === false){
 		@@if(color === ""){
-			&lt;a href="#" class="button"&gt;Button Text&lt;/a&gt;
+			<a href="#" class="button">Button Text</a>
 		}
 		@@if(color !== ""){
 			@if(color == "campus gold"){
-				&lt;a href="#" class="button button--campusGold"&gt;Button Text&lt;/a&gt;
+				<a href="#" class="button button--campusGold">Button Text</a>
 			}
 			@if(color == "black"){
-				&lt;a href="#" class="button button--black"&gt;Button Text&lt;/a&gt;
+				<a href="#" class="button button--black">Button Text</a>
 			}
 		}
 	}
 	@@if(light == true){
 		@@if(color === ""){
-			&lt;a href="#" class="button button--light"&gt;Button Text&lt;/a&gt;
+			<a href="#" class="button button--light">Button Text</a>
 		}
 		@@if(color !== ""){
 			@if(color == "campus gold"){
-				&lt;a href="#" class="button button--campusGold button--light"&gt;Button Text&lt;/a&gt;
+				<a href="#" class="button button--campusGold button--light">Button Text</a>
 			}
 			@if(color == "black"){
-				&lt;a href="#" class="button button--black button--light"&gt;Button Text&lt;/a&gt;
+				<a href="#" class="button button--black button--light">Button Text</a>
 			}
 		}
 	}
-}</div>
+}
+```
 etc...

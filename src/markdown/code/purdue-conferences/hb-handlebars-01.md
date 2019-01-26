@@ -1,8 +1,10 @@
-<div>&lt;a href="#"
+```handlebars
+<a href="#"
 	class="button 
 		{{ifEquals this.light true 'button-light'}}
 		{{ifEquals this.color 'campus gold' 'button--campusGold'}}
 		{{ifEquals this.color 'black' 'button--black'}}
-	"&gt;
+	">
 		Button Text
-&lt;/a&gt;</div>
+</a>
+```
