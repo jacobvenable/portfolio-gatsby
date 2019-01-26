@@ -1,5 +1,5 @@
 import React from 'react';
-import generateId from './../../utils/generateId';
+import generateId from './../utils/generateId';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo } from '@fortawesome/fontawesome-pro-light';
 import { faSpinnerThird } from '@fortawesome/fontawesome-pro-regular';

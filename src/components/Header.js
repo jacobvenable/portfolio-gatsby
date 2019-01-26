@@ -11,7 +11,7 @@ import faFolderOpen from '@fortawesome/fontawesome-pro-solid/faFolderOpen';
 import faEnvelope from '@fortawesome/fontawesome-pro-solid/faEnvelope';
 
 
-import logoSvg from './../../images/logo.svg';
+import logoSvg from './../images/logo.svg';
 //import logoPng from './../../images/logo.png';
 
 class Header extends React.Component {

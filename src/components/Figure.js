@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import generateId from './../../utils/generateId';
+import generateId from './../utils/generateId';
 
 class Figure extends React.Component {
 

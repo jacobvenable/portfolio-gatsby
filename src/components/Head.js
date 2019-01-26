@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import OgImageDefault from './../../images/meta_og-image-default.png';
+import OgImageDefault from './../images/meta_og-image-default.png';
 
 class Head extends React.Component {
   constructor(props){

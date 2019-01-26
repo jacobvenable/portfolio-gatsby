@@ -1,14 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import SkipToMain from './../SkipToMain';
-import Header from './../Header';
-import Footer from './../Footer';
+import SkipToMain from './SkipToMain';
+import Header from './Header';
+import Footer from './Footer';
 
-import favIconAppleTouchIcon from './../../images/favicon_apple-touch-icon.png';
-import favIcon32 from './../../images/favicon_32x32.png';
-import favIcon16 from './../../images/favicon_16x16.png';
-import favSafariPinnedTab from './../../images/favicon_safari-pinned-tab.svg';
+import favIconAppleTouchIcon from './../images/favicon_apple-touch-icon.png';
+import favIcon32 from './../images/favicon_32x32.png';
+import favIcon16 from './../images/favicon_16x16.png';
+import favSafariPinnedTab from './../images/favicon_safari-pinned-tab.svg';
 
 const TemplateWrapper = ({ children }) => (
   <div>

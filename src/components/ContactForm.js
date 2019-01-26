@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './../Input';
+import Input from './Input';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinnerThird } from '@fortawesome/fontawesome-pro-light';
@@ -89,6 +89,7 @@ class ContactForm extends React.Component {
   }
 
   componentDidMount(){
+    // eslint-disable-next-line
     const FormData = require('formdata-polyfill');
   }
 
