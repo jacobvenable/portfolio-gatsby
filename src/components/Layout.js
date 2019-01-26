@@ -10,6 +10,9 @@ import favIcon32 from './../images/favicon_32x32.png';
 import favIcon16 from './../images/favicon_16x16.png';
 import favSafariPinnedTab from './../images/favicon_safari-pinned-tab.svg';
 
+/**
+ * A class React component used on each page of the site. This component contains all children of the page, and also sets some default metadata via React Helmet.
+ */
 const TemplateWrapper = ({ children }) => (
   <div>
   	<Helmet>
