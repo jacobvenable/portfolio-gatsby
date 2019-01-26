@@ -6,8 +6,8 @@ import OgImageDefault from './../images/meta_og-image-default.png';
  * A functional React component used to place meta data in the <head> section of the page using React Helmet.
  * @param {string} props.title - the title to be applied to the page
  * @param {string} props.description - the description to be applied to the page
- * @param {object} ogImage - the image to be applied to the og:image metadata
- * @param {string} ogImageAlt - the text to be applied to the og:image:alt metadata
+ * @param {object} props.ogImage - the image to be applied to the og:image metadata
+ * @param {string} props.ogImageAlt - the text to be applied to the og:image:alt metadata
  */
 function Head(props){
   const baseTitle = 'Jacob Venable: Front-End Developer';
