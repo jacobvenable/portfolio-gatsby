@@ -17,10 +17,18 @@ class Video extends React.Component {
 
 	constructor(props) {
     super(props);
+
+    //create built-in property to instantly update whether the video is paused or not
     this.paused = true;
+
+    //create a reference for the <video> element for easier access to browser video API
     this.videoElement = React.createRef();
+
+    //create an IDs for the video title and video using imported utility
     this.titleId = generateId('video-title');
     this.videoId = generateId('video');
+
+    //create states to determine if default browser controls should display on the video, whether the custom controls are visible, if the video has been buffered, if the video is paused, the current progress of the video (from 0 - 100), whether the video has been reset, and whether the video has been interacted with
     this.state = {
       defaultControls:true,
       controls:true,
@@ -30,6 +38,8 @@ class Video extends React.Component {
       reset:false,
       interaction:false
     };
+
+    //bind the this object to methods
     this.resetVideo = this.resetVideo.bind(this);
     this.toggleVideo = this.toggleVideo.bind(this);
     this.bufferedVideo = this.bufferedVideo.bind(this);
@@ -41,6 +51,9 @@ class Video extends React.Component {
     this.updateVideoTime = this.updateVideoTime.bind(this);
   }
 
+  /**
+   * Method that makes the video ready to be reset, which sets the video as paused and changes the play/pause button icon to the reset icon. Called when the video ends.
+   */
   resetVideo(){
     this.paused = true;
     this.setState({
@@ -50,6 +63,9 @@ class Video extends React.Component {
     this.showControls();
   }
 
+  /**
+   * Method that either plays or pauses the video based on whether the video is currently paused.
+   */
   toggleVideo(){
     this.paused ? this.playVideo() : this.pauseVideo();
     this.paused = !this.paused;
@@ -60,22 +76,35 @@ class Video extends React.Component {
     });
   }
 
+  /**
+   * Method that sets that the video has buffered enough to start playing.
+   */
   bufferedVideo(){
     this.setState({
       buffered:true
     });
   }
 
+  /**
+   * Method that plays the video element and schedules the video controls to become hidden.
+   */
   playVideo(){
     this.scheduleHideControls();
     this.videoElement.current.play();
   }
 
+  /**
+   * Method that pauses the video element and makes the video controls visible.
+   */
   pauseVideo(){
     this.videoElement.current.pause();
     this.showControls();
   }
 
+  /**
+   * Method that makes the video controls visible and reschedules them to be hidden if the video is not currently paused.
+   * @param {boolean} rescheduleHideControls - (optional) boolean identifying if the controls should be scheduled to be hidden.
+   */
   showControls(rescheduleHideControls = !this.paused){
     if(!this.state.controls){
       if(rescheduleHideControls) this.scheduleHideControls();
@@ -85,11 +114,17 @@ class Video extends React.Component {
     }
   }
 
+  /**
+   * Method that schedules the video controls to be hidden via timemout. If the controls have already been scheduled to be hidden, it clears that timeout and creates a new one.
+   */
   scheduleHideControls(){
     if(typeof this.timeoutHideControls !== 'undefined') clearTimeout(this.timeoutHideControls);
     this.timeoutHideControls = setTimeout(() => this.hideControls(),2000);
   }
 
+  /**
+   * Method that hides the video's controls and clears the potential timeout that will also hide the controls.
+   */
   hideControls(){
     if(this.state.controls && !this.paused){
       this.setState({
@@ -99,6 +134,10 @@ class Video extends React.Component {
     }
   }
 
+  /**
+   * Method containing the JSX for the play/pause/reset button.
+   * @return {object} the JSX for the play/pause/reset button.
+   */
   playPauseButton(){
     return(
       <button
@@ -119,6 +158,10 @@ class Video extends React.Component {
     );
   }
 
+  /**
+   * Method used to update the progress bar associated with the video.
+   * @param {object} e - event object that initiated the method.
+   */
   updateProgress(e){
     if(typeof e !== 'undefined' && typeof e.target.value !== 'undefined')
     {
@@ -132,6 +175,10 @@ class Video extends React.Component {
     }
   }
 
+  /**
+   * Method used to calculate the current time of the video and set the 'reset' state as fall if not at the end of the video.
+   * @param {number} percent - the percentage of the video that has already been played.
+   */
   updateVideoTime(percent = -1){
     if(this.videoElement.current.readyState > 0 && typeof percent === 'number' && percent > 0)
     {
@@ -146,6 +193,10 @@ class Video extends React.Component {
     }
   }
 
+  /**
+   * Method containing the JSX for the progress bar.
+   * @return {object} the JSX for the progress bar.
+   */
   progressBar(){
     return(
       <div>
@@ -171,6 +222,9 @@ class Video extends React.Component {
     );
   }
 
+  /**
+   * React component method called when the component successfully mounts. This is used to hide the browser-built-in controls when JS is enabled.
+   */
   componentDidMount(){
     //remove browser-default video controls because JS is enabled
     this.setState({defaultControls:false});
