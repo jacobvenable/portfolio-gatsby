@@ -37,7 +37,7 @@ class DisclosureButton extends React.Component {
 
   /**
    * Method used to open/close the disclosure based on it's current open state.
-   * @param {boolean} open - (optional) boolean identifying what the new state of the button
+   * @param {boolean} open - (optional) boolean identifying what the new state of the button should be
    */
   toggle(open = undefined){
     this.open = (typeof(open)==='boolean'?open:!this.open);
@@ -49,7 +49,7 @@ class DisclosureButton extends React.Component {
   }
 
   /**
-   * Built-in React component method used to update some properties and state when the Disclosure successfully mounts. This is done to allow the disclosure's content to be visible if JS is disabled.
+   * Built-in React component method used to update some properties and state when the component successfully mounts. This is done to allow the disclosure's content to be visible if JS is disabled.
    */
   componentDidMount(){
     this.mounted = true;
