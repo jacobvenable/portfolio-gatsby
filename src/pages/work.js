@@ -13,7 +13,6 @@ const WorkPage = ({ data }) => (
 		/>
 	  <div className="container">
 			<h1>Work</h1>
-			{console.log(data)}
 			<PortfolioItems data={data}/>
 			<TriangleMask />
 		</div>
