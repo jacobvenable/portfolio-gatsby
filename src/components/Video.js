@@ -7,17 +7,22 @@ import { faPlay } from '@fortawesome/fontawesome-pro-solid';
 import { faPause } from '@fortawesome/fontawesome-pro-solid';
 import { faRedoAlt } from '@fortawesome/fontawesome-pro-regular';
 
+/**
+ * A class React component used for placing a custom video player.
+ * @param {string} props.title - the title of the video
+ * @param {object} props.poster - the imported poster displayed before the video plays
+ * @param {object} props.mp4 - the imported mp4 src of the video
+ */
 class Video extends React.Component {
 
 	constructor(props) {
     super(props);
-    this.videoMask = React.createRef();
+    this.paused = true;
     this.videoElement = React.createRef();
-    this.videoPlayPauseButton = React.createRef();
-    this.videoProgress = React.createRef();
     this.titleId = generateId('video-title');
     this.videoId = generateId('video');
     this.state = {
+      defaultControls:true,
       controls:true,
       buffered:false,
       paused:true,
@@ -36,34 +41,20 @@ class Video extends React.Component {
     this.updateVideoTime = this.updateVideoTime.bind(this);
   }
 
-  componentDidMount(){
-    //remove browser-default video controls
-    this.videoElement.current.removeAttribute('controls');
-
-    //attach event listeners to elements
-    this.videoMask.current.addEventListener('click',this.toggleVideo);
-    this.videoElement.current.addEventListener('ended',this.resetVideo);
-    this.videoElement.current.addEventListener('timeupdate',this.updateProgress);
-    this.videoElement.current.addEventListener('canplaythrough',this.bufferedVideo);
-    this.videoMask.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
-    this.videoPlayPauseButton.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
-    this.videoPlayPauseButton.current.addEventListener('focus',() => this.showControls(!this.state.paused));
-    this.videoProgress.current.addEventListener('mousemove',() => this.showControls(!this.state.paused));
-    this.videoProgress.current.addEventListener('focus',() => this.showControls(!this.state.paused));
-  }
-
   resetVideo(){
+    this.paused = true;
     this.setState({
-      paused:true,
+      paused:this.paused,
       reset:true,
     });
     this.showControls();
   }
 
   toggleVideo(){
-    this.state.paused ? this.playVideo() : this.pauseVideo();
+    this.paused ? this.playVideo() : this.pauseVideo();
+    this.paused = !this.paused;
     this.setState({
-      paused:!this.state.paused,
+      paused:this.paused,
       reset:false,
       interaction:true
     });
@@ -85,7 +76,7 @@ class Video extends React.Component {
     this.showControls();
   }
 
-  showControls(rescheduleHideControls = false){
+  showControls(rescheduleHideControls = !this.paused){
     if(!this.state.controls){
       if(rescheduleHideControls) this.scheduleHideControls();
       this.setState({
@@ -100,7 +91,7 @@ class Video extends React.Component {
   }
 
   hideControls(){
-    if(this.state.controls && !this.state.paused){
+    if(this.state.controls && !this.paused){
       this.setState({
         controls:false
       });
@@ -110,12 +101,18 @@ class Video extends React.Component {
 
   playPauseButton(){
     return(
-      <button ref={this.videoPlayPauseButton} aria-controls={this.videoId} className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`} onClick={this.toggleVideo}>
-        <span className="sr-only">{this.state.reset?'replay':(this.state.paused?'play':'pause')}</span>
+      <button
+        aria-controls={this.videoId}
+        className={`video__button video__button--play${!this.state.controls?' video__button--hidden':''}`}
+        onClick={this.toggleVideo}
+        onMouseMove={this.showControls}
+        onFocus={this.showControls}
+      >
+        <span className="sr-only">{this.state.reset?'replay':(this.paused?'play':'pause')}</span>
         <FontAwesomeIcon
-          icon={this.state.reset?faRedoAlt:(this.state.paused?faPlay:(this.state.buffered?faPause:faSpinnerThird))}
+          icon={this.state.reset?faRedoAlt:(this.paused?faPlay:(this.state.buffered?faPause:faSpinnerThird))}
           flip={this.state.reset?'horizontal':null}
-          rotate={!this.state.paused && !this.state.buffered ? faSpinnerThird : null}
+          rotate={!this.paused && !this.state.buffered ? faSpinnerThird : null}
           className="video__icon"
         />
       </button>
@@ -153,7 +150,20 @@ class Video extends React.Component {
     return(
       <div>
         <label htmlFor={`${this.props.title}-progress`} aria-hidden="true" className="sr-only">{this.props.title} Video Progress</label>
-        <input ref={this.videoProgress} type="range" id={`${this.props.title}-progress`} name={`${this.props.title}-progress`} aria-controls={this.videoId} className="video__progress video__progress--hidden" value={`${this.state.progress}`} onChange={this.updateProgress} min="0" max="100" step="0.01"/>
+        <input
+          type="range"
+          id={`${this.props.title}-progress`}
+          name={`${this.props.title}-progress`}
+          aria-controls={this.videoId}
+          className="video__progress video__progress--hidden"
+          value={`${this.state.progress}`}
+          onChange={this.updateProgress}
+          min="0"
+          max="100"
+          step="0.01"
+          onMouseMove={this.showControls}
+          onFocus={this.showControls}
+        />
         <div className={`video__progress video__progress--visible${!this.state.controls || !this.state.interaction?' video__progress--hidden':''}`} style={{ width:`${this.state.progress}%` }}>
           <div className="video__control video__control--progress"></div>
         </div>
@@ -161,14 +171,30 @@ class Video extends React.Component {
     );
   }
 
+  componentDidMount(){
+    //remove browser-default video controls because JS is enabled
+    this.setState({defaultControls:false});
+  }
+
   render(){
     return (
       <div className={`video${!this.state.controls?' video--controls-hidden':''}`}>
-        <div ref={this.videoMask} className="video__mask"></div>
-        <p id={this.titleId} className={`video__title${!this.state.controls?' video__title--hidden':''}`}><FontAwesomeIcon icon={faVideo}/> {this.props.title}</p>
+        <div className="video__mask" onClick={this.toggleVideo} onMouseMove={this.showControls}></div>
+        <p onLoad={this.test} id={this.titleId} className={`video__title${!this.state.controls?' video__title--hidden':''}`}><FontAwesomeIcon icon={faVideo}/> {this.props.title}</p>
         {this.playPauseButton()}
         {this.progressBar()}
-        <video controls ref={this.videoElement} id={this.videoId} aria-labelledby={this.titleId} className={`video__element${!this.state.interaction?' video__element--initial':''}`} preload="none" poster={this.props.poster.src}>
+        <video
+          controls={this.state.defaultControls}
+          ref={this.videoElement}
+          id={this.videoId}
+          aria-labelledby={this.titleId}
+          className={`video__element${!this.state.interaction?' video__element--initial':''}`}
+          preload="none"
+          poster={this.props.poster.src}
+          onEnded={this.resetVideo}
+          onTimeUpdate={this.updateProgress}
+          onCanPlayThrough={this.bufferedVideo}
+        >
           <source src={this.props.mp4} type="video/mp4"/>
         </video>
       </div>
