@@ -24,6 +24,9 @@ class Disclosure extends React.Component {
     this.buttonRef = React.createRef();
     this.contentRef = React.createRef();
 
+    //bind this component to methods
+    this.toggle = this.toggle.bind(this);
+
     if(Array.isArray(this.props.children)){
       //there is more than one child within this element
 
@@ -43,10 +46,6 @@ class Disclosure extends React.Component {
         );
       }
     }
-
-    //bind this component to methods
-    this.toggle = this.toggle.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
   }
 
   /**
@@ -65,7 +64,7 @@ class Disclosure extends React.Component {
   toggle(open = undefined){
     this.open = (typeof boolean === 'boolean' ? open : !this.open);
     this.contentRef.current.toggleOpen(this.open);
-  }
+  };
 
   render(){
     //if there is a disclosure button, render that and the rest of the non-button children within a DisclosureContent component. Otherwise, render only the children passed
