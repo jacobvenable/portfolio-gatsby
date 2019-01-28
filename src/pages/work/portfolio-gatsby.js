@@ -69,9 +69,9 @@ const PurdueConferencesPage = ({data}) => (
 			</section>
 			<section aria-labelledby="dev">
 				<h2 id="dev">Development Notes</h2>
-				<p>Since early 2018, I've been teaching myself (and falling in love with) <OutboundLink href="https://reactjs.org/">React</OutboundLink>. Since I was in desperate need for an updated personal portfolio, I wanted to find a way to fit React into the equation. While I could create a single page application for my portfolio, it didn't really do me any favors in terms of SEO. That's when I stumbled upon <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>.</p>
+				<p>In early 2018, I started teaching myself (and falling in love with) <OutboundLink href="https://reactjs.org/">React</OutboundLink>. Since I was in desperate need for an updated personal portfolio, I wanted to find a way to fit React into the equation. While I could create a single page application for my portfolio, it didn't really do me any favors in terms of SEO. That's when I stumbled upon <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>.</p>
 				<h3 className="heading--underline">GatsbyJS</h3>
-				<p>Gatbsy is a React-based static site generator, meaning it can create a site with multiple using React components. Basically, each individual page within the site are their own component that you can import other components into. Using each component's render method, Gatsby will build the page that is served as a static HTML document.</p>
+				<p>Gatbsy is a React-based static site generator, meaning it can create a site with multiple pages using React components. Basically, each individual page within the site is its own component that you can import other components into. Using each component's render method, Gatsby will build the page as a static HTML document.</p>
 				<p>For example, some components I created to be used on each page of this site include the following:</p>
 				<ul>
 					<li><OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/Head.js">Head</OutboundLink> &#8212; a component used to set some needed metadata on each page</li>
@@ -86,11 +86,10 @@ const PurdueConferencesPage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('js-video');
 					}).node.html
 				}/>
-				<p>In the example above, there is a button element that has a click event, which calls the Video component's toggleVideo method. This is how dynamic components can be implemented within your site.</p>
-				<p>If needed, you could even go further and import other components dynamically.</p>
+				<p>In the example above, the video players is dynamically controlled via the click event placed on the play/pause button. If needed, you could even go further and import other components dynamically.</p>
 				<h4>GraphQL</h4>
 				<p>Another bonus to using GatsbyJS is the ability to query your site's data via GraphQL. This means you can dynamically query your pages, markdown files, images, etc. and use that data to output content. When combined with some of <OutboundLink href="https://www.gatsbyjs.org/plugins/">GatsbyJS plugins</OutboundLink>, you have a lot of flexibility.</p>
-				<p>An example where this came in handy for my site was dynamically generating the main <a href="/work/">work page</a>. I didn't want to have to add a new piece of work manually; instead, I decided it would be better to query all my work pages, and insert the items automatically.</p>
+				<p>An example where this came in handy for this site was dynamically generating the main <a href="/work/">work page</a>. I didn't want to have to add a new piece of work manually; instead, I decided it would be better to query all my work pages, and insert the items automatically.</p>
 				<p>To accomplish this, I combined a GraphQL query and the <OutboundLink href="https://www.gatsbyjs.org/packages/gatsby-transformer-javascript-frontmatter/?=frontmatter">gatsby-transformer-javascript-frontmatter plugin</OutboundLink>. At the top of each individual work page, I placed a snippet like the one below (this is the snippet placed for this page).</p>
 				<CodeSection language="javascript" code={
 					data.markdown.edges.find((edge) => {
@@ -103,16 +102,17 @@ const PurdueConferencesPage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('js-graphql-02');
 					}).node.html
 				}/>
-				<p>The data from the query is can then be used within the page by passing an object containing 'data'. As shown in the example above, I created a <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/PortfolioItems.js">PortofolioItems</OutboundLink> component to handle the data.</p>
+				<p>The data from the query can then be used within the page by passing an object containing 'data'. As shown in the example above, I created a <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/PortfolioItems.js">PortofolioItems</OutboundLink> component to handle the data.</p>
+				<p>Finally, within the PortfolioItems component, I created a loop through each returned asset of the query and passed that data individually to a component that is used to display the invidiual work item.</p>
 				<CodeSection language="javascript" code={
 					data.markdown.edges.find((edge) => {
 						return edge.node.fileAbsolutePath.includes('js-graphql-03');
 					}).node.html
 				}/>
 				<h3 className="heading--underline">Accessibility</h3>
-				<p>Another feature I wanted to implement were some easily re-used components that had some custom functionality with ARIA best practices built-in. An example of this is the <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/Accordions/index.js">Accordions component</OutboundLink>. When I building this component, I had the following goals:</p>
+				<p>Another feature I wanted to implement were some easily reusable components made with ARIA best practices built-in. An example of this is the <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/Accordions/index.js">Accordions component</OutboundLink>. When building this, I had the following goals:</p>
 				<ol>
-					<li>progressively enhance the component ensure that all content is visible if JavaScript is not enabled</li>
+					<li>progressively enhance the component to ensure that all content is visible if JavaScript is not enabled</li>
 					<li>make it easy to create a group of accordions</li>
 					<li>ensure accordions can be added to any style of elements</li>
 					<li>
@@ -140,14 +140,14 @@ const PurdueConferencesPage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('js-accessibility-02');
 					}).node.html
 				}/>
-				<p>For full implementation, see the full constructor method on the <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/Accordions/index.js">Accordions component</OutboundLink>. At this point, the component has now stored each item accordion button-panel group, and can now be setup to properly handle showing/hiding content.</p>
-				<h4>Goal 3: Flexibility on any Style of Elements</h4>
+				<p>For full implementation, see the full constructor method on the <OutboundLink href="https://github.com/jacobvenable/portfolio-gatsby/blob/master/src/components/Accordions/index.js">Accordions component</OutboundLink>. At this point, the component has now stored each accordion button-panel group and can now be setup to properly handle showing/hiding content.</p>
+				<h4>Goal 3: Flexibility of Style</h4>
 				<p>My plan was to use accordions in two places:</p>
 				<ul>
 					<li>the FAQ section of the <a href="/">home page</a></li>
 					<li>the main content of the <a href="/skills/">skills page</a></li>
 				</ul>
-				<p>While the implementation of show/hide functionality is the same, the way they are displayed is quite different. This meant, it would be best to allow us to specify the classes that are added/removed depending on element visibility. To accomplish this, I added properties to the Accordions component:</p>
+				<p>While the implementation of show/hide functionality is the same, the way they are displayed is quite different. This meant it would be best to allow specifying the classes that are added/removed depending on element visibility. To accomplish this, I added properties to the Accordions component:</p>
 				<ul>
 					<li>classButtonToggle &#8212; the class added to a button when it's corresponding content panel is visible</li>
 					<li>classContent &#8212; the initial class added to a content panel since these elements are dynamically generated</li>
@@ -161,11 +161,11 @@ const PurdueConferencesPage = ({data}) => (
 				<p>Now, I can create a group of accordions using any combination of CSS classes and therefore any styling.</p>
 				<h4>Goal 4: ARIA Best Practices</h4>
 				<p>Once we had already accomplished dynamically creating accordion button-panel groups is goal 2, ensuring we follow <OutboundLink href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">ARIA best practices for accordions</OutboundLink> was easy.</p>
-				<h5>Requirement: Enter or Space</h5>
+				<h5>Requirement: Keyboard Enter or Space</h5>
 				<p>From the Web Accessibility Initiative (WAI)-ARIA best practices:</p>
 				<blockquote>When focus is on the accordion header for a collapsed panel, expands the associated panel. If the implementation allows only one panel to be expanded, and if another panel is expanded, collapses that panel.</blockquote>
 				<p>Buttons can be activated via the enter or space key by default.</p>
-				<h5>Requirement: Tab and Shift + Tab</h5>
+				<h5>Requirement: Keyboard Tab and Shift + Tab</h5>
 				<p>From the WAI-ARIA best practices:</p>
 				<blockquote>
 					<p>Tab: Moves focus to the next focusable element; all focusable elements in the accordion are included in the page Tab sequence.</p>
@@ -205,7 +205,7 @@ const PurdueConferencesPage = ({data}) => (
 				<p>Since my implementation will allow all panels to be hidden, this is not an issue.</p>
 				<h4>Conclusion</h4>
 				<p>In the end I feel that I was successful in accomplishing the accessibility implementation goals; however, I'm a bit hesitant to say that this would work for every situation.</p>
-				<p>In this process, I did make extensive use of <OutboundLink href="https://reactjs.org/docs/refs-and-the-dom.html">React refs</OutboundLink> to make calling sub-component methods easier. For accordions in a single page application, I may combine the sub-components into the main component.</p>
+				<p>In this process, I did make extensive use of <OutboundLink href="https://reactjs.org/docs/refs-and-the-dom.html">React refs</OutboundLink> to make calling sub-component methods easier. For accordions in a single page application, I may combine the sub-components into a single component instead.</p>
 			</section>
 		</div>
 	</Layout>
