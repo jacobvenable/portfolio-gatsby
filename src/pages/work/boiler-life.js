@@ -12,7 +12,7 @@ import ogImage from './../../images/boilerLife_ogImage.png';
 export const frontmatter = {
     title: 'Boiler Life',
     role: 'Front-End Development , CMS Implementation',
-    blurb: 'a social media marketing campaign with a custom-designed microsite, showcasing stories of Purdue students, groups, and alumni',
+    blurb: 'a social media marketing campaign with a custom-designed micro-site, showcasing stories of Purdue students, groups, and alumni',
     thumb: 'portfolio_boilerLife-thumb.jpg',
     date: '2015-11-01',
     tech: ['GulpJS','HTML5','responsive','Bootstrap','SASS','jQuery','lazy loading']
@@ -22,7 +22,7 @@ const BoilerLifePage = ({data}) => (
     <Layout>
         <Head
             title="Boiler Life"
-            description="A social media marketing campaign with a custom-designed microsite, developed by Jacob Venable, showcasing stories of Purdue students, groups, and alumni."
+            description="A social media marketing campaign with a custom-designed micro-site, developed by Jacob Venable, showcasing stories of Purdue students, groups, and alumni."
             ogImage={ogImage}
             ogImageAlt='screenshot of the Boiler Life site'
         />

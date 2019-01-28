@@ -56,7 +56,7 @@ const IndexPage = () => (
 							<h4 className="heading--6">Assistant Web Designer</h4>
 							<ul>
 								<li>May 2012 - May 2014</li>
-								<li>Purdue Deptartment of Forestry and Natural Resources</li>
+								<li>Purdue Department of Forestry and Natural Resources</li>
 							</ul>
 							<h4 className="heading--6">Freelance Web Developer/Designer</h4>
 							<ul>

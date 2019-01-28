@@ -59,7 +59,7 @@ const Pccr40thPage = ({data}) => (
 						<ul>
 							<li className="overview__item">review design for accessibility issues</li>
 							<li className="overview__item">use Git and GitHub for version control and tracking progress</li>
-							<li className="overview__item">develop reuseable components and templates based on design</li>
+							<li className="overview__item">develop reusable components and templates based on design</li>
 							<li className="overview__item">test for browser inconsistencies</li>
 						</ul>
 					</div>

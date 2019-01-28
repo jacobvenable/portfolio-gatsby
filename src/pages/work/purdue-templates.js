@@ -102,7 +102,7 @@ const PurdueHomePage = ({data}) => (
 				<h3 className="heading--underline">2015 Template Updates</h3>
 				<p>Since the release of the updated templates in 2014, our team was gathering feedback about both the base web-templates and our CMS implementation. Using the feedback, I, the only web developer on the team at the time, made the following updates that were released a year after the last release.</p>
 				<h4>Implementing SASS</h4>
-				<p>In an effort to improve readability and solidify the Purdue brand, the header and footer were redesigned along with other elements on prebuilt pages.</p>
+				<p>In an effort to improve readability and solidify the Purdue brand, the header and footer were redesigned along with other elements on pre-built pages.</p>
 				<Figure 
 					full={true} 
 					caption='the header of the 2014 version of the web templates' 
@@ -156,7 +156,7 @@ const PurdueHomePage = ({data}) => (
 				<ul>
 					<li><mark>HTML templating</mark> &#8212; most sites we built were implemented into a CMS, so I used a simple library that allowed including HTML files. This allowed the team to create small snippets for various elements used throughout a site</li>
 					<li><mark>SASS compiling &amp; minification</mark> &#8212; compiling our SASS files within the task runner allowed us to have more customization in how our files output and automate other features, such as autoprefixing</li>
-					<li><mark>live reload</mark> &#8212; this tool was one I didn't know I needed. Having GulpJS watch your files and reload a page when it notices a change is a huge timesaver.</li>
+					<li><mark>live reload</mark> &#8212; this tool was one I didn't know I needed. Having GulpJS watch your files and reload a page when it notices a change is a huge time-saver.</li>
 				</ul>
 				<p>Each of these tasks would run dependent on the environment they were built for. For example, minification of CSS would only occur if it was building for the production environment.</p>
 				<h3 className="heading--underline">Implementing Git + Github</h3>

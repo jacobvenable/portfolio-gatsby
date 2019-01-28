@@ -64,7 +64,7 @@ const PurdueConferencesPage = ({data}) => (
 						<ul>
 							<li className="overview__item">review design for accessibility issues</li>
 							<li className="overview__item">use Git and GitHub for version control and tracking progress</li>
-							<li className="overview__item">develop reuseable components and templates based on design</li>
+							<li className="overview__item">develop reusable components and templates based on design</li>
 							<li className="overview__item">test for browser inconsistencies</li>
 							<li className="overview__item">implement the site within the CMS</li>
 						</ul>
@@ -107,7 +107,7 @@ const PurdueConferencesPage = ({data}) => (
 						return edge.node.fileAbsolutePath.includes('scss-grid-01');
 					}).node.html
 				}/>
-				<p>This approach did mean that IE11 would not have the desired layout, but still have a useable, appealing fallback.</p>
+				<p>This approach did mean that IE11 would not have the desired layout, but still have a usable, appealing fallback.</p>
 				<h3 className="heading--underline">Implementing Handlebars</h3>
 				<p>The reason for using <OutboundLink href="https://handlebarsjs.com/">Handlebars</OutboundLink> during development was to have the ability to create more flexible components. In the past, I had simply used <OutboundLink href="https://github.com/coderhaoxin/gulp-file-include">gulp-file-include</OutboundLink> in order to handle templating various components and page types. The problem with this plugin is that it didn't provide enough flexibility with its conditionals. For example, if I wanted to include a button that has four different looks depending on the used modifiers, I'd have to have multiple conditionals.</p>
 				<CodeSection language="html" code={

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/fontawesome-pro-solid';
 import { faToolbox } from '@fortawesome/fontawesome-pro-solid';
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
-import Figure from './../../components/Figure';
 import CodeSection from './../../components/CodeSection';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
@@ -70,7 +69,7 @@ const PurdueConferencesPage = ({data}) => (
 			</section>
 			<section aria-labelledby="dev">
 				<h2 id="dev">Development Notes</h2>
-				<p>Since early 2018, I've been teaching myself (and falling in love with) <OutboundLink href="https://reactjs.org/">React</OutboundLink>. Since I was in desparate need for an upd`ated personal portfolio, I wanted to find a way to fit React into the equation. While I could create a single page application for my portfolio, it didn't really do me any favors in terms of SEO. That's when I stumbled upon <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>.</p>
+				<p>Since early 2018, I've been teaching myself (and falling in love with) <OutboundLink href="https://reactjs.org/">React</OutboundLink>. Since I was in desperate need for an updated personal portfolio, I wanted to find a way to fit React into the equation. While I could create a single page application for my portfolio, it didn't really do me any favors in terms of SEO. That's when I stumbled upon <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>.</p>
 				<h3 className="heading--underline">GatsbyJS</h3>
 				<p>Gatbsy is a React-based static site generator, meaning it can create a site with multiple using React components. Basically, each individual page within the site are their own component that you can import other components into. Using each component's render method, Gatsby will build the page that is served as a static HTML document.</p>
 				<p>For example, some components I created to be used on each page of this site include the following:</p>

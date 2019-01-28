@@ -103,7 +103,7 @@ const SkillsPage = ({ data }) => (
 							</p>
 						</div>
 						<div className="container__column container__column--padded panel__column">
-							<p className="panel__description">I've had a love-hate relationship with CSS. I've needed to support browsers as far back as IE9 while also optimizing for the latest. It took me some time to determine that it's ok a site doesn't look the same in old browsers as it does in new browsers. As long as it starts useable and progressively enhances, you can use those newer, amazing, lovely, time-saving features (praise to flexbox and grid).</p>
+							<p className="panel__description">I've had a love-hate relationship with CSS. I've needed to support browsers as far back as IE9 while also optimizing for the latest. It took me some time to determine that it's ok a site doesn't look the same in old browsers as it does in new browsers. As long as it starts usable and progressively enhances, you can use those newer, amazing, lovely, time-saving features (praise to flexbox and grid).</p>
 							<p className="panel__description">When I started using SASS 3 years ago, managing CSS became so much easier. Nowadays, I've been working towards setting up styles in a way that is readable and scalable. I've found using a combination of <OutboundLink href="http://getbem.com/">BEM</OutboundLink> and <OutboundLink href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS</OutboundLink> has worked out really well.</p>
 						</div>
 					</div>
@@ -178,7 +178,7 @@ const SkillsPage = ({ data }) => (
 							</div>
 							<div className="container__column container__column--padded panel__column">
 								<p className="panel__description">My interest in React was born after the initial version of the <Link to="/work/purdue-home-page">Purdue home page customization</Link>. Although it was a good exercise, limiting interaction with the DOM without the help of a framework was tolling on progress.</p>
-								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reuseable components. I went as far as rebuilding this site using <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>, a static site generator that you can use to build a site with React.</p>
+								<p className="panel__description">I decided it was time to look into tools that could address this issue and found React. After doing some tutorials, I loved how easy it was to build web applications with reusable components. I went as far as <a href="/work/portfolio-gatsby">rebuilding this site</a> using <OutboundLink href="https://www.gatsbyjs.org/">GatsbyJS</OutboundLink>, a static site generator that you can use to build a site with React.</p>
 							</div>
 						</div>
 					<button className="tiles__tile tile" role="heading" aria-level="2">
