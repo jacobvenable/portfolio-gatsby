@@ -78,7 +78,7 @@ const IndexPage = () => (
 							<h3><FontAwesomeIcon icon={faStar} className='heading__icon'/>Hobbies</h3>
 							<ul>
 								<li>Reading: Believe it or not, I only just recently finished the entire Harry Potter series over the summer.</li>
-								<li>Crossfit: I’ve been going to crossfit since February 2018 because I need someone to yell at me to work out.</li>
+								<li>CrossFit: I’ve been going to crossfit since February 2018 because I need someone to yell at me to work out.</li>
 								<li>Hiking: Being originally a flat-lander from Indiana, I love soaking in the views of the Rocky Mountains.</li>
 							</ul>
 						</div>
