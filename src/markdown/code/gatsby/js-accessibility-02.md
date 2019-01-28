@@ -1,9 +1,6 @@
 ```javascript
 import React from 'react';
 
-/**
- * A class React component used for adding a group of accordions according to ARIA best practices: https://www.w3.org/TR/wai-aria-practices-1.1/#accordion
- */
 class Accordions extends React.Component {
 
 	constructor(props){
