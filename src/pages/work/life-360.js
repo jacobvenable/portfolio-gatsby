@@ -34,7 +34,7 @@ const Life360Page = ({data}) => (
 			<div className="container__row">
 				<div className="container__column">
 					<OutboundLink
-			      href="https://www.purdue.edu/hhs/life360/index-old.html"
+			      href="https://www.purdue.edu/hhs/life360/"
 			      className="button button--blue-dark"
 					>
 						View Live Site
